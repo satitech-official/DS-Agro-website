@@ -19,34 +19,36 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Set up Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7
         with:
           node-version: 22
           cache: npm
 
       - name: Configure and enable GitHub Pages
-        uses: actions/configure-pages@v5
+        uses: actions/configure-pages@v6
         with:
           enablement: true
 
       - name: Install dependencies
         run: npm ci
 
-      - name: Build static website
-        run: npm run build
+      - name: Lint
+        run: npm run lint
 
-      - name: Add GitHub Pages fallbacks
-        run: |
-          touch out/.nojekyll
-          cp out/index.html out/404.html
+      - name: Build and validate static website
+        run: npm test
+
+      - name: Disable Jekyll processing
+        run: touch out/.nojekyll
 
       - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v4
+        uses: actions/upload-pages-artifact@v5
         with:
           path: ./out
+          include-hidden-files: true
 
   deploy:
     environment:
@@ -60,4 +62,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
