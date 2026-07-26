@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="112" viewBox="0 0 640 112" role="img" aria-labelledby="title desc">
+  <title id="title">Open DS Agro Tourism and Resort live website</title>
+  <desc id="desc">Premium green and gold live website button</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0f2f22"/>
+      <stop offset="0.55" stop-color="#1d5139"/>
+      <stop offset="1" stop-color="#0b241a"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#e8cf92"/>
+      <stop offset="0.5" stop-color="#b9985a"/>
+      <stop offset="1" stop-color="#f0dda9"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-30%" width="140%" height="170%">
+      <feDropShadow dx="0" dy="10" stdDeviation="10" flood-color="#07150f" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+  <rect x="8" y="8" width="624" height="96" rx="24" fill="url(#bg)" filter="url(#shadow)"/>
+  <rect x="9" y="9" width="622" height="94" rx="23" fill="none" stroke="url(#gold)" stroke-width="2"/>
+  <circle cx="62" cy="56" r="26" fill="#f5f0e6" fill-opacity="0.08" stroke="#d6bc7d" stroke-width="1.5"/>
+  <path d="M51 61c9-2 15-8 18-18 4 12 0 22-11 27-5-1-8-4-7-9Z" fill="#d8bf82"/>
+  <path d="M58 69c-1-8 1-16 8-23" fill="none" stroke="#f5e7bf" stroke-width="2" stroke-linecap="round"/>
+  <text x="105" y="48" fill="#f8f4ea" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" letter-spacing="3">DS AGRO TOURISM &amp; RESORT</text>
+  <text x="105" y="75" fill="#e6cb8e" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700">OPEN LIVE WEBSITE</text>
+  <circle cx="575" cy="56" r="25" fill="#d3b674"/>
+  <path d="M565 56h18m-7-7 7 7-7 7" fill="none" stroke="#102a1e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
