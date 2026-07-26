@@ -78,6 +78,8 @@ All booking calls-to-action create transparent, prefilled WhatsApp enquiries to 
 
 Every push to `main` runs lint and a production static build. When validation passes, the exported `out` directory is deployed automatically to GitHub Pages.
 
+The deployment workflow can also be started manually from the repository Actions page when a fresh publish is needed.
+
 Repository publishing source: **GitHub Actions**.
 
 ---
