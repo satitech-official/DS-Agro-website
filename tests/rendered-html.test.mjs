@@ -20,6 +20,8 @@ test("server-renders the finished resort homepage", async () => {
   assert.match(html, /DS Agro Tourism &amp; Resort/);
   assert.match(html, /Escape the city\./);
   assert.match(html, /Check on WhatsApp/);
+  assert.match(html, /media\/farming-fields\.mp4/);
+  assert.match(html, /aria-current="page"[^>]*href="\/"|href="\/"[^>]*aria-current="page"/);
   assert.match(html, /918149428126/);
   assert.match(html, /4N9MusUsVUeHSG9E8/);
   assert.doesNotMatch(html, /codex-preview|react-loading-skeleton|Lorem Ipsum/i);
@@ -32,5 +34,7 @@ test("renders inner experience pages without fake booking claims", async () => {
   assert.match(html, /Stay close to nature\./);
   assert.match(html, /confirmed directly by the resort team/);
   assert.match(html, /Enquire on WhatsApp/);
+  assert.match(html, /Rest\. Reconnect\. Repeat\./);
+  assert.match(html, /visual-stay/);
   assert.doesNotMatch(html, /Confirm Booking|Book Now|available rooms|discount/i);
 });

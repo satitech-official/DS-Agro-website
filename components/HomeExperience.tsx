@@ -35,7 +35,7 @@ export function FirstVisitLoader() {
   </div>;
 }
 
-export function Header() {
+export function Header({ currentPath = "/" }: { currentPath?: string }) {
   const [open, setOpen] = useState(false);
   const [compact, setCompact] = useState(false);
   useEffect(() => {
@@ -45,12 +45,12 @@ export function Header() {
   }, []);
   return <header className={`site-header ${compact ? "is-compact" : ""}`}>
     <a className="brand" href="/" aria-label="DS Agro Tourism home"><span className="brand-mark">DS</span><span>Agro Tourism <small>& Resort</small></span></a>
-    <nav className="desktop-nav" aria-label="Main navigation">{nav.slice(0, 7).map(([label, href]) => <a className={href === "/" ? "home-link" : ""} href={href} key={href}>{label}</a>)}</nav>
+    <nav className="desktop-nav" aria-label="Main navigation">{nav.map(([label, href]) => <a className={currentPath === href ? "current-link" : ""} aria-current={currentPath === href ? "page" : undefined} href={href} key={href}>{label}</a>)}</nav>
     <a className="nav-cta" href={whatsapp("Hello DS Agro Tourism & Resort, I would like to plan a visit.")} target="_blank" rel="noreferrer">Plan your visit <span>↗</span></a>
     <button className={`menu-button ${open ? "open" : ""}`} onClick={() => setOpen(!open)} aria-expanded={open} aria-label="Toggle menu"><span /><span /></button>
     {open && <div className="mobile-menu">
       <div className="menu-glow" />
-      {nav.map(([label, href], index) => <a href={href} key={href} style={{ animationDelay: `${index * 55}ms` }}><span>0{index + 1}</span>{label}</a>)}
+      {nav.map(([label, href], index) => <a className={currentPath === href ? "current-link" : ""} aria-current={currentPath === href ? "page" : undefined} href={href} key={href} style={{ animationDelay: `${index * 55}ms` }}><span>0{index + 1}</span>{label}</a>)}
       <div className="menu-socials"><a href={contact.instagram} target="_blank" rel="noreferrer"><SocialIcon type="ig" /> Instagram</a><a href={whatsapp("Hello DS Agro Tourism & Resort")}><SocialIcon type="wa" /> WhatsApp</a></div>
     </div>}
   </header>;
@@ -93,7 +93,7 @@ export function Footer() {
         </div>
       </div>
     </div>
-    <div className="footer-marquee"><div>ESCAPE THE CITY ✦ EXPERIENCE NATURE ✦ LIVE LUXURY ✦ FARM LIFE, ELEVATED ✦ WEEKENDS THAT STAY WITH YOU ✦ </div></div>
+    <div className="footer-marquee"><div>ESCAPE THE CITY ✦ EXPERIENCE NATURE ✦ LIVE LUXURY ✦ FARM LIFE, ELEVATED ✦ WEEKENDS THAT STAY WITH YOU ✦ ESCAPE THE CITY ✦ EXPERIENCE NATURE ✦ LIVE LUXURY ✦ FARM LIFE, ELEVATED ✦ WEEKENDS THAT STAY WITH YOU ✦ </div></div>
     <div className="footer-bottom"><span>© {new Date().getFullYear()} DS Agro Tourism & Resort</span><span>Facts, rates and availability confirmed directly by the resort.</span></div>
   </footer>;
 }
@@ -115,17 +115,20 @@ export function HomeExperience() {
   const [active, setActive] = useState(0);
   const feature = experiences[active];
   return <>
-    <FirstVisitLoader /><GlobalMotion /><a className="skip" href="#main">Skip to content</a><Header />
+    <FirstVisitLoader /><GlobalMotion /><a className="skip" href="#main">Skip to content</a><Header currentPath="/" />
     <main id="main" className="page-enter">
       <section className="hero">
-        <div className="hero-image" role="img" aria-label="Lush countryside inspiration at golden hour" /><div className="hero-shade" />
+        <video className="hero-video" autoPlay muted loop playsInline preload="metadata" poster="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=2200&q=90" aria-label="Aerial countryside fields at golden hour">
+          <source src="/media/farming-fields.mp4" type="video/mp4" />
+        </video>
+        <div className="hero-image" role="img" aria-label="Lush countryside fallback at golden hour" /><div className="hero-shade" />
         <div className="sun-orb" /><div className="floating-leaf leaf-one">◆</div><div className="floating-leaf leaf-two">◆</div>
         <div className="hero-copy"><p className="eyebrow light hero-reveal delay-1">DS Agro Tourism & Resort</p><h1 className="hero-reveal delay-2">Escape the city.<br /><em>Return to yourself.</em></h1><p className="hero-lede hero-reveal delay-3">Nature-led stays, family adventures and celebrations shaped under open skies.</p>
           <div className="hero-actions hero-reveal delay-4"><a className="button button-gold pulse-button" href="#enquire">Plan your visit <b>↘</b></a><a className="text-link" href="#story">Discover the story <span>↓</span></a></div>
         </div>
         <div className="hero-note"><span>From soil</span><i /><span>to serenity</span></div>
       </section>
-      <div className="energy-marquee"><div>Luxury Stay ✦ Day Outing ✦ Swimming Pool ✦ Horse Riding ✦ Farm Experience ✦ Family Time ✦ Traditional Food ✦ Celebrations ✦ </div></div>
+      <div className="energy-marquee"><div>Luxury Stay ✦ Day Outing ✦ Swimming Pool ✦ Horse Riding ✦ Farm Experience ✦ Family Time ✦ Traditional Food ✦ Celebrations ✦ Luxury Stay ✦ Day Outing ✦ Swimming Pool ✦ Horse Riding ✦ Farm Experience ✦ Family Time ✦ Traditional Food ✦ Celebrations ✦ </div></div>
       <div id="enquire" className="booking-wrap"><BookingPanel /></div>
       <section className="intro section reveal" id="story">
         <div><p className="eyebrow">The escape</p><h2>A slower world,<br />waiting just beyond<br /><em>the everyday.</em></h2></div>
