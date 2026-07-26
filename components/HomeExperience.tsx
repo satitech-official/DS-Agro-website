@@ -1,8 +1,13 @@
 "use client";
-/* eslint-disable @next/next/no-html-link-for-pages */
 
 import { useEffect, useState } from "react";
 import { contact, experiences, nav } from "../data/site";
+
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
+function pageHref(path: string) {
+  return path === "/" ? `${basePath}/` : `${basePath}${path}`;
+}
 
 export function whatsapp(message: string) {
   return `https://wa.me/${contact.whatsapp}?text=${encodeURIComponent(message)}`;
@@ -44,13 +49,13 @@ export function Header({ currentPath = "/" }: { currentPath?: string }) {
     return () => removeEventListener("scroll", onScroll);
   }, []);
   return <header className={`site-header ${compact ? "is-compact" : ""}`}>
-    <a className="brand" href="/" aria-label="DS Agro Tourism home"><span className="brand-mark">DS</span><span>Agro Tourism <small>& Resort</small></span></a>
-    <nav className="desktop-nav" aria-label="Main navigation">{nav.map(([label, href]) => <a className={currentPath === href ? "current-link" : ""} aria-current={currentPath === href ? "page" : undefined} href={href} key={href}>{label}</a>)}</nav>
+    <a className="brand" href={pageHref("/")} aria-label="DS Agro Tourism home"><span className="brand-mark">DS</span><span>Agro Tourism <small>& Resort</small></span></a>
+    <nav className="desktop-nav" aria-label="Main navigation">{nav.map(([label, href]) => <a className={currentPath === href ? "current-link" : ""} aria-current={currentPath === href ? "page" : undefined} href={pageHref(href)} key={href}>{label}</a>)}</nav>
     <a className="nav-cta" href={whatsapp("Hello DS Agro Tourism & Resort, I would like to plan a visit.")} target="_blank" rel="noreferrer">Plan your visit <span>↗</span></a>
     <button className={`menu-button ${open ? "open" : ""}`} onClick={() => setOpen(!open)} aria-expanded={open} aria-label="Toggle menu"><span /><span /></button>
     {open && <div className="mobile-menu">
       <div className="menu-glow" />
-      {nav.map(([label, href], index) => <a className={currentPath === href ? "current-link" : ""} aria-current={currentPath === href ? "page" : undefined} href={href} key={href} style={{ animationDelay: `${index * 55}ms` }}><span>0{index + 1}</span>{label}</a>)}
+      {nav.map(([label, href], index) => <a className={currentPath === href ? "current-link" : ""} aria-current={currentPath === href ? "page" : undefined} href={pageHref(href)} key={href} style={{ animationDelay: `${index * 55}ms` }}><span>0{index + 1}</span>{label}</a>)}
       <div className="menu-socials"><a href={contact.instagram} target="_blank" rel="noreferrer"><SocialIcon type="ig" /> Instagram</a><a href={whatsapp("Hello DS Agro Tourism & Resort")}><SocialIcon type="wa" /> WhatsApp</a></div>
     </div>}
   </header>;
@@ -84,7 +89,7 @@ export function Footer() {
     <div className="footer-orbit one" /><div className="footer-orbit two" />
     <div className="footer-top">
       <div className="footer-brand"><span className="brand-mark">DS</span><h3>Agro Tourism<br /><small>& Resort</small></h3><p>Escape the city. Experience nature. Live luxury.</p></div>
-      <div><p className="footer-label">Explore</p>{nav.map(([label, href]) => <a href={href} key={href}>{label}</a>)}</div>
+      <div><p className="footer-label">Explore</p>{nav.map(([label, href]) => <a href={pageHref(href)} key={href}>{label}</a>)}</div>
       <div><p className="footer-label">Connect</p><a href={`tel:+91${contact.phones[0]}`}>{contact.displayWhatsapp}</a><a href={contact.maps} target="_blank" rel="noreferrer">Google Maps ↗</a>
         <div className="social-row">
           <a className="social-button" href={whatsapp("Hello DS Agro Tourism & Resort")} target="_blank" rel="noreferrer" aria-label="WhatsApp"><SocialIcon type="wa" /></a>
@@ -119,7 +124,7 @@ export function HomeExperience() {
     <main id="main" className="page-enter">
       <section className="hero">
         <video className="hero-video" autoPlay muted loop playsInline preload="metadata" poster="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=2200&q=90" aria-label="Aerial countryside fields at golden hour">
-          <source src="/media/farming-fields.mp4" type="video/mp4" />
+          <source src="https://videos.pexels.com/video-files/4334522/4334522-hd_1920_1080_24fps.mp4" type="video/mp4" />
         </video>
         <div className="hero-image" role="img" aria-label="Lush countryside fallback at golden hour" /><div className="hero-shade" />
         <div className="sun-orb" /><div className="floating-leaf leaf-one">◆</div><div className="floating-leaf leaf-two">◆</div>
@@ -132,7 +137,7 @@ export function HomeExperience() {
       <div id="enquire" className="booking-wrap"><BookingPanel /></div>
       <section className="intro section reveal" id="story">
         <div><p className="eyebrow">The escape</p><h2>A slower world,<br />waiting just beyond<br /><em>the everyday.</em></h2></div>
-        <div className="intro-copy"><p className="large-copy">DS Agro Tourism & Resort brings together the openness of farm life and the comfort of a considered getaway.</p><p>Come for a stay, a day outdoors, time by the pool or a gathering with the people who matter. Every visit begins with a direct conversation, so the details fit your plan.</p><a className="arrow-link" href="/experiences">Explore all experiences <span>→</span></a></div>
+        <div className="intro-copy"><p className="large-copy">DS Agro Tourism & Resort brings together the openness of farm life and the comfort of a considered getaway.</p><p>Come for a stay, a day outdoors, time by the pool or a gathering with the people who matter. Every visit begins with a direct conversation, so the details fit your plan.</p><a className="arrow-link" href={pageHref("/experiences")}>Explore all experiences <span>→</span></a></div>
       </section>
       <section className="experience-stage reveal"><div className="experience-image" style={{ backgroundImage: `linear-gradient(90deg,rgba(17,36,26,.1),rgba(17,36,26,.72)),url("${feature.image}")` }} />
         <div className="experience-content"><p className="eyebrow light">Choose your escape</p>
@@ -144,7 +149,7 @@ export function HomeExperience() {
         <div className="day-grid"><article className="day-card morning"><div><span>Morning</span><h3>Wake with the land</h3></div></article><article className="day-card afternoon"><div><span>Afternoon</span><h3>Cool off. Slow down.</h3></div></article><article className="day-card evening"><div><span>Golden hour</span><h3>Gather into evening</h3></div></article></div>
         <p className="disclaimer">Images across this concept site are licensed experience inspiration and are not presented as photographs of DS Agro Tourism & Resort. Visit the official Instagram for current property imagery.</p>
       </section>
-      <section className="gather reveal"><div className="gather-image" /><div className="gather-copy"><p className="eyebrow light">Celebrations</p><h2>More room for<br /><em>what matters.</em></h2><p>Family milestones, group outings and corporate days feel different with open sky above and nature all around.</p><a className="button button-cream" href="/celebrations">Imagine your gathering <b>→</b></a></div></section>
+      <section className="gather reveal"><div className="gather-image" /><div className="gather-copy"><p className="eyebrow light">Celebrations</p><h2>More room for<br /><em>what matters.</em></h2><p>Family milestones, group outings and corporate days feel different with open sky above and nature all around.</p><a className="button button-cream" href={pageHref("/celebrations")}>Imagine your gathering <b>→</b></a></div></section>
       <section className="final-cta reveal"><div className="cta-spark one">✦</div><div className="cta-spark two">✦</div><p className="eyebrow">Begin your escape</p><h2>Your weekend deserves<br /><em>more than a stay.</em></h2><div><a className="button button-dark pulse-button" href={whatsapp("Hello DS Agro Tourism & Resort, I would like to know more about visiting the resort.")} target="_blank" rel="noreferrer">WhatsApp us <b>↗</b></a><a className="button button-outline" href={contact.maps} target="_blank" rel="noreferrer">Get directions <b>↗</b></a></div></section>
     </main>
     <Footer />
