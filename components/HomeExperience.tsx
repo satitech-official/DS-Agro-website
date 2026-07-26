@@ -1,5 +1,4 @@
 "use client";
-/* eslint-disable @next/next/no-html-link-for-pages */
 
 import { useEffect, useState } from "react";
 import { contact, experiences, nav } from "../data/site";
@@ -8,7 +7,8 @@ const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
 export function sitePath(path: string) {
   if (!path.startsWith("/")) return path;
-  return path === "/" ? `${basePath}/` : `${basePath}${path}`;
+  if (path === "/") return `${basePath}/`;
+  return `${basePath}${path}${path.endsWith("/") ? "" : "/"}`;
 }
 
 export function whatsapp(message: string) {
