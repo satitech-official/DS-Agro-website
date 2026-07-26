@@ -1,6 +1,8 @@
 import type { MetadataRoute } from "next";
 import { pages } from "../data/site";
 
+export const dynamic = "force-static";
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = "https://satitech-official.github.io/DS-Agro-website";
   return [
