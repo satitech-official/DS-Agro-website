@@ -9,7 +9,7 @@
 </p>
 
 <p align="center">
-  <a href="https://ds-agro-tourism-resort.nikhilbaraskar551.chatgpt.site/">
+  <a href="https://satitech-official.github.io/DS-Agro-website/">
     <img src="./public/live-website-button.svg" alt="Open DS Agro Tourism & Resort live website" width="520" />
   </a>
 </p>
@@ -28,6 +28,7 @@
 
 - Premium responsive UI for desktop, tablet, and mobile
 - Static-exported Next.js application optimized for GitHub Pages
+- Cinematic autoplay hero videography with image fallback
 - Stay, day outing, experiences, dining, celebrations, gallery, and contact pages
 - Direct WhatsApp enquiry flow with prefilled visit details
 - Google Maps, telephone, and Instagram integrations
@@ -74,11 +75,9 @@ All booking calls-to-action create transparent, prefilled WhatsApp enquiries to 
 
 ## Live Deployment
 
-**Production URL:** https://ds-agro-tourism-resort.nikhilbaraskar551.chatgpt.site/
+**Production URL:** https://satitech-official.github.io/DS-Agro-website/
 
-Every push to `main` runs lint and a production static build. When validation passes, the exported `out` directory is deployed automatically to GitHub Pages.
-
-The deployment workflow can also be started manually from the repository Actions page when a fresh publish is needed.
+Every push to `main` runs a production static build. When validation passes, the exported `out` directory is deployed automatically to GitHub Pages.
 
 Repository publishing source: **GitHub Actions**.
 
