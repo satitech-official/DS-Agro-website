@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import "./hero-video.css";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 const siteUrl = "https://satitech-official.github.io/DS-Agro-website";
