@@ -72,11 +72,13 @@ Do not add prices, room categories, policies, capacities, timings, availability 
 
 All booking calls-to-action create transparent, prefilled WhatsApp enquiries to the primary business number. The website does not claim real-time availability or confirmed booking.
 
-## Deployment
+## Live Deployment
+
+**Production URL:** https://satitech-official.github.io/DS-Agro-website/
 
 Every push to `main` runs lint and a production static build. When validation passes, the exported `out` directory is deployed automatically to GitHub Pages.
 
-For the first deployment, repository administrators must select **Settings → Pages → Source: GitHub Actions**. After that one-time setting, future pushes deploy automatically.
+Repository publishing source: **GitHub Actions**.
 
 ---
 
