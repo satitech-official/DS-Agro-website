@@ -125,7 +125,12 @@ export function HomeExperience() {
     <FirstVisitLoader /><GlobalMotion /><a className="skip" href="#main">Skip to content</a><Header currentPath="/" />
     <main id="main" className="page-enter">
       <section className="hero">
-        <div className="hero-image" role="img" aria-label="Lush countryside at golden hour" /><div className="hero-shade" />
+        <div className="hero-image" role="img" aria-label="Lush countryside at golden hour" />
+        <video className="hero-video-bg" autoPlay muted loop playsInline preload="metadata" poster="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=2200&q=90" aria-hidden="true">
+          <source src="https://cdn.coverr.co/videos/coverr-aerial-view-of-a-green-field-1578/1080p.mp4" type="video/mp4" />
+          <source src="https://assets.mixkit.co/videos/preview/mixkit-aerial-view-of-a-green-forest-1211-large.mp4" type="video/mp4" />
+        </video>
+        <div className="hero-shade" />
         <div className="sun-orb" /><div className="floating-leaf leaf-one">◆</div><div className="floating-leaf leaf-two">◆</div>
         <div className="hero-copy"><p className="eyebrow light hero-reveal delay-1">DS Agro Tourism & Resort</p><h1 className="hero-reveal delay-2">Escape the city.<br /><em>Return to yourself.</em></h1><p className="hero-lede hero-reveal delay-3">Nature-led stays, family adventures and celebrations shaped under open skies.</p>
           <div className="hero-actions hero-reveal delay-4"><a className="button button-gold pulse-button" href="#enquire">Plan your visit <b>↘</b></a><a className="text-link" href="#story">Discover the story <span>↓</span></a></div>
