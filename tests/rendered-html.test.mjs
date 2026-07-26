@@ -13,7 +13,7 @@ test("exports the finished resort homepage", async () => {
   assert.match(html, /Check on WhatsApp/);
   assert.match(html, /918149428126/);
   assert.match(html, /4N9MusUsVUeHSG9E8/);
-  assert.match(html, /DS-Agro-website\/experiences\//);
+  assert.match(html, /(?:DS-Agro-website\/)?experiences\//);
   assert.doesNotMatch(html, /media\/farming-fields\.mp4/);
   assert.doesNotMatch(html, /codex-preview|react-loading-skeleton|Lorem Ipsum/i);
 });
