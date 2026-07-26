@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">DS Agro Tourism and Resort website preview</title>
+  <desc id="desc">A premium countryside resort website preview with forest green and warm gold styling.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#102a1e"/>
+      <stop offset="0.55" stop-color="#31543d"/>
+      <stop offset="1" stop-color="#b9985a"/>
+    </linearGradient>
+    <radialGradient id="sun">
+      <stop offset="0" stop-color="#f5dca5" stop-opacity="0.95"/>
+      <stop offset="1" stop-color="#f5dca5" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <circle cx="1300" cy="180" r="260" fill="url(#sun)"/>
+  <path d="M0 660 C260 540 430 720 690 610 C960 500 1170 700 1600 520 V900 H0Z" fill="#173c2b"/>
+  <path d="M0 735 C280 640 510 790 790 680 C1070 575 1300 730 1600 650 V900 H0Z" fill="#102a1e" opacity="0.92"/>
+  <g fill="none" stroke="#e6d6b4" stroke-opacity="0.42">
+    <circle cx="1320" cy="220" r="90"/>
+    <circle cx="1320" cy="220" r="140"/>
+    <circle cx="1320" cy="220" r="190"/>
+  </g>
+  <g transform="translate(120 105)">
+    <circle cx="42" cy="42" r="40" fill="none" stroke="#f5f0e6" stroke-width="2"/>
+    <text x="42" y="55" text-anchor="middle" fill="#f5f0e6" font-size="35" font-family="Georgia, serif">DS</text>
+    <text x="105" y="35" fill="#f5f0e6" font-size="30" font-family="Georgia, serif">Agro Tourism</text>
+    <text x="107" y="65" fill="#e6d6b4" font-size="15" letter-spacing="4" font-family="Arial, sans-serif">&amp; RESORT</text>
+  </g>
+  <text x="120" y="330" fill="#e6d6b4" font-size="18" letter-spacing="6" font-family="Arial, sans-serif">FROM SOIL TO SERENITY</text>
+  <text x="120" y="440" fill="#f5f0e6" font-size="96" font-family="Georgia, serif">Escape the city.</text>
+  <text x="120" y="535" fill="#e2c88f" font-size="96" font-style="italic" font-family="Georgia, serif">Return to yourself.</text>
+  <text x="125" y="600" fill="#f5f0e6" fill-opacity="0.78" font-size="24" font-family="Arial, sans-serif">Nature-led stays, family adventures and celebrations under open skies.</text>
+  <rect x="120" y="655" width="260" height="68" rx="3" fill="#b9985a"/>
+  <text x="250" y="697" text-anchor="middle" fill="#102a1e" font-size="17" font-weight="700" letter-spacing="2" font-family="Arial, sans-serif">PLAN YOUR VISIT</text>
+  <text x="120" y="815" fill="#f5f0e6" fill-opacity="0.58" font-size="17" letter-spacing="3" font-family="Arial, sans-serif">PREMIUM RESPONSIVE HOSPITALITY EXPERIENCE</text>
+</svg>
