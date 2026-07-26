@@ -9,9 +9,19 @@
 </p>
 
 <p align="center">
-  <a href="https://satitech-official.github.io/DS-Agro-website/"><strong>View Live Website</strong></a>
-  ·
-  <a href="https://www.instagram.com/dsagrotourismresort_official">Official Instagram</a>
+  <a href="https://satitech-official.github.io/DS-Agro-website/">
+    <img src="./public/live-website-button.svg" alt="Open DS Agro Tourism & Resort live website" width="520" />
+  </a>
+</p>
+
+<p align="center">
+  <a href="https://github.com/satitech-official/DS-Agro-website/actions/workflows/deploy-pages.yml">
+    <img alt="Deployment status" src="https://github.com/satitech-official/DS-Agro-website/actions/workflows/deploy-pages.yml/badge.svg" />
+  </a>
+  &nbsp;
+  <a href="https://www.instagram.com/dsagrotourismresort_official">
+    <img alt="Official Instagram" src="https://img.shields.io/badge/Instagram-Official_Profile-C13584?logo=instagram&logoColor=white" />
+  </a>
 </p>
 
 ## Features
@@ -65,6 +75,8 @@ All booking calls-to-action create transparent, prefilled WhatsApp enquiries to 
 ## Deployment
 
 Every push to `main` runs lint and a production static build. When validation passes, the exported `out` directory is deployed automatically to GitHub Pages.
+
+For the first deployment, repository administrators must select **Settings → Pages → Source: GitHub Actions**. After that one-time setting, future pushes deploy automatically.
 
 ---
 
