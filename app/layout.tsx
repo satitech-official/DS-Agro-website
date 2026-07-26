@@ -3,6 +3,7 @@ import "./globals.css";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 const siteUrl = "https://satitech-official.github.io/DS-Agro-website";
+const previewImage = `${siteUrl}/preview.svg`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -13,9 +14,9 @@ export const metadata: Metadata = {
     description: "Escape the city. Experience nature. Live luxury.",
     type: "website",
     url: siteUrl,
-    images: [`${basePath}/preview.svg`],
+    images: [previewImage],
   },
-  twitter: { card: "summary_large_image", images: [`${basePath}/preview.svg`] },
+  twitter: { card: "summary_large_image", images: [previewImage] },
   icons: { icon: `${basePath}/favicon.svg` },
 };
 
