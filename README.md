@@ -9,7 +9,7 @@
 </p>
 
 <p align="center">
-  <a href="https://satitech-official.github.io/DS-Agro-website/">
+  <a href="https://ds-agro-tourism-resort.nikhilbaraskar551.chatgpt.site/">
     <img src="./public/live-website-button.svg" alt="Open DS Agro Tourism & Resort live website" width="520" />
   </a>
 </p>
@@ -74,7 +74,7 @@ All booking calls-to-action create transparent, prefilled WhatsApp enquiries to 
 
 ## Live Deployment
 
-**Production URL:** https://satitech-official.github.io/DS-Agro-website/
+**Production URL:** https://ds-agro-tourism-resort.nikhilbaraskar551.chatgpt.site/
 
 Every push to `main` runs lint and a production static build. When validation passes, the exported `out` directory is deployed automatically to GitHub Pages.
 
