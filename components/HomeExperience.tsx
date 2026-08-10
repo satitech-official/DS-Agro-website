@@ -110,7 +110,7 @@ function BookingPanel() {
   const message = `Hello DS Agro Tourism & Resort, I would like to enquire about a ${type.toLowerCase()}.\nPreferred date: ${date || "To be decided"}\nGuests: ${guests}\nPlease share current availability, inclusions and pricing.`;
   return <div className="booking-panel reveal">
     <label><span>Visit type</span><select value={type} onChange={e => setType(e.target.value)}><option>Stay</option><option>Day outing</option><option>Celebration</option><option>Corporate outing</option></select></label>
-    <label><span>Preferred date</span><input type="date" value={date} onChange={e => setDate(e.target.value)} /></label>
+    <label><span>Preferred date</span><input type="date" value={date} onInput={e => setDate(e.currentTarget.value)} onChange={e => setDate(e.currentTarget.value)} /></label>
     <label><span>Guests</span><input type="number" min="1" value={guests} onChange={e => setGuests(e.target.value)} /></label>
     <a className="button button-gold pulse-button" href={whatsapp(message)} target="_blank" rel="noreferrer">Check on WhatsApp <b>↗</b></a>
   </div>;
