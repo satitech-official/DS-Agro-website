@@ -6,6 +6,10 @@ async function renderedHtml(path = "index.html") {
   return readFile(new URL(`../out/${path}`, import.meta.url), "utf8");
 }
 
+function uniqueResortImages(html) {
+  return new Set([...html.matchAll(/resort\/([a-z0-9-]+\.webp)/g)].map((match) => match[1]));
+}
+
 test("exports the finished resort homepage", async () => {
   const html = await renderedHtml();
   assert.match(html, /DS Agro Tourism &amp; Resort/);
@@ -13,10 +17,12 @@ test("exports the finished resort homepage", async () => {
   assert.match(html, /Check on WhatsApp/);
   assert.match(html, /videos\.pexels\.com\/video-files\/4334522/);
   assert.match(html, /resort\/aerial\.webp/);
-  assert.match(html, /resort\/resort-wide\.webp/);
-  assert.match(html, /resort\/pool-lawn\.webp/);
   assert.match(html, /resort\/turf-aerial\.webp/);
   assert.match(html, /resort\/dining-area\.webp/);
+  assert.match(html, /resort\/room-white\.webp/);
+  assert.match(html, /resort\/country-aerial\.webp/);
+  assert.match(html, /resort\/villa-garden-exterior\.webp/);
+  assert.equal(uniqueResortImages(html).size, 6, "homepage should render six different initial property photographs");
   assert.match(html, />Rooms</);
   assert.match(html, />Amenities</);
   assert.match(html, />Activities</);
@@ -63,19 +69,35 @@ test("exports supplied amenities, activities, outing rates and terms", async () 
   assert.match(terms, /Festival and New Year bookings are non-changeable and non-refundable/);
 });
 
-test("uses a varied property photo library across the detailed pages", async () => {
-  const [amenities, activities, outing, gallery] = await Promise.all([
+test("uses different hero and content photos across detailed pages", async () => {
+  const [amenities, activities, outing] = await Promise.all([
     renderedHtml("amenities/index.html"),
     renderedHtml("experiences/index.html"),
     renderedHtml("day-outing/index.html"),
-    renderedHtml("gallery/index.html"),
   ]);
 
   assert.match(amenities, /resort\/pool-lawn\.webp/);
   assert.match(amenities, /resort\/lounge\.webp/);
   assert.match(activities, /resort\/horse-arena-aerial\.webp/);
-  assert.match(activities, /resort\/turf-aerial\.webp/);
-  assert.match(outing, /resort\/dining-area\.webp/);
+  assert.match(activities, /resort\/turf-close\.webp/);
+  assert.match(outing, /resort\/country-aerial\.webp/);
+  assert.match(outing, /resort\/suite-living\.webp/);
+  assert.equal(uniqueResortImages(amenities).size, 4);
+  assert.equal(uniqueResortImages(activities).size, 4);
+  assert.equal(uniqueResortImages(outing).size, 4);
+});
+
+test("exports a categorized gallery with every photograph used once", async () => {
+  const gallery = await renderedHtml("gallery/index.html");
+
+  assert.match(gallery, /Resort &amp; Aerial Views/);
+  assert.match(gallery, /Rooms &amp; Stays/);
+  assert.match(gallery, /Activities &amp; Outdoors/);
+  assert.match(gallery, /Amenities &amp; Shared Spaces/);
+  assert.equal((gallery.match(/class="gallery-category-card"/g) ?? []).length, 30);
+  assert.equal(uniqueResortImages(gallery).size, 31, "gallery hero and all 30 gallery photos should be different");
   assert.match(gallery, /resort\/villa-living\.webp/);
   assert.match(gallery, /resort\/bathroom\.webp/);
+  assert.match(gallery, /resort\/horse-portrait\.webp/);
+  assert.match(gallery, /resort\/turf-top\.webp/);
 });
