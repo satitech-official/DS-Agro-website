@@ -19,6 +19,23 @@ export const resortImages = {
   bathroom: resortImage("bathroom.webp"),
   lounge: resortImage("lounge.webp"),
   horseRiding: resortImage("horse-riding.webp"),
+  roomWhite: resortImage("room-white.webp"),
+  roomWhiteAlt: resortImage("room-white-alt.webp"),
+  suiteLiving: resortImage("suite-living.webp"),
+  villaGarden: resortImage("villa-garden-exterior.webp"),
+  premiumAlt: resortImage("premium-room-alt.webp"),
+  dormitoryWide: resortImage("dormitory-wide.webp"),
+  dormitoryLounge: resortImage("dormitory-lounge.webp"),
+  horseTrack: resortImage("horse-track.webp"),
+  horseAction: resortImage("horse-action.webp"),
+  horsePortrait: resortImage("horse-portrait.webp"),
+  countryAerial: resortImage("country-aerial.webp"),
+  estateAerial: resortImage("estate-aerial.webp"),
+  farmFields: resortImage("farm-fields.webp"),
+  turfClose: resortImage("turf-close.webp"),
+  turfTop: resortImage("turf-top.webp"),
+  resortAerialTwo: resortImage("resort-aerial-two.webp"),
+  resortAerialThree: resortImage("resort-aerial-three.webp"),
 } as const;
 
 export const contact = {
@@ -92,11 +109,84 @@ export const terms = [
 ] as const;
 
 export const experiences = [
-  { name: "Comfortable stays", eyebrow: "Rooms", copy: "Choose from rooms, dormitory accommodation and a 2 BHK villa for your group.", image: resortImages.villaLiving },
+  { name: "Comfortable stays", eyebrow: "Rooms", copy: "Choose from rooms, dormitory accommodation and a 2 BHK villa for your group.", image: resortImages.roomWhite },
   { name: "Poolside afternoons", eyebrow: "Amenities", copy: "Slow down by the swimming pool and attached deck with your family and friends.", image: resortImages.poolLawn },
-  { name: "Outdoor adventures", eyebrow: "Activities", copy: "Horse riding, boating, rain dance, turf games and more bring the outdoors alive.", image: resortImages.horseArena },
+  { name: "Outdoor adventures", eyebrow: "Activities", copy: "Horse riding, boating, rain dance, turf games and more bring the outdoors alive.", image: resortImages.horseTrack },
   { name: "Group escapes", eyebrow: "Day outing", copy: "Plan a complete day with food, swimming, rain dance, trampoline and activities.", image: resortImages.resortWide },
 ] as const;
+
+export type GalleryCategory = {
+  id: string;
+  title: string;
+  eyebrow: string;
+  description: string;
+  images: { image: string; label: string; copy: string }[];
+};
+
+export const galleryCategories: GalleryCategory[] = [
+  {
+    id: "resort-views",
+    title: "Resort & Aerial Views",
+    eyebrow: "The setting",
+    description: "See the complete property, surrounding farms, lawns and countryside from different aerial perspectives.",
+    images: [
+      { image: resortImages.resortWide, label: "The complete resort", copy: "Pool, lawns and stays surrounded by farmland." },
+      { image: resortImages.aerial, label: "Across the fields", copy: "A wide countryside view around DS Agro Tourism & Resort." },
+      { image: resortImages.countryAerial, label: "Country approach", copy: "The resort and its road connection through the fields." },
+      { image: resortImages.farmFields, label: "Farm landscape", copy: "A top-down view of the agricultural setting." },
+      { image: resortImages.resortAerialTwo, label: "Resort from above", copy: "The complete property framed by green fields." },
+      { image: resortImages.resortAerialThree, label: "A wider perspective", copy: "Another distinct aerial angle across the resort grounds." },
+    ],
+  },
+  {
+    id: "rooms-stays",
+    title: "Rooms & Stays",
+    eyebrow: "Accommodation",
+    description: "Explore different room categories, dormitory spaces, villa interiors and attached facilities.",
+    images: [
+      { image: resortImages.deluxe, label: "Deluxe room", copy: "A comfortable room prepared for a relaxed stay." },
+      { image: resortImages.premium, label: "Premium room", copy: "King-size comfort with a spacious layout." },
+      { image: resortImages.premiumAlt, label: "Premium room view", copy: "A second, distinct view of the premium accommodation." },
+      { image: resortImages.roomWhite, label: "Bright bedroom", copy: "A clean bedroom with natural light." },
+      { image: resortImages.roomWhiteAlt, label: "Bedroom entrance", copy: "A different angle into the bright room." },
+      { image: resortImages.suiteLiving, label: "Suite living space", copy: "Extra seating and room for families to settle in." },
+      { image: resortImages.dormitory, label: "Dormitory", copy: "Group accommodation for guests travelling together." },
+      { image: resortImages.dormitoryWide, label: "Dormitory wide view", copy: "A complete view of the larger group room." },
+      { image: resortImages.dormitoryLounge, label: "Dormitory lounge", copy: "Beds and seating within the shared accommodation." },
+      { image: resortImages.villa, label: "2 BHK villa", copy: "The private villa surrounded by greenery." },
+      { image: resortImages.villaLiving, label: "Villa living", copy: "A bright shared room inside the villa." },
+      { image: resortImages.bathroom, label: "Attached facilities", copy: "Clean facilities within the accommodation." },
+      { image: resortImages.lounge, label: "Indoor lounge", copy: "A quiet sitting corner for conversation." },
+    ],
+  },
+  {
+    id: "activities-outdoors",
+    title: "Activities & Outdoors",
+    eyebrow: "Things to do",
+    description: "Move through horse-riding moments, the dedicated arena and different views of the resort turf.",
+    images: [
+      { image: resortImages.horseRiding, label: "Horse riding", copy: "A real riding moment at the resort." },
+      { image: resortImages.horseArena, label: "Horse arena", copy: "The complete riding arena from above." },
+      { image: resortImages.horseTrack, label: "On the track", copy: "The horse moving through the outdoor arena." },
+      { image: resortImages.horseAction, label: "Training moment", copy: "A supervised activity moment inside the arena." },
+      { image: resortImages.horsePortrait, label: "Meet the horse", copy: "A closer look at the resort's horse-riding experience." },
+      { image: resortImages.turfClose, label: "Turf and play zone", copy: "The sports turf surrounded by resort greenery." },
+      { image: resortImages.turfTop, label: "Turf from above", copy: "A clear top-down view of the full play area." },
+    ],
+  },
+  {
+    id: "amenities-spaces",
+    title: "Amenities & Shared Spaces",
+    eyebrow: "Around the resort",
+    description: "Browse the lawn, pool area, dining corner and comfortable shared spaces around the property.",
+    images: [
+      { image: resortImages.poolLawn, label: "Pool and lawn", copy: "Open green space next to the pool and stay areas." },
+      { image: resortImages.turf, label: "Outdoor facilities", copy: "The turf and activity zone within the resort." },
+      { image: resortImages.dining, label: "Dining corner", copy: "A simple shared table for meals and conversation." },
+      { image: resortImages.villaGarden, label: "Garden-side villa", copy: "Accommodation opening into the resort greenery." },
+    ],
+  },
+];
 
 export type Page = {
   title: string;
@@ -131,9 +221,9 @@ export const pages: Record<string, Page> = {
     image: resortImages.poolLawn,
     visualTitle: "Everything within reach.",
     visuals: [
-      { image: resortImages.poolLawn, label: "Open resort spaces", copy: "A green setting with room to slow down." },
       { image: resortImages.lounge, label: "Indoor comfort", copy: "Air-conditioned spaces for easy conversation and downtime." },
-      { image: resortImages.dining, label: "Shared corners", copy: "A quiet table for meals and time together." },
+      { image: resortImages.bathroom, label: "Attached facilities", copy: "Clean facilities within the accommodation." },
+      { image: resortImages.villaGarden, label: "Garden-side stay", copy: "Comfortable accommodation surrounded by greenery." },
     ],
     sections: [
       { title: "For every kind of day", body: "Swim, work out, dine, play or simply take your time in the resort's open spaces." },
@@ -146,9 +236,9 @@ export const pages: Record<string, Page> = {
     image: resortImages.resortWide,
     visualTitle: "A day that keeps unfolding.",
     visuals: [
-      { image: resortImages.resortWide, label: "01 · Arrive", copy: "Leave the city pace at the gate." },
+      { image: resortImages.countryAerial, label: "01 · Arrive", copy: "Leave the city pace at the gate." },
       { image: resortImages.turf, label: "02 · Play", copy: "Make room for movement, activities and laughter." },
-      { image: resortImages.dining, label: "03 · Gather", copy: "Close the day together over a shared meal." },
+      { image: resortImages.suiteLiving, label: "03 · Gather", copy: "Close the day together in a comfortable shared space." },
     ],
     sections: [
       { title: "Made for groups", body: "Day outings are suited to families, friends, schools, colleges and corporate teams, subject to direct confirmation." },
@@ -162,8 +252,8 @@ export const pages: Record<string, Page> = {
     visualTitle: "Choose your kind of alive.",
     visuals: [
       { image: resortImages.horseRiding, label: "Horse riding", copy: "A guided outdoor experience, subject to supervision." },
-      { image: resortImages.turf, label: "Turf games", copy: "Bring friendly competition into the day." },
-      { image: resortImages.horseArena, label: "Outdoor arena", copy: "See the dedicated riding space from above." },
+      { image: resortImages.turfClose, label: "Turf games", copy: "Bring friendly competition into the day." },
+      { image: resortImages.horseAction, label: "Outdoor activity", copy: "A supervised moment inside the riding arena." },
     ],
     sections: [
       { title: "Nature, at your pace", body: "Choose an energetic day or a slower escape and shape the outing around the people you are bringing." },
@@ -176,9 +266,9 @@ export const pages: Record<string, Page> = {
     image: resortImages.lounge,
     visualTitle: "Know before you go.",
     visuals: [
-      { image: resortImages.lounge, label: "Plan ahead", copy: "Confirm dates, guest count and package details." },
-      { image: resortImages.premium, label: "Check the stay", copy: "Review room policies and applicable charges." },
-      { image: resortImages.resortWide, label: "Arrive ready", copy: "Keep the latest confirmation with your group." },
+      { image: resortImages.bathroom, label: "Plan ahead", copy: "Confirm room details, dates and guest count." },
+      { image: resortImages.premiumAlt, label: "Check the stay", copy: "Review room policies and applicable charges." },
+      { image: resortImages.resortAerialThree, label: "Arrive ready", copy: "Keep the latest confirmation with your group." },
     ],
     sections: [
       { title: "Tariffs may change", body: "Management may revise rates and package inclusions without prior notice. The resort team's written confirmation is final for your booking." },
@@ -191,8 +281,8 @@ export const pages: Record<string, Page> = {
     image: resortImages.dining,
     visualTitle: "Made to be shared.",
     visuals: [
-      { image: resortImages.dining, label: "Fresh setting", copy: "Meals feel different with nature close by." },
-      { image: resortImages.lounge, label: "Shared time", copy: "The best meals bring everyone closer." },
+      { image: resortImages.dormitoryLounge, label: "Shared time", copy: "The best meals bring everyone closer." },
+      { image: resortImages.suiteLiving, label: "Gather together", copy: "A comfortable shared space before or after a meal." },
       { image: resortImages.villaLiving, label: "Easy comfort", copy: "Settle in after a generous meal." },
     ],
     sections: [
@@ -203,12 +293,12 @@ export const pages: Record<string, Page> = {
   celebrations: {
     title: "Celebrate beneath open skies.", kicker: "Gatherings", variant: "celebration",
     intro: "From family milestones to group occasions, begin with a conversation about your date, guest count, food and space requirements.",
-    image: resortImages.poolLawn,
+    image: resortImages.resortAerialTwo,
     visualTitle: "Every reason deserves a setting.",
     visuals: [
       { image: resortImages.poolLawn, label: "Open-air occasions", copy: "Let nature become part of the atmosphere." },
       { image: resortImages.dining, label: "Togetherness", copy: "A gathering shaped around your people." },
-      { image: resortImages.resortWide, label: "The wider setting", copy: "A green property with space for shared memories." },
+      { image: resortImages.villaGarden, label: "Garden setting", copy: "A green property with space for shared memories." },
     ],
     sections: [
       { title: "Your occasion, considered", body: "Tell us the event, date and expected guest count to understand the suitable spaces and possibilities." },
@@ -218,23 +308,9 @@ export const pages: Record<string, Page> = {
   gallery: {
     title: "A glimpse of the escape.", kicker: "Gallery", variant: "gallery",
     intro: "Explore real photographs supplied by DS Agro Tourism & Resort, from comfortable rooms and group stays to outdoor experiences and the surrounding landscape.",
-    image: resortImages.resortWide,
+    image: resortImages.estateAerial,
     visualTitle: "See the real place.",
-    visuals: [
-      { image: resortImages.resortWide, label: "The setting", copy: "DS Agro Tourism & Resort surrounded by green fields." },
-      { image: resortImages.poolLawn, label: "Pool and lawn", copy: "Open green space beside the stay and pool areas." },
-      { image: resortImages.turf, label: "The turf", copy: "A dedicated space for energetic group play." },
-      { image: resortImages.horseArena, label: "The arena", copy: "The resort's outdoor horse-riding area." },
-      { image: resortImages.deluxe, label: "The rooms", copy: "Clean, comfortable spaces for a restful stay." },
-      { image: resortImages.horseRiding, label: "The activities", copy: "Outdoor experiences that bring the visit alive." },
-      { image: resortImages.dormitory, label: "Group accommodation", copy: "A spacious stay option for groups." },
-      { image: resortImages.premium, label: "Premium comfort", copy: "A king-size room for a slower stay." },
-      { image: resortImages.villa, label: "Villa stay", copy: "A private 2 BHK villa surrounded by greenery." },
-      { image: resortImages.villaLiving, label: "Villa living", copy: "A bright shared room for families and groups." },
-      { image: resortImages.dining, label: "Dining corner", copy: "A comfortable place to sit and share a meal." },
-      { image: resortImages.bathroom, label: "Room facilities", copy: "Clean attached facilities within the accommodation." },
-      { image: resortImages.lounge, label: "Indoor lounge", copy: "A quiet corner to pause and reconnect." },
-    ],
+    visuals: [],
     sections: [
       { title: "Property photographs", body: "The featured photographs were supplied for DS Agro Tourism & Resort's website update." },
       { title: "See more", body: "Visit the official Instagram account for recent guest moments, resort updates and new photographs." },
@@ -246,9 +322,9 @@ export const pages: Record<string, Page> = {
     image: resortImages.villa,
     visualTitle: "One conversation away.",
     visuals: [
-      { image: resortImages.resortWide, label: "Find your way", copy: "Use the verified Google Maps route." },
-      { image: resortImages.villaLiving, label: "Plan the stay", copy: "Tell us your date and group size." },
-      { image: resortImages.villa, label: "Arrive ready", copy: "Let the team guide the practical details." },
+      { image: resortImages.farmFields, label: "Find your way", copy: "Use the verified Google Maps route." },
+      { image: resortImages.roomWhite, label: "Plan the stay", copy: "Tell us your date and group size." },
+      { image: resortImages.roomWhiteAlt, label: "Arrive ready", copy: "Let the team guide the practical details." },
     ],
     sections: [
       { title: "WhatsApp", body: "+91 81494 28126 - the primary number for visit and booking enquiries." },
@@ -256,3 +332,18 @@ export const pages: Record<string, Page> = {
     ],
   },
 };
+
+function assertUniqueImages(label: string, images: readonly string[]) {
+  if (new Set(images).size !== images.length) {
+    throw new Error(`Duplicate resort image detected in ${label}.`);
+  }
+}
+
+Object.entries(pages).forEach(([slug, page]) => {
+  assertUniqueImages(`${slug} page`, [page.image, ...page.visuals.map((visual) => visual.image)]);
+});
+
+assertUniqueImages("homepage experience selector", experiences.map((experience) => experience.image));
+
+const categorizedGalleryImages = galleryCategories.flatMap((category) => category.images.map((photo) => photo.image));
+assertUniqueImages("categorized gallery", [pages.gallery.image, ...categorizedGalleryImages]);
