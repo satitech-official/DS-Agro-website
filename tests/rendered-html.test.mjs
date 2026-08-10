@@ -12,6 +12,11 @@ test("exports the finished resort homepage", async () => {
   assert.match(html, /Escape the city\./);
   assert.match(html, /Check on WhatsApp/);
   assert.match(html, /videos\.pexels\.com\/video-files\/4334522/);
+  assert.match(html, /resort\/aerial\.webp/);
+  assert.match(html, />Rooms</);
+  assert.match(html, />Amenities</);
+  assert.match(html, />Activities</);
+  assert.match(html, />T&amp;C</);
   assert.match(html, /aria-current="page"[^>]*href="\/"|href="\/"[^>]*aria-current="page"/);
   assert.match(html, /918149428126/);
   assert.match(html, /4N9MusUsVUeHSG9E8/);
@@ -22,9 +27,34 @@ test("exports the finished resort homepage", async () => {
 test("exports inner experience pages without fake booking claims", async () => {
   const html = await renderedHtml("stay/index.html");
   assert.match(html, /Stay close to nature\./);
-  assert.match(html, /confirmed directly by the resort team/);
+  assert.match(html, /6 rooms/);
+  assert.match(html, /2 BHK Villa \/ DS Bungalow/);
+  assert.match(html, /₹2,999/);
+  assert.match(html, /₹21,499/);
+  assert.match(html, /Expected to be ready within 1 month/);
+  assert.match(html, /resort\/dormitory\.webp/);
   assert.match(html, /Enquire on WhatsApp/);
   assert.match(html, /Rest\. Reconnect\. Repeat\./);
   assert.match(html, /visual-stay/);
   assert.doesNotMatch(html, /Confirm Booking|Book Now|available rooms|discount/i);
+});
+
+test("exports supplied amenities, activities, outing rates and terms", async () => {
+  const [amenities, activities, outing, terms] = await Promise.all([
+    renderedHtml("amenities/index.html"),
+    renderedHtml("experiences/index.html"),
+    renderedHtml("day-outing/index.html"),
+    renderedHtml("terms/index.html"),
+  ]);
+
+  assert.match(amenities, /Swimming pool with attached deck/);
+  assert.match(amenities, /Kids play area/);
+  assert.match(activities, /Horse riding/);
+  assert.match(activities, /Tyre climbing/);
+  assert.match(outing, /₹850/);
+  assert.match(outing, /₹1,150/);
+  assert.match(outing, /Trampoline/);
+  assert.match(terms, /Check-in: 2:00 PM/);
+  assert.match(terms, /Pets are not allowed/);
+  assert.match(terms, /Festival and New Year bookings are non-changeable and non-refundable/);
 });

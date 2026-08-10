@@ -10,7 +10,7 @@ export function InnerPageVisuals({ page }: { page: Page }) {
   return <section className={`page-visual-story visual-${page.variant} section reveal`} aria-label={`${page.kicker} visual story`}>
     <div className="visual-story-head">
       <div><p className="eyebrow">{page.kicker} · Visual story</p><h2>{page.visualTitle}</h2></div>
-      <p>Move across the photographs to explore the mood. Property-specific details and imagery are confirmed directly with the resort.</p>
+      <p>Move across real DS Agro Tourism & Resort photographs to explore the rooms, setting and experiences.</p>
     </div>
 
     <div className="visual-stage">

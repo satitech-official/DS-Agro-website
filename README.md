@@ -28,7 +28,10 @@ GitHub Pages' repository sub-path for assets and internal navigation.
 
 ## Content updates
 
-Verified contact information, navigation, experience cards and inner-page copy live in `data/site.ts`. Replace the inspiration photography with client-approved property images before a public marketing launch. Do not add prices, room categories, policies, capacities, timings or testimonials unless the resort has confirmed them.
+Verified contact information, room inventory, stay tariffs, day-outing rates,
+amenities, activities, terms and inner-page copy live in `data/site.ts`. The
+current details follow the supplied July 2026 DS Agro Tourism & Resort rate
+card and the accompanying accommodation inventory update.
 
 ## Enquiry flow
 
@@ -36,4 +39,6 @@ All booking calls-to-action create transparent, prefilled WhatsApp enquiries to 
 
 ## Photography
 
-Current images are remote experience-inspiration photographs from Unsplash and are explicitly disclosed as such. The official Instagram is linked as the source for current property-specific imagery.
+The main website visuals in `public/resort/` are optimized from the
+property-specific photographs supplied in the shared DS Agro Tourism & Resort
+Drive folder. Keep the optimized files in place so GitHub Pages remains fast.
