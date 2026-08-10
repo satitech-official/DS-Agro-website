@@ -1,3 +1,18 @@
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
+function resortImage(name: string) {
+  return `${basePath}/resort/${name}`;
+}
+
+export const resortImages = {
+  aerial: resortImage("aerial.webp"),
+  deluxe: resortImage("deluxe-room.webp"),
+  premium: resortImage("premium-room.webp"),
+  dormitory: resortImage("dormitory.webp"),
+  villa: resortImage("villa-exterior.webp"),
+  horseRiding: resortImage("horse-riding.webp"),
+} as const;
+
 export const contact = {
   whatsapp: "918149428126",
   displayWhatsapp: "+91 81494 28126",
@@ -7,16 +22,72 @@ export const contact = {
 };
 
 export const nav = [
-  ["Home", "/"], ["Stay", "/stay"], ["Day Outing", "/day-outing"],
-  ["Experiences", "/experiences"], ["Dining", "/dining"],
-  ["Celebrations", "/celebrations"], ["Gallery", "/gallery"], ["Contact", "/contact"],
+  ["Home", "/"], ["Rooms", "/stay"], ["Amenities", "/amenities"],
+  ["Activities", "/experiences"], ["Day Outing", "/day-outing"],
+  ["T&C", "/terms"], ["Gallery", "/gallery"], ["Contact", "/contact"],
+] as const;
+
+export const roomInventory = [
+  { name: "Deluxe Room", count: "6 rooms", detail: "Up to 2 guests per room" },
+  { name: "Super Deluxe Room", count: "2 rooms", detail: "Up to 2 guests per room" },
+  { name: "Premium Room", count: "2 rooms", detail: "King-size bed · Up to 4 guests per rate card" },
+  { name: "Dormitory", count: "2 bunk beds", detail: "Current dormitory setup" },
+  { name: "Additional Dormitories", count: "2 units", detail: "Expected to be ready within 1 month" },
+  { name: "2 BHK Villa / DS Bungalow", count: "1 villa", detail: "Up to 10 guests per rate card" },
+] as const;
+
+export const stayRates = [
+  { room: "Deluxe Room", occupancy: "2 pax", cpWeekday: "₹2,999", cpWeekend: "₹3,499", mapWeekday: "₹4,499", mapWeekend: "₹5,499" },
+  { room: "Super Deluxe Room", occupancy: "2 pax", cpWeekday: "₹3,999", cpWeekend: "₹4,499", mapWeekday: "₹5,499", mapWeekend: "₹6,499" },
+  { room: "Premium Room", occupancy: "4 pax", cpWeekday: "₹5,999", cpWeekend: "₹6,999", mapWeekday: "₹9,599", mapWeekend: "₹10,599" },
+  { room: "2 BHK Villa / DS Bungalow", occupancy: "10 pax", cpWeekday: "₹11,999", cpWeekend: "₹12,999", mapWeekday: "₹20,499", mapWeekend: "₹21,499" },
+  { room: "Dormitory", occupancy: "Package", cpWeekday: "₹7,200", cpWeekend: "₹8,000", mapWeekday: "₹11,199", mapWeekend: "₹11,999" },
+] as const;
+
+export const amenities = [
+  "Swimming pool with attached deck", "Gym", "Kids play area",
+  "Air-conditioned rooms", "Ample parking", "Restaurant",
+] as const;
+
+export const activities = [
+  "Boating", "Swimming", "Indoor games", "Rain dance",
+  "Turf", "ATV ride", "Tyre climbing", "Horse riding",
+] as const;
+
+export const dayOutingRates = [
+  { days: "Monday - Friday", veg: "₹850", nonVeg: "₹1,050" },
+  { days: "Saturday - Sunday", veg: "₹950", nonVeg: "₹1,150" },
+] as const;
+
+export const dayOutingIncludes = ["Rain dance", "Swimming pool", "Trampoline", "Activities"] as const;
+
+export const terms = [
+  "Check-in: 2:00 PM.",
+  "Check-out: 11:00 AM.",
+  "Dormitory package is without breakfast.",
+  "Weekend (Saturday and Sunday) room bookings are subject to an additional ₹1,000 charge.",
+  "Extra bed: ₹1,000 per bed.",
+  "Turf: ₹1,000 per hour.",
+  "Children aged 12 years and above will be charged full price.",
+  "Children aged 6-11 years will be charged 50% of the package price.",
+  "Villa Combo Offer includes breakfast, hi-tea, lunch or dinner, activities and amenities.",
+  "Extra person charges apply as per resort policy.",
+  "Festival and New Year bookings are non-changeable and non-refundable.",
+  "Cancellation 30 days before check-in is 100% refundable.",
+  "Cancellation 15 days before check-in is 50% refundable.",
+  "Cancellation within 7 days of check-in is non-refundable.",
+  "100% advance payment is required for guaranteed booking confirmation.",
+  "Taxes are applicable as per prevailing rules.",
+  "Visa, Mastercard and RuPay cards are accepted.",
+  "Pets are not allowed.",
+  "Management reserves the right to revise tariffs and package inclusions without prior notice.",
 ] as const;
 
 export const experiences = [
-  { name: "Slow stays", eyebrow: "Stay", copy: "Wake to softer light, open skies and a day that asks nothing of you.", image: "https://images.unsplash.com/photo-1601918774946-25832a4be0d6?auto=format&fit=crop&w=1800&q=85" },
-  { name: "Poolside afternoons", eyebrow: "Water", copy: "An easy afternoon shaped by sunlight, water and unhurried family time.", image: "https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?auto=format&fit=crop&w=1800&q=85" },
-  { name: "Farm life, elevated", eyebrow: "Nature", copy: "Step closer to the land and rediscover the pleasure of simple things.", image: "https://images.unsplash.com/photo-1500076656116-558758c991c1?auto=format&fit=crop&w=1800&q=85" },
-  { name: "Gather beneath open skies", eyebrow: "Celebrations", copy: "Bring your people together for occasions that deserve room to breathe.", image: "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=1800&q=85" },
+  { name: "Comfortable stays", eyebrow: "Rooms", copy: "Choose from rooms, dormitory accommodation and a 2 BHK villa for your group.", image: resortImages.deluxe },
+  { name: "Poolside afternoons", eyebrow: "Amenities", copy: "Slow down by the swimming pool and attached deck with your family and friends.", image: resortImages.aerial },
+  { name: "Outdoor adventures", eyebrow: "Activities", copy: "Horse riding, boating, rain dance, turf games and more bring the outdoors alive.", image: resortImages.horseRiding },
+  { name: "Group escapes", eyebrow: "Day outing", copy: "Plan a complete day with food, swimming, rain dance, trampoline and activities.", image: resortImages.villa },
 ] as const;
 
 export type Page = {
@@ -32,107 +103,140 @@ export type Page = {
 
 export const pages: Record<string, Page> = {
   stay: {
-    title: "Stay close to nature.", kicker: "Accommodation", variant: "stay",
-    intro: "A restful base for families, friends and groups. Exact room categories, occupancy and amenities are confirmed directly by the resort team.",
-    image: "https://images.unsplash.com/photo-1601918774946-25832a4be0d6?auto=format&fit=crop&w=1800&q=85",
+    title: "Stay close to nature.", kicker: "Rooms", variant: "stay",
+    intro: "Six Deluxe rooms, two Super Deluxe rooms, two Premium rooms, dormitory accommodation and a 2 BHK villa give couples, families and groups room to settle in.",
+    image: resortImages.dormitory,
     visualTitle: "Rest. Reconnect. Repeat.",
     visuals: [
-      { image: "https://images.unsplash.com/photo-1615874694520-474822394e73?auto=format&fit=crop&w=1200&q=82", label: "Unhurried mornings", copy: "A calm beginning with nature close by." },
-      { image: "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1200&q=82", label: "Space to settle in", copy: "Comfort for the people you travel with." },
-      { image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=82", label: "Slow evenings", copy: "Let the day end without a schedule." },
+      { image: resortImages.deluxe, label: "Deluxe Room", copy: "A spacious room for up to two guests." },
+      { image: resortImages.premium, label: "Premium Room", copy: "King-size comfort for a relaxed stay." },
+      { image: resortImages.dormitory, label: "Group Stay", copy: "Dormitory accommodation for groups travelling together." },
     ],
     sections: [
-      { title: "A quieter rhythm", body: "Plan a restorative overnight escape with generous time for the pool, outdoor experiences and shared meals." },
-      { title: "Details, confirmed personally", body: "Send your dates and group size on WhatsApp. The team will share current accommodation choices, inclusions and pricing without artificial availability claims." },
+      { title: "A room for every escape", body: "Choose from Deluxe, Super Deluxe and Premium rooms, a dormitory setup and the 2 BHK Villa / DS Bungalow." },
+      { title: "Confirm before you travel", body: "Send your dates and group size on WhatsApp to confirm current availability, applicable inclusions and the final payable tariff." },
+    ],
+  },
+  amenities: {
+    title: "Comfort comes naturally.", kicker: "Amenities", variant: "adventure",
+    intro: "From the swimming pool and gym to family-friendly spaces, dining and parking, the essentials for an easy getaway are close at hand.",
+    image: resortImages.aerial,
+    visualTitle: "Everything within reach.",
+    visuals: [
+      { image: resortImages.aerial, label: "Open resort spaces", copy: "A green setting with room to slow down." },
+      { image: resortImages.villa, label: "Private comfort", copy: "Air-conditioned accommodation surrounded by greenery." },
+      { image: resortImages.deluxe, label: "Room to unwind", copy: "Comfortable interiors for a restful stay." },
+    ],
+    sections: [
+      { title: "For every kind of day", body: "Swim, work out, dine, play or simply take your time in the resort's open spaces." },
+      { title: "Plan with confidence", body: "Please confirm maintenance schedules and access to individual amenities for your selected date." },
     ],
   },
   "day-outing": {
-    title: "One day. A world away.", kicker: "Day outing", variant: "timeline",
-    intro: "Build a day around food, water, nature and time together. Timings and inclusions are confirmed for your selected date.",
-    image: "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=1800&q=85",
+    title: "One day. A world away.", kicker: "Day Outing", variant: "timeline",
+    intro: "Choose a weekday or weekend outing with veg or non-veg meals, plus rain dance, swimming pool, trampoline and activities.",
+    image: resortImages.aerial,
     visualTitle: "A day that keeps unfolding.",
     visuals: [
-      { image: "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1200&q=82", label: "01 · Arrive", copy: "Leave the city pace at the gate." },
-      { image: "https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?auto=format&fit=crop&w=1200&q=82", label: "02 · Play", copy: "Make room for water, movement and laughter." },
-      { image: "https://images.unsplash.com/photo-1475483768296-6163e08872a1?auto=format&fit=crop&w=1200&q=82", label: "03 · Gather", copy: "Close the day together under open skies." },
+      { image: resortImages.aerial, label: "01 · Arrive", copy: "Leave the city pace at the gate." },
+      { image: resortImages.horseRiding, label: "02 · Play", copy: "Make room for movement, activities and laughter." },
+      { image: resortImages.villa, label: "03 · Gather", copy: "Close the day together in a green setting." },
     ],
     sections: [
-      { title: "Shape your day", body: "Tell us your group size, preferred date and the experiences that matter most. We will help you plan the flow." },
-      { title: "Made for groups", body: "Suitable for family circles, school and college groups, and corporate teams—subject to direct confirmation." },
+      { title: "Made for groups", body: "Day outings are suited to families, friends, schools, colleges and corporate teams, subject to direct confirmation." },
+      { title: "Share your plan", body: "Send the preferred date, group size and meal choice on WhatsApp so the team can confirm the final arrangement." },
     ],
   },
   experiences: {
-    title: "Feel alive outdoors.", kicker: "Experiences", variant: "adventure",
-    intro: "Pool time, horse riding, farm life and outdoor activities are part of the resort story. Availability, supervision and age guidance are confirmed before your visit.",
-    image: "https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?auto=format&fit=crop&w=1800&q=85",
+    title: "Feel alive outdoors.", kicker: "Activities", variant: "adventure",
+    intro: "Boating, swimming, indoor games, rain dance, turf, ATV ride, tyre climbing and horse riding bring energy to every visit.",
+    image: resortImages.horseRiding,
     visualTitle: "Choose your kind of alive.",
     visuals: [
-      { image: "https://images.unsplash.com/photo-1553284966-19b8815c7817?auto=format&fit=crop&w=1200&q=82", label: "Horse riding", copy: "A confident outdoor experience, subject to supervision." },
-      { image: "https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=1200&q=82", label: "Explore outside", copy: "Follow curiosity through a greener world." },
-      { image: "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=1200&q=82", label: "Open landscapes", copy: "Slow down enough to notice the land." },
+      { image: resortImages.horseRiding, label: "Horse riding", copy: "A guided outdoor experience, subject to supervision." },
+      { image: resortImages.aerial, label: "Explore outside", copy: "Move through green, open resort spaces." },
+      { image: resortImages.villa, label: "Slow moments", copy: "Balance activity with time to unwind." },
     ],
     sections: [
-      { title: "Nature, at your pace", body: "Choose an energetic day or a slower escape. Every enquiry starts with the people you are bringing and the memories you want to make." },
-      { title: "Safety comes first", body: "Activity access may vary by age, weather and supervision. Please confirm current operating guidance with the resort." },
+      { title: "Nature, at your pace", body: "Choose an energetic day or a slower escape and shape the outing around the people you are bringing." },
+      { title: "Safety comes first", body: "Activity access may vary by age, weather, maintenance and supervision. Confirm operating guidance before your visit." },
+    ],
+  },
+  terms: {
+    title: "Clear plans. Easy stays.", kicker: "Terms & Conditions", variant: "contact",
+    intro: "Review the current timings, charges, child policy, cancellation terms and booking conditions before confirming your visit.",
+    image: resortImages.villa,
+    visualTitle: "Know before you go.",
+    visuals: [
+      { image: resortImages.villa, label: "Plan ahead", copy: "Confirm dates, guest count and package details." },
+      { image: resortImages.deluxe, label: "Check the stay", copy: "Review room policies and applicable charges." },
+      { image: resortImages.aerial, label: "Arrive ready", copy: "Keep the latest confirmation with your group." },
+    ],
+    sections: [
+      { title: "Tariffs may change", body: "Management may revise rates and package inclusions without prior notice. The resort team's written confirmation is final for your booking." },
+      { title: "Questions are welcome", body: "If any condition is unclear, contact the resort before making the advance payment." },
     ],
   },
   dining: {
     title: "Gather around the table.", kicker: "Dining", variant: "dining",
     intro: "Traditional food and the warmth of eating together are central to the experience. Current meal formats and dietary requests are confirmed directly.",
-    image: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1800&q=85",
+    image: resortImages.villa,
     visualTitle: "Made to be shared.",
     visuals: [
-      { image: "https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1200&q=82", label: "Fresh flavours", copy: "Food that feels generous, familiar and alive." },
-      { image: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1200&q=82", label: "Shared tables", copy: "The best meals bring everyone closer." },
-      { image: "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=1200&q=82", label: "Rooted in place", copy: "A story of ingredients, tradition and warmth." },
+      { image: resortImages.aerial, label: "Fresh setting", copy: "Meals feel different with nature close by." },
+      { image: resortImages.villa, label: "Shared time", copy: "The best meals bring everyone closer." },
+      { image: resortImages.deluxe, label: "Easy comfort", copy: "Settle in after a generous meal." },
     ],
     sections: [
       { title: "Food with a sense of place", body: "Expect a dining story rooted in freshness, familiar flavours and generous hospitality." },
-      { title: "Plan for your group", body: "Share dietary preferences and group requirements in your enquiry so the team can recommend suitable options." },
+      { title: "Plan for your group", body: "Share veg, non-veg and dietary preferences in your enquiry so the team can recommend suitable options." },
     ],
   },
   celebrations: {
     title: "Celebrate beneath open skies.", kicker: "Gatherings", variant: "celebration",
-    intro: "From family milestones to group occasions, begin with a conversation. Event types, capacities, décor and food arrangements are confirmed to fit your plan.",
-    image: "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=1800&q=85",
+    intro: "From family milestones to group occasions, begin with a conversation about your date, guest count, food and space requirements.",
+    image: resortImages.aerial,
     visualTitle: "Every reason deserves a setting.",
     visuals: [
-      { image: "https://images.unsplash.com/photo-1507504031003-b417219a0fde?auto=format&fit=crop&w=1200&q=82", label: "Milestones", copy: "Create a moment that feels entirely your own." },
-      { image: "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=1200&q=82", label: "Open-air occasions", copy: "Let nature become part of the atmosphere." },
-      { image: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1200&q=82", label: "Togetherness", copy: "A gathering shaped around your people." },
+      { image: resortImages.aerial, label: "Open-air occasions", copy: "Let nature become part of the atmosphere." },
+      { image: resortImages.villa, label: "Togetherness", copy: "A gathering shaped around your people." },
+      { image: resortImages.horseRiding, label: "Shared experiences", copy: "Add outdoor memories to the occasion." },
     ],
     sections: [
-      { title: "Your occasion, considered", body: "Tell us the event, date and expected guest count. We will help you understand the suitable spaces and possibilities." },
-      { title: "Clear, direct planning", body: "No preset promises or invented packages—just a direct enquiry that gives the team what they need to respond well." },
+      { title: "Your occasion, considered", body: "Tell us the event, date and expected guest count to understand the suitable spaces and possibilities." },
+      { title: "Clear, direct planning", body: "Food, décor, activities and other arrangements are confirmed directly for your event." },
     ],
   },
   gallery: {
     title: "A glimpse of the escape.", kicker: "Gallery", variant: "gallery",
-    intro: "The imagery below is experience inspiration, not a representation of the property. Visit the official Instagram for current, property-specific photographs.",
-    image: "https://images.unsplash.com/photo-1500076656116-558758c991c1?auto=format&fit=crop&w=1800&q=85",
-    visualTitle: "Move through the mood.",
+    intro: "Explore real photographs supplied by DS Agro Tourism & Resort, from comfortable rooms and group stays to outdoor experiences and the surrounding landscape.",
+    image: resortImages.aerial,
+    visualTitle: "See the real place.",
     visuals: [
-      { image: "https://images.unsplash.com/photo-1497250681960-ef046c08a56e?auto=format&fit=crop&w=1200&q=82", label: "Nature", copy: "Greenery and open-air calm." },
-      { image: "https://images.unsplash.com/photo-1564501049412-61c2a3083791?auto=format&fit=crop&w=1200&q=82", label: "Stay", copy: "Quiet, considered comfort." },
-      { image: "https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1200&q=82", label: "Gatherings", copy: "Moments made to be remembered." },
+      { image: resortImages.aerial, label: "The setting", copy: "DS Agro Tourism & Resort surrounded by green fields." },
+      { image: resortImages.deluxe, label: "The rooms", copy: "Clean, comfortable spaces for a restful stay." },
+      { image: resortImages.horseRiding, label: "The activities", copy: "Outdoor experiences that bring the visit alive." },
+      { image: resortImages.dormitory, label: "Group accommodation", copy: "A spacious stay option for groups." },
+      { image: resortImages.premium, label: "Premium comfort", copy: "A king-size room for a slower stay." },
+      { image: resortImages.villa, label: "Villa stay", copy: "A private 2 BHK villa surrounded by greenery." },
     ],
     sections: [
-      { title: "See the real place", body: "Our official Instagram is the best source for current guest moments, resort spaces and recent experiences." },
-      { title: "Bring your own story", body: "Every gathering looks different. Start with your group, occasion and preferred date." },
+      { title: "Property photographs", body: "The featured photographs were supplied for DS Agro Tourism & Resort's website update." },
+      { title: "See more", body: "Visit the official Instagram account for recent guest moments, resort updates and new photographs." },
     ],
   },
   contact: {
     title: "Your escape starts here.", kicker: "Contact", variant: "contact",
-    intro: "Speak directly with the DS Agro Tourism & Resort team for current availability, inclusions, pricing and route guidance.",
-    image: "https://images.unsplash.com/photo-1494783367193-149034c05e8f?auto=format&fit=crop&w=1800&q=85",
+    intro: "Speak directly with the DS Agro Tourism & Resort team for availability, inclusions, pricing and route guidance.",
+    image: resortImages.aerial,
     visualTitle: "One conversation away.",
     visuals: [
-      { image: "https://images.unsplash.com/photo-1473445361085-b9a07f55608b?auto=format&fit=crop&w=1200&q=82", label: "Find your way", copy: "Use the verified Google Maps route." },
-      { image: "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1200&q=82", label: "Plan the escape", copy: "Tell us your date and group size." },
-      { image: "https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=1200&q=82", label: "Arrive lighter", copy: "Let the team guide the practical details." },
+      { image: resortImages.aerial, label: "Find your way", copy: "Use the verified Google Maps route." },
+      { image: resortImages.deluxe, label: "Plan the stay", copy: "Tell us your date and group size." },
+      { image: resortImages.villa, label: "Arrive ready", copy: "Let the team guide the practical details." },
     ],
     sections: [
-      { title: "WhatsApp", body: "+91 81494 28126 — the primary number for visit and booking enquiries." },
+      { title: "WhatsApp", body: "+91 81494 28126 - the primary number for visit and booking enquiries." },
       { title: "Call the team", body: "81494 28126 · 84079 11909 · 77989 11909 · 75079 11909" },
     ],
   },
