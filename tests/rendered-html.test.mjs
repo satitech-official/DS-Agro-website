@@ -13,6 +13,10 @@ test("exports the finished resort homepage", async () => {
   assert.match(html, /Check on WhatsApp/);
   assert.match(html, /videos\.pexels\.com\/video-files\/4334522/);
   assert.match(html, /resort\/aerial\.webp/);
+  assert.match(html, /resort\/resort-wide\.webp/);
+  assert.match(html, /resort\/pool-lawn\.webp/);
+  assert.match(html, /resort\/turf-aerial\.webp/);
+  assert.match(html, /resort\/dining-area\.webp/);
   assert.match(html, />Rooms</);
   assert.match(html, />Amenities</);
   assert.match(html, />Activities</);
@@ -57,4 +61,21 @@ test("exports supplied amenities, activities, outing rates and terms", async () 
   assert.match(terms, /Check-in: 2:00 PM/);
   assert.match(terms, /Pets are not allowed/);
   assert.match(terms, /Festival and New Year bookings are non-changeable and non-refundable/);
+});
+
+test("uses a varied property photo library across the detailed pages", async () => {
+  const [amenities, activities, outing, gallery] = await Promise.all([
+    renderedHtml("amenities/index.html"),
+    renderedHtml("experiences/index.html"),
+    renderedHtml("day-outing/index.html"),
+    renderedHtml("gallery/index.html"),
+  ]);
+
+  assert.match(amenities, /resort\/pool-lawn\.webp/);
+  assert.match(amenities, /resort\/lounge\.webp/);
+  assert.match(activities, /resort\/horse-arena-aerial\.webp/);
+  assert.match(activities, /resort\/turf-aerial\.webp/);
+  assert.match(outing, /resort\/dining-area\.webp/);
+  assert.match(gallery, /resort\/villa-living\.webp/);
+  assert.match(gallery, /resort\/bathroom\.webp/);
 });

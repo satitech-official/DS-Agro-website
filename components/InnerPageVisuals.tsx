@@ -25,13 +25,13 @@ export function InnerPageVisuals({ page }: { page: Page }) {
         key={visual.image}
       >
         <span className="visual-photo" style={{ backgroundImage: `linear-gradient(0deg,rgba(8,29,19,.72),transparent 60%),url("${visual.image}")` }} />
-        <span className="visual-index">0{index + 1}</span>
+        <span className="visual-index">{String(index + 1).padStart(2, "0")}</span>
         <span className="visual-label">{visual.label}</span>
       </button>)}
     </div>
 
     <div className="visual-caption" key={current.label}>
-      <span>0{active + 1}</span><div><strong>{current.label}</strong><p>{current.copy}</p></div>
+      <span>{String(active + 1).padStart(2, "0")}</span><div><strong>{current.label}</strong><p>{current.copy}</p></div>
       <div className="visual-progress">{page.visuals.map((_, index) => <i className={index === active ? "active" : ""} key={index} />)}</div>
     </div>
   </section>;
