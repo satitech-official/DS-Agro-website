@@ -14,7 +14,7 @@ test("exports the finished resort homepage", async () => {
   const html = await renderedHtml();
   assert.match(html, /DS Agro Tourism &amp; Resort/);
   assert.match(html, /Escape the city\./);
-  assert.match(html, /Check on WhatsApp/);
+  assert.match(html, /Check availability/);
   assert.match(html, /videos\.pexels\.com\/video-files\/4334522/);
   assert.match(html, /resort\/aerial\.webp/);
   assert.match(html, /resort\/turf-aerial\.webp/);
@@ -100,4 +100,21 @@ test("exports a categorized gallery with every photograph used once", async () =
   assert.match(gallery, /resort\/bathroom\.webp/);
   assert.match(gallery, /resort\/horse-portrait\.webp/);
   assert.match(gallery, /resort\/turf-top\.webp/);
+});
+
+test("exports the live booking journey and protected admin entry points", async () => {
+  const [booking, adminLogin, admin] = await Promise.all([
+    renderedHtml("booking/index.html"),
+    renderedHtml("admin/login/index.html"),
+    renderedHtml("admin/index.html"),
+  ]);
+
+  assert.match(booking, /Plan your/);
+  assert.match(booking, /Luxury Stay/);
+  assert.match(booking, /live resort inventory/);
+  assert.match(booking, /Booking progress/);
+  assert.doesNotMatch(booking, /Confirm Booking|Guaranteed availability/);
+  assert.match(adminLogin, /Secure workspace/);
+  assert.match(adminLogin, /Welcome back/);
+  assert.match(admin, /Loading secure dashboard/);
 });

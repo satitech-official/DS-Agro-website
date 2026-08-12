@@ -51,7 +51,7 @@ export function Header({ currentPath = "/" }: { currentPath?: string }) {
   return <header className={`site-header ${compact ? "is-compact" : ""}`}>
     <a className="brand" href={pageHref("/")} aria-label="DS Agro Tourism home"><span className="brand-mark">DS</span><span>Agro Tourism <small>& Resort</small></span></a>
     <nav className="desktop-nav" aria-label="Main navigation">{nav.map(([label, href]) => <a className={currentPath === href ? "current-link" : ""} aria-current={currentPath === href ? "page" : undefined} href={pageHref(href)} key={href}>{label}</a>)}</nav>
-    <a className="nav-cta" href={whatsapp("Hello DS Agro Tourism & Resort, I would like to plan a visit.")} target="_blank" rel="noreferrer">Plan your visit <span>↗</span></a>
+    <a className="nav-cta" href={pageHref("/booking")}>Book your visit <span>→</span></a>
     <button className={`menu-button ${open ? "open" : ""}`} onClick={() => setOpen(!open)} aria-expanded={open} aria-label="Toggle menu"><span /><span /></button>
     {open && <div className="mobile-menu">
       <div className="menu-glow" />
@@ -107,12 +107,12 @@ function BookingPanel() {
   const [type, setType] = useState("Stay");
   const [date, setDate] = useState("");
   const [guests, setGuests] = useState("2");
-  const message = `Hello DS Agro Tourism & Resort, I would like to enquire about a ${type.toLowerCase()}.\nPreferred date: ${date || "To be decided"}\nGuests: ${guests}\nPlease share current availability, inclusions and pricing.`;
+  const bookingHref = `${pageHref("/booking")}?${new URLSearchParams({ visitType: type, checkIn: date, adults: guests }).toString()}`;
   return <div className="booking-panel reveal">
     <label><span>Visit type</span><select value={type} onChange={e => setType(e.target.value)}><option>Stay</option><option>Day outing</option><option>Celebration</option><option>Corporate outing</option></select></label>
     <label><span>Preferred date</span><input type="date" value={date} onInput={e => setDate(e.currentTarget.value)} onChange={e => setDate(e.currentTarget.value)} /></label>
     <label><span>Guests</span><input type="number" min="1" value={guests} onChange={e => setGuests(e.target.value)} /></label>
-    <a className="button button-gold pulse-button" href={whatsapp(message)} target="_blank" rel="noreferrer">Check on WhatsApp <b>↗</b></a>
+    <a className="button button-gold pulse-button" href={bookingHref}>Check availability <b>→</b></a>
   </div>;
 }
 
