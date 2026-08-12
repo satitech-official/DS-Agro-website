@@ -118,5 +118,7 @@ test("exports the live booking journey and protected admin entry points", async 
   assert.doesNotMatch(booking, /Confirm Booking|Guaranteed availability/);
   assert.match(adminLogin, /Secure workspace/);
   assert.match(adminLogin, /Welcome back/);
+  assert.match(adminLogin, /Forgot password\?/);
+  assert.doesNotMatch(adminLogin, /Set or reset password by email/);
   assert.match(admin, /Loading secure dashboard/);
 });
