@@ -52,10 +52,12 @@ export function Header({ currentPath = "/" }: { currentPath?: string }) {
     <a className="brand" href={pageHref("/")} aria-label="DS Agro Tourism home"><span className="brand-mark">DS</span><span>Agro Tourism <small>& Resort</small></span></a>
     <nav className="desktop-nav" aria-label="Main navigation">{nav.map(([label, href]) => <a className={currentPath === href ? "current-link" : ""} aria-current={currentPath === href ? "page" : undefined} href={pageHref(href)} key={href}>{label}</a>)}</nav>
     <a className="nav-cta" href={pageHref("/booking")}>Book your visit <span>→</span></a>
+    <a className="admin-entry" href={pageHref("/admin")} aria-label="Open admin dashboard">Admin <span>→</span></a>
     <button className={`menu-button ${open ? "open" : ""}`} onClick={() => setOpen(!open)} aria-expanded={open} aria-label="Toggle menu"><span /><span /></button>
     {open && <div className="mobile-menu">
       <div className="menu-glow" />
       {nav.map(([label, href], index) => <a className={currentPath === href ? "current-link" : ""} aria-current={currentPath === href ? "page" : undefined} href={pageHref(href)} key={href} style={{ animationDelay: `${index * 55}ms` }}><span>0{index + 1}</span>{label}</a>)}
+      <a className="mobile-admin-entry" href={pageHref("/admin")} style={{ animationDelay: `${nav.length * 55}ms` }}><span>{String(nav.length + 1).padStart(2, "0")}</span>Admin Dashboard</a>
       <div className="menu-socials"><a href={contact.instagram} target="_blank" rel="noreferrer"><SocialIcon type="ig" /> Instagram</a><a href={whatsapp("Hello DS Agro Tourism & Resort")}><SocialIcon type="wa" /> WhatsApp</a></div>
     </div>}
   </header>;
@@ -97,6 +99,7 @@ export function Footer() {
           <span className="social-button pending" title="Official Facebook link pending" aria-label="Facebook link pending"><SocialIcon type="fb" /></span>
         </div>
       </div>
+      <div className="footer-manage"><p className="footer-label">Manage</p><a className="footer-admin-button" href={pageHref("/admin")}>Admin Dashboard <span>→</span></a><small>Authorized resort team only</small></div>
     </div>
     <div className="footer-marquee"><div>ESCAPE THE CITY ✦ EXPERIENCE NATURE ✦ LIVE LUXURY ✦ FARM LIFE, ELEVATED ✦ WEEKENDS THAT STAY WITH YOU ✦ ESCAPE THE CITY ✦ EXPERIENCE NATURE ✦ LIVE LUXURY ✦ FARM LIFE, ELEVATED ✦ WEEKENDS THAT STAY WITH YOU ✦ </div></div>
     <div className="footer-bottom"><span>© {new Date().getFullYear()} DS Agro Tourism & Resort</span><span>Facts, rates and availability confirmed directly by the resort.</span></div>
