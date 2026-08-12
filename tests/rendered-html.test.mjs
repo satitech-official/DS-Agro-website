@@ -27,6 +27,8 @@ test("exports the finished resort homepage", async () => {
   assert.match(html, />Amenities</);
   assert.match(html, />Activities</);
   assert.match(html, />T&amp;C</);
+  assert.match(html, /href="\/admin"[^>]*aria-label="Open admin dashboard"/);
+  assert.match(html, /Admin Dashboard/);
   assert.match(html, /aria-current="page"[^>]*href="\/"|href="\/"[^>]*aria-current="page"/);
   assert.match(html, /918149428126/);
   assert.match(html, /4N9MusUsVUeHSG9E8/);
