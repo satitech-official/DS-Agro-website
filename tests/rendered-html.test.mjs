@@ -122,3 +122,18 @@ test("exports the live booking journey and protected admin entry points", async 
   assert.doesNotMatch(adminLogin, /Set or reset password by email/);
   assert.match(admin, /Loading secure dashboard/);
 });
+
+test("ships an operational admin dashboard for bookings and inventory", async () => {
+  const source = await readFile(new URL("../components/AdminDashboard.tsx", import.meta.url), "utf8");
+
+  assert.match(source, /aria-current=.*activeTab/);
+  assert.match(source, /Booking workspace/);
+  assert.match(source, /View details/);
+  assert.match(source, /Open WhatsApp/);
+  assert.match(source, /paymentStatuses/);
+  assert.match(source, /status saved as/);
+  assert.match(source, /get_room_availability/);
+  assert.match(source, /room_blocks/);
+  assert.match(source, /Block selected dates/);
+  assert.match(source, /Room block could not be removed/);
+});
