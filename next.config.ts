@@ -14,6 +14,10 @@ const nextConfig: NextConfig = {
   assetPrefix: basePath || undefined,
   env: {
     NEXT_PUBLIC_BASE_PATH: basePath,
+    NEXT_PUBLIC_SUPABASE_URL:
+      process.env.NEXT_PUBLIC_SUPABASE_URL ?? "https://ndlgcanimwpkuuqqotym.supabase.co",
+    NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY:
+      process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY ?? "sb_publishable_f3HDmJVtMMI_6j1fFjUg9w_QxTBozi7",
   },
 };
 

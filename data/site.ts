@@ -47,7 +47,7 @@ export const contact = {
 };
 
 export const nav = [
-  ["Home", "/"], ["Rooms", "/stay"], ["Amenities", "/amenities"],
+  ["Home", "/"], ["Book", "/booking"], ["Rooms", "/stay"], ["Amenities", "/amenities"],
   ["Activities", "/experiences"], ["Day Outing", "/day-outing"],
   ["T&C", "/terms"], ["Gallery", "/gallery"], ["Contact", "/contact"],
 ] as const;
