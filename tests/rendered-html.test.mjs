@@ -123,8 +123,12 @@ test("exports the live booking journey and protected admin entry points", async 
   assert.match(admin, /Loading secure dashboard/);
 });
 
-test("ships an operational admin dashboard for bookings and inventory", async () => {
-  const source = await readFile(new URL("../components/AdminDashboard.tsx", import.meta.url), "utf8");
+test("ships an operational admin dashboard for bookings, inventory and gallery updates", async () => {
+  const [source, publicGallery, migration] = await Promise.all([
+    readFile(new URL("../components/AdminDashboard.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../components/GalleryCategories.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../supabase/migrations/20260813061200_gallery_management.sql", import.meta.url), "utf8"),
+  ]);
 
   assert.match(source, /aria-current=.*activeTab/);
   assert.match(source, /Booking workspace/);
@@ -136,4 +140,14 @@ test("ships an operational admin dashboard for bookings and inventory", async ()
   assert.match(source, /room_blocks/);
   assert.match(source, /Block selected dates/);
   assert.match(source, /Room block could not be removed/);
+  assert.match(source, /Gallery workspace/);
+  assert.match(source, /Add to gallery/);
+  assert.match(source, /storage\.from\("gallery"\)\.upload/);
+  assert.match(source, /Hidden and Archived items remain saved/);
+  assert.match(source, /deleteGalleryItem/);
+  assert.match(publicGallery, /recordsToGalleryCategories/);
+  assert.match(publicGallery, /\.eq\("status", "Published"\)/);
+  assert.match(migration, /create policy gallery_assets_admin_insert/);
+  assert.match(migration, /select private\.is_admin\(\)/);
+  assert.equal((migration.match(/'resort\//g) ?? []).length, 30);
 });
