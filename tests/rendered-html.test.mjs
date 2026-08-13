@@ -144,6 +144,7 @@ test("ships an operational admin dashboard for bookings, inventory and gallery u
   assert.match(source, /Add to gallery/);
   assert.match(source, /storage\.from\("gallery"\)\.upload/);
   assert.match(source, /Hidden and Archived items remain saved/);
+  assert.match(source, /type="text" inputMode="url"/);
   assert.match(source, /deleteGalleryItem/);
   assert.match(publicGallery, /recordsToGalleryCategories/);
   assert.match(publicGallery, /\.eq\("status", "Published"\)/);

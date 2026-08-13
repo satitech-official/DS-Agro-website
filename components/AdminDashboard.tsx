@@ -535,7 +535,7 @@ export function AdminDashboard() {
               <label className="admin-field"><span>Description</span><textarea value={galleryDraft.description} onChange={(event) => setGalleryDraft((draft) => ({ ...draft, description: event.target.value }))} maxLength={300} placeholder="A short caption shown below the image" /></label>
               <div className="admin-form-grid">
                 <label className="admin-field"><span>{editingGalleryId ? "Replace image (optional)" : "Upload image"}</span><input key={galleryFileKey} type="file" accept="image/jpeg,image/png,image/webp" onChange={(event) => setGalleryFile(event.target.files?.[0] ?? null)} /></label>
-                <label className="admin-field"><span>HTTPS image URL (alternative)</span><input type="url" value={galleryDraft.image_url} onChange={(event) => setGalleryDraft((draft) => ({ ...draft, image_url: event.target.value }))} placeholder="https://…" /></label>
+                <label className="admin-field"><span>HTTPS image URL (alternative)</span><input type="text" inputMode="url" value={galleryDraft.image_url} onChange={(event) => setGalleryDraft((draft) => ({ ...draft, image_url: event.target.value }))} placeholder="https://…" /></label>
               </div>
               <div className="admin-gallery-settings">
                 <label className="admin-field"><span>Visibility</span><select value={galleryDraft.status} onChange={(event) => setGalleryDraft((draft) => ({ ...draft, status: event.target.value as GalleryRecord["status"] }))}>{galleryStatuses.map((status) => <option key={status}>{status}</option>)}</select></label>
