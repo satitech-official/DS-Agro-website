@@ -10,6 +10,23 @@ function uniqueResortImages(html) {
   return new Set([...html.matchAll(/(?:resort|images\/ds-agro\/[a-z-]+)\/([a-z0-9-]+\.webp)/g)].map((match) => match[1].replace(/-(640|1200)\.webp$/, ".webp")));
 }
 
+test("hides only the two unverified dormitory photo boxes while keeping room details", async () => {
+  const html = await renderedHtml("stay/index.html");
+  for (const slug of ["dormitory", "additional-dormitories"]) {
+    const card = html.match(new RegExp(`<article[^>]*id="${slug}"[^>]*>([\\s\\S]*?)</article>`))?.[1];
+    assert.ok(card, `${slug} room card remains present`);
+    assert.doesNotMatch(card, /stay-room-photo|photo-pending|<img/);
+    assert.match(card, /<h3>/);
+    assert.match(card, slug === "dormitory" ? /2 bunk beds/ : /2 units/);
+  }
+  for (const slug of ["deluxe-room", "super-deluxe-room", "premium-room", "2-bhk-villa"]) {
+    const card = html.match(new RegExp(`<article[^>]*id="${slug}"[^>]*>([\\s\\S]*?)</article>`))?.[1];
+    assert.ok(card);
+    assert.match(card, /class="stay-room-photo"/);
+    assert.match(card, /<img/);
+  }
+});
+
 test("exports the finished resort homepage", async () => {
   const html = await renderedHtml();
   assert.match(html, /DS Agro Tourism &amp; Resort/);
@@ -46,7 +63,7 @@ test("exports inner experience pages without fake booking claims", async () => {
   assert.match(html, /₹21,499/);
   assert.match(html, /Expected to be ready within 1 month/);
   assert.doesNotMatch(html, /resort\/dormitory\.webp/);
-  assert.match(html, /Photo awaiting verification/);
+  assert.doesNotMatch(html, /Photo awaiting verification/);
   assert.match(html, /View room photographs/);
   assert.match(html, /Enquire on WhatsApp/);
   assert.match(html, /Rest\. Reconnect\. Repeat\./);
