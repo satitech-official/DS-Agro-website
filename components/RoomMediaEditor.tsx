@@ -1,7 +1,7 @@
 "use client";
 
 import { FormEvent, useEffect, useState } from "react";
-import { galleryCategories, resolveMediaUrl, resolveRoomCover, roomCategoryBySlug } from "../data/site";
+import { galleryCategories, resolveMediaUrl, resolveRoomCover, roomCategoryBySlug, roomCoverBySlug } from "../data/site";
 import { getSupabaseClient } from "../lib/supabase";
 import { ResortPhoto } from "./ResortPhoto";
 
@@ -22,7 +22,7 @@ export function RoomMediaEditor({ room }: { room: Room }) {
   const [target, setTarget] = useState("gallery");
   const [fileKey, setFileKey] = useState(0);
   const [preview, setPreview] = useState("");
-  const defaults = galleryCategories.find(item => item.id === roomCategoryBySlug[room.slug])?.images ?? [];
+  const defaults = (galleryCategories.find(item => item.id === roomCategoryBySlug[room.slug])?.images ?? []).filter(photo => photo.image !== roomCoverBySlug[room.slug]);
 
   useEffect(() => {
     return () => { if (preview) URL.revokeObjectURL(preview); };
@@ -118,6 +118,18 @@ export function RoomMediaEditor({ room }: { room: Room }) {
           <button disabled={busy}>{busy ? "Saving…" : "Save photograph"}</button>
         </form>
         {defaults.length > 0 && <button type="button" disabled={busy} onClick={() => void importAlbum()}>Import verified room album</button>}
+        {roomCoverBySlug[room.slug] && <button type="button" disabled={busy} onClick={() => {
+          if (!window.confirm(`Use the verified official ${room.name} cover? This replaces the current cover reference; the stored file will be kept.`)) return;
+          void run(async () => {
+            const official = roomCoverBySlug[room.slug];
+            const response = await fetch(official, { method: "HEAD" });
+            if (!response.ok) throw new Error("Official cover is not deployed yet. Current cover was not changed.");
+            const saved = await getSupabaseClient()!.from("rooms").update({ cover_image: official.replace(process.env.NEXT_PUBLIC_BASE_PATH ?? "", "") }).eq("id", room.id).select("cover_image").single();
+            if (saved.error) throw saved.error;
+            setCover(saved.data.cover_image);
+            setMessage("Official cover saved. Rooms and Booking will use it on their next load. Previous stored file retained.");
+          });
+        }}>Use verified official cover</button>}
         <button type="button" disabled={busy} onClick={() => {
           if (!window.confirm("Remove this room cover? The original file will be kept.")) return;
           void run(async () => {

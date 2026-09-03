@@ -7,6 +7,7 @@ import { ResortPhoto } from "./ResortPhoto";
 export function InnerPageVisuals({ page }: { page: Page }) {
   const [active, setActive] = useState(0);
   const current = page.visuals[active];
+  if (!current) return null;
 
   return <section className={`page-visual-story visual-${page.variant} section reveal`} aria-label={`${page.kicker} visual story`}>
     <div className="visual-story-head">

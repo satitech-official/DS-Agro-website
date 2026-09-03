@@ -1,5 +1,7 @@
 # Official photography update
 
+> Historical report for the previous release. The new [visual-upgrade report](VISUAL_UPGRADE.md) supersedes the Premium ambiguity, static hero, 33-image default archive and absence of dining photography described below. Its live database import status is documented separately; do not treat old verification results as proof of the new release.
+
 ## Source and selection
 
 Source: the client-provided [DS Agro Photos & Videos folder](https://drive.google.com/drive/folders/1bEb07Syc1IHbetRBCaDkFKujTsRPOX4j).

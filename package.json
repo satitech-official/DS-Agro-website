@@ -7,7 +7,8 @@
   },
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "npm run check:media && next build",
+    "check:media": "node scripts/check-media-duplicates.mjs",
     "start": "npx serve out",
     "test": "npm run build && node --test tests/*.test.mjs",
     "typecheck": "tsc --noEmit",

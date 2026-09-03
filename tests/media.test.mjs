@@ -41,24 +41,26 @@ test("managed gallery deduplicates relative URLs and preserves uploaded photos",
 });
 
 test("admin official import shares the curated public mapping", () => {
-  assert.equal(gallery.officialGalleryRows.length, 33);
-  assert.equal(new Set(gallery.officialGalleryRows.map(row => row.image_url)).size, 33);
+  assert.equal(gallery.officialGalleryRows.length, 57);
+  assert.equal(new Set(gallery.officialGalleryRows.map(row => row.image_url)).size, 57);
   assert.ok(gallery.officialGalleryRows.every(row => row.status === "Published" && !gallery.isRetiredGalleryImage(row.image_url)));
 });
 
 test("only publishes verified source ranges with different room covers", () => {
-  assert.equal(manifest.length, 23);
+  assert.equal(manifest.length, 51);
   for (const photo of manifest) {
+    if (photo.path.includes("/property/")) { assert.ok(photo.driveId); continue; }
     const number = Number(photo.source.match(/DSC(\d+)/)[1]);
     const correct = photo.path.includes("/bungalow/") ? number >= 2934 && number <= 2959
+      : photo.path.includes("/premium/") ? number >= 2960 && number <= 2972
       : photo.path.includes("/super-deluxe/") ? number >= 2998 && number <= 3005
       : number >= 3040 && number <= 3076;
     assert.ok(correct, photo.source);
   }
-  assert.equal(new Set(Object.values(site.roomCoverBySlug)).size, 3);
-  assert.equal(site.roomCoverBySlug["premium-room"], undefined);
+  assert.equal(new Set(Object.values(site.roomCoverBySlug)).size, 4);
+  assert.equal(site.roomCoverBySlug["premium-room"], site.accommodationMedia.premium.cover);
   assert.equal(site.resolveRoomCover("dormitory", "/resort/dormitory.webp"), null);
-  assert.equal(site.resolveRoomCover("premium-room", "/resort/premium-room.webp"), null);
+  assert.equal(site.resolveRoomCover("premium-room", "/resort/premium-room.webp"), site.accommodationMedia.premium.cover);
 });
 
 test("admin custom room covers and deliberate removals override default mapping", () => {
@@ -68,11 +70,11 @@ test("admin custom room covers and deliberate removals override default mapping"
   assert.equal(site.resolveRoomCover("super-deluxe-room", null), site.accommodationMedia.superDeluxe.cover);
 });
 
-test("gallery contains 33 distinct images in six verified categories", () => {
+test("gallery contains 57 distinct images in ten verified categories", () => {
   const images = site.galleryCategories.flatMap(category => category.images);
-  assert.equal(images.length, 33);
-  assert.equal(site.galleryCategories.length, 6);
-  assert.equal(new Set(images.map(photo => photo.image)).size, 33);
+  assert.equal(images.length, 57);
+  assert.equal(site.galleryCategories.length, 10);
+  assert.equal(new Set(images.map(photo => photo.image)).size, 57);
   assert.ok(images.every(photo => photo.label.length > 4));
 });
 

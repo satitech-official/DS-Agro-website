@@ -1,208 +1,4 @@
 {
-  "resort/aerial-1200.webp": [
-    1200,
-    900
-  ],
-  "resort/aerial-640.webp": [
-    640,
-    480
-  ],
-  "resort/aerial.webp": [
-    1200,
-    900
-  ],
-  "resort/country-aerial-1200.webp": [
-    1200,
-    900
-  ],
-  "resort/country-aerial-640.webp": [
-    640,
-    480
-  ],
-  "resort/country-aerial.webp": [
-    1200,
-    900
-  ],
-  "resort/dining-area-1200.webp": [
-    1200,
-    800
-  ],
-  "resort/dining-area-640.webp": [
-    640,
-    427
-  ],
-  "resort/dining-area.webp": [
-    1350,
-    900
-  ],
-  "resort/estate-aerial-1200.webp": [
-    1200,
-    900
-  ],
-  "resort/estate-aerial-640.webp": [
-    640,
-    480
-  ],
-  "resort/estate-aerial.webp": [
-    1200,
-    900
-  ],
-  "resort/farm-fields-1200.webp": [
-    1200,
-    900
-  ],
-  "resort/farm-fields-640.webp": [
-    640,
-    480
-  ],
-  "resort/farm-fields.webp": [
-    1200,
-    900
-  ],
-  "resort/horse-action-1200.webp": [
-    1200,
-    800
-  ],
-  "resort/horse-action-640.webp": [
-    640,
-    427
-  ],
-  "resort/horse-action.webp": [
-    1350,
-    900
-  ],
-  "resort/horse-arena-aerial-1200.webp": [
-    1200,
-    900
-  ],
-  "resort/horse-arena-aerial-640.webp": [
-    640,
-    480
-  ],
-  "resort/horse-arena-aerial.webp": [
-    1200,
-    900
-  ],
-  "resort/horse-portrait-1200.webp": [
-    1200,
-    800
-  ],
-  "resort/horse-portrait-640.webp": [
-    640,
-    427
-  ],
-  "resort/horse-portrait.webp": [
-    1350,
-    900
-  ],
-  "resort/horse-riding-1200.webp": [
-    1200,
-    800
-  ],
-  "resort/horse-riding-640.webp": [
-    640,
-    427
-  ],
-  "resort/horse-riding.webp": [
-    1800,
-    1200
-  ],
-  "resort/horse-track-1200.webp": [
-    1200,
-    800
-  ],
-  "resort/horse-track-640.webp": [
-    640,
-    427
-  ],
-  "resort/horse-track.webp": [
-    1350,
-    900
-  ],
-  "resort/pool-lawn-1200.webp": [
-    1200,
-    900
-  ],
-  "resort/pool-lawn-640.webp": [
-    640,
-    480
-  ],
-  "resort/pool-lawn.webp": [
-    1200,
-    900
-  ],
-  "resort/resort-aerial-three-1200.webp": [
-    1200,
-    900
-  ],
-  "resort/resort-aerial-three-640.webp": [
-    640,
-    480
-  ],
-  "resort/resort-aerial-three.webp": [
-    1200,
-    900
-  ],
-  "resort/resort-aerial-two-1200.webp": [
-    1200,
-    900
-  ],
-  "resort/resort-aerial-two-640.webp": [
-    640,
-    480
-  ],
-  "resort/resort-aerial-two.webp": [
-    1200,
-    900
-  ],
-  "resort/resort-wide-1200.webp": [
-    1200,
-    900
-  ],
-  "resort/resort-wide-640.webp": [
-    640,
-    480
-  ],
-  "resort/resort-wide.webp": [
-    1200,
-    900
-  ],
-  "resort/turf-aerial-1200.webp": [
-    1200,
-    900
-  ],
-  "resort/turf-aerial-640.webp": [
-    640,
-    480
-  ],
-  "resort/turf-aerial.webp": [
-    1200,
-    900
-  ],
-  "resort/turf-close-1200.webp": [
-    1200,
-    900
-  ],
-  "resort/turf-close-640.webp": [
-    640,
-    480
-  ],
-  "resort/turf-close.webp": [
-    1200,
-    900
-  ],
-  "resort/turf-top-1200.webp": [
-    1200,
-    900
-  ],
-  "resort/turf-top-640.webp": [
-    640,
-    480
-  ],
-  "resort/turf-top.webp": [
-    1200,
-    900
-  ],
   "images/ds-agro/bungalow/ds-agro-bungalow-exterior-1200.webp": [
     1200,
     800
@@ -431,6 +227,342 @@
     2200,
     1467
   ],
+  "images/ds-agro/premium/ds-agro-premium-bathroom-1200.webp": [
+    1200,
+    800
+  ],
+  "images/ds-agro/premium/ds-agro-premium-bathroom-640.webp": [
+    640,
+    427
+  ],
+  "images/ds-agro/premium/ds-agro-premium-bathroom.webp": [
+    2200,
+    1467
+  ],
+  "images/ds-agro/premium/ds-agro-premium-bed-detail-1200.webp": [
+    1200,
+    800
+  ],
+  "images/ds-agro/premium/ds-agro-premium-bed-detail-640.webp": [
+    640,
+    427
+  ],
+  "images/ds-agro/premium/ds-agro-premium-bed-detail.webp": [
+    2200,
+    1467
+  ],
+  "images/ds-agro/premium/ds-agro-premium-room-cover-1200.webp": [
+    1200,
+    800
+  ],
+  "images/ds-agro/premium/ds-agro-premium-room-cover-640.webp": [
+    640,
+    427
+  ],
+  "images/ds-agro/premium/ds-agro-premium-room-cover.webp": [
+    2200,
+    1467
+  ],
+  "images/ds-agro/premium/ds-agro-premium-room-front-1200.webp": [
+    1200,
+    800
+  ],
+  "images/ds-agro/premium/ds-agro-premium-room-front-640.webp": [
+    640,
+    427
+  ],
+  "images/ds-agro/premium/ds-agro-premium-room-front.webp": [
+    2200,
+    1467
+  ],
+  "images/ds-agro/premium/ds-agro-premium-seating-1200.webp": [
+    1200,
+    800
+  ],
+  "images/ds-agro/premium/ds-agro-premium-seating-640.webp": [
+    640,
+    427
+  ],
+  "images/ds-agro/premium/ds-agro-premium-seating-and-beds-1200.webp": [
+    1200,
+    800
+  ],
+  "images/ds-agro/premium/ds-agro-premium-seating-and-beds-640.webp": [
+    640,
+    427
+  ],
+  "images/ds-agro/premium/ds-agro-premium-seating-and-beds.webp": [
+    2200,
+    1467
+  ],
+  "images/ds-agro/premium/ds-agro-premium-seating.webp": [
+    2200,
+    1467
+  ],
+  "images/ds-agro/premium/ds-agro-premium-storage-1200.webp": [
+    1200,
+    800
+  ],
+  "images/ds-agro/premium/ds-agro-premium-storage-640.webp": [
+    640,
+    427
+  ],
+  "images/ds-agro/premium/ds-agro-premium-storage.webp": [
+    2200,
+    1467
+  ],
+  "images/ds-agro/property/ds-agro-accommodation-exterior-1200.webp": [
+    1200,
+    800
+  ],
+  "images/ds-agro/property/ds-agro-accommodation-exterior-640.webp": [
+    640,
+    427
+  ],
+  "images/ds-agro/property/ds-agro-accommodation-exterior.webp": [
+    2200,
+    1467
+  ],
+  "images/ds-agro/property/ds-agro-atv-1200.webp": [
+    675,
+    1200
+  ],
+  "images/ds-agro/property/ds-agro-atv-640.webp": [
+    360,
+    640
+  ],
+  "images/ds-agro/property/ds-agro-atv.webp": [
+    1237,
+    2200
+  ],
+  "images/ds-agro/property/ds-agro-banquet-table-1200.webp": [
+    1200,
+    800
+  ],
+  "images/ds-agro/property/ds-agro-banquet-table-640.webp": [
+    640,
+    427
+  ],
+  "images/ds-agro/property/ds-agro-banquet-table.webp": [
+    2200,
+    1467
+  ],
+  "images/ds-agro/property/ds-agro-dining-service-1200.webp": [
+    1200,
+    800
+  ],
+  "images/ds-agro/property/ds-agro-dining-service-640.webp": [
+    640,
+    427
+  ],
+  "images/ds-agro/property/ds-agro-dining-service.webp": [
+    2200,
+    1467
+  ],
+  "images/ds-agro/property/ds-agro-dining-table-detail-1200.webp": [
+    1200,
+    800
+  ],
+  "images/ds-agro/property/ds-agro-dining-table-detail-640.webp": [
+    640,
+    427
+  ],
+  "images/ds-agro/property/ds-agro-dining-table-detail.webp": [
+    2200,
+    1467
+  ],
+  "images/ds-agro/property/ds-agro-dining-terrace-1200.webp": [
+    1200,
+    800
+  ],
+  "images/ds-agro/property/ds-agro-dining-terrace-640.webp": [
+    640,
+    427
+  ],
+  "images/ds-agro/property/ds-agro-dining-terrace.webp": [
+    2200,
+    1467
+  ],
+  "images/ds-agro/property/ds-agro-evening-seating-1200.webp": [
+    1200,
+    800
+  ],
+  "images/ds-agro/property/ds-agro-evening-seating-640.webp": [
+    640,
+    427
+  ],
+  "images/ds-agro/property/ds-agro-evening-seating.webp": [
+    2200,
+    1467
+  ],
+  "images/ds-agro/property/ds-agro-garden-arrival-1200.webp": [
+    1200,
+    675
+  ],
+  "images/ds-agro/property/ds-agro-garden-arrival-640.webp": [
+    640,
+    360
+  ],
+  "images/ds-agro/property/ds-agro-garden-arrival.webp": [
+    2200,
+    1238
+  ],
+  "images/ds-agro/property/ds-agro-garden-pavilion-1200.webp": [
+    1200,
+    800
+  ],
+  "images/ds-agro/property/ds-agro-garden-pavilion-640.webp": [
+    640,
+    427
+  ],
+  "images/ds-agro/property/ds-agro-garden-pavilion.webp": [
+    2200,
+    1467
+  ],
+  "images/ds-agro/property/ds-agro-green-estate-1200.webp": [
+    1200,
+    675
+  ],
+  "images/ds-agro/property/ds-agro-green-estate-640.webp": [
+    640,
+    360
+  ],
+  "images/ds-agro/property/ds-agro-green-estate.webp": [
+    2200,
+    1238
+  ],
+  "images/ds-agro/property/ds-agro-gym-1200.webp": [
+    1200,
+    800
+  ],
+  "images/ds-agro/property/ds-agro-gym-640.webp": [
+    640,
+    427
+  ],
+  "images/ds-agro/property/ds-agro-gym.webp": [
+    2200,
+    1467
+  ],
+  "images/ds-agro/property/ds-agro-indoor-gathering-1200.webp": [
+    1200,
+    800
+  ],
+  "images/ds-agro/property/ds-agro-indoor-gathering-640.webp": [
+    640,
+    427
+  ],
+  "images/ds-agro/property/ds-agro-indoor-gathering.webp": [
+    2200,
+    1467
+  ],
+  "images/ds-agro/property/ds-agro-intimate-dining-1200.webp": [
+    1200,
+    800
+  ],
+  "images/ds-agro/property/ds-agro-intimate-dining-640.webp": [
+    640,
+    427
+  ],
+  "images/ds-agro/property/ds-agro-intimate-dining.webp": [
+    2200,
+    1467
+  ],
+  "images/ds-agro/property/ds-agro-main-pool-1200.webp": [
+    1200,
+    800
+  ],
+  "images/ds-agro/property/ds-agro-main-pool-640.webp": [
+    640,
+    427
+  ],
+  "images/ds-agro/property/ds-agro-main-pool.webp": [
+    2200,
+    1467
+  ],
+  "images/ds-agro/property/ds-agro-palm-canopy-1200.webp": [
+    1200,
+    675
+  ],
+  "images/ds-agro/property/ds-agro-palm-canopy-640.webp": [
+    640,
+    360
+  ],
+  "images/ds-agro/property/ds-agro-palm-canopy.webp": [
+    2200,
+    1238
+  ],
+  "images/ds-agro/property/ds-agro-pool-deck-1200.webp": [
+    1200,
+    800
+  ],
+  "images/ds-agro/property/ds-agro-pool-deck-640.webp": [
+    640,
+    427
+  ],
+  "images/ds-agro/property/ds-agro-pool-deck.webp": [
+    2200,
+    1467
+  ],
+  "images/ds-agro/property/ds-agro-pool-garden-overview-1200.webp": [
+    1200,
+    800
+  ],
+  "images/ds-agro/property/ds-agro-pool-garden-overview-640.webp": [
+    640,
+    427
+  ],
+  "images/ds-agro/property/ds-agro-pool-garden-overview.webp": [
+    2200,
+    1467
+  ],
+  "images/ds-agro/property/ds-agro-pool-lounger-1200.webp": [
+    1200,
+    800
+  ],
+  "images/ds-agro/property/ds-agro-pool-lounger-640.webp": [
+    640,
+    427
+  ],
+  "images/ds-agro/property/ds-agro-pool-lounger.webp": [
+    2200,
+    1467
+  ],
+  "images/ds-agro/property/ds-agro-pool-water-1200.webp": [
+    1200,
+    800
+  ],
+  "images/ds-agro/property/ds-agro-pool-water-640.webp": [
+    640,
+    427
+  ],
+  "images/ds-agro/property/ds-agro-pool-water.webp": [
+    2200,
+    1467
+  ],
+  "images/ds-agro/property/ds-agro-restaurant-1200.webp": [
+    1200,
+    800
+  ],
+  "images/ds-agro/property/ds-agro-restaurant-640.webp": [
+    640,
+    427
+  ],
+  "images/ds-agro/property/ds-agro-restaurant.webp": [
+    2200,
+    1467
+  ],
+  "images/ds-agro/property/ds-agro-turf-and-pond-1200.webp": [
+    1200,
+    675
+  ],
+  "images/ds-agro/property/ds-agro-turf-and-pond-640.webp": [
+    640,
+    360
+  ],
+  "images/ds-agro/property/ds-agro-turf-and-pond.webp": [
+    1920,
+    1080
+  ],
   "images/ds-agro/super-deluxe/ds-agro-super-deluxe-bathroom-1200.webp": [
     1200,
     800
@@ -478,5 +610,265 @@
   "images/ds-agro/super-deluxe/ds-agro-super-deluxe-room-wide.webp": [
     2200,
     1467
+  ],
+  "resort/aerial-1200.webp": [
+    1200,
+    900
+  ],
+  "resort/aerial-640.webp": [
+    640,
+    480
+  ],
+  "resort/aerial.webp": [
+    1200,
+    900
+  ],
+  "resort/bathroom.webp": [
+    1350,
+    900
+  ],
+  "resort/country-aerial-1200.webp": [
+    1200,
+    900
+  ],
+  "resort/country-aerial-640.webp": [
+    640,
+    480
+  ],
+  "resort/country-aerial.webp": [
+    1200,
+    900
+  ],
+  "resort/deluxe-room.webp": [
+    1350,
+    900
+  ],
+  "resort/dining-area-1200.webp": [
+    1200,
+    800
+  ],
+  "resort/dining-area-640.webp": [
+    640,
+    427
+  ],
+  "resort/dining-area.webp": [
+    1350,
+    900
+  ],
+  "resort/dormitory-lounge.webp": [
+    1350,
+    900
+  ],
+  "resort/dormitory-wide.webp": [
+    1350,
+    900
+  ],
+  "resort/dormitory.webp": [
+    1350,
+    900
+  ],
+  "resort/estate-aerial-1200.webp": [
+    1200,
+    900
+  ],
+  "resort/estate-aerial-640.webp": [
+    640,
+    480
+  ],
+  "resort/estate-aerial.webp": [
+    1200,
+    900
+  ],
+  "resort/farm-fields-1200.webp": [
+    1200,
+    900
+  ],
+  "resort/farm-fields-640.webp": [
+    640,
+    480
+  ],
+  "resort/farm-fields.webp": [
+    1200,
+    900
+  ],
+  "resort/horse-action-1200.webp": [
+    1200,
+    800
+  ],
+  "resort/horse-action-640.webp": [
+    640,
+    427
+  ],
+  "resort/horse-action.webp": [
+    1350,
+    900
+  ],
+  "resort/horse-arena-aerial-1200.webp": [
+    1200,
+    900
+  ],
+  "resort/horse-arena-aerial-640.webp": [
+    640,
+    480
+  ],
+  "resort/horse-arena-aerial.webp": [
+    1200,
+    900
+  ],
+  "resort/horse-portrait-1200.webp": [
+    1200,
+    800
+  ],
+  "resort/horse-portrait-640.webp": [
+    640,
+    427
+  ],
+  "resort/horse-portrait.webp": [
+    1350,
+    900
+  ],
+  "resort/horse-riding-1200.webp": [
+    1200,
+    800
+  ],
+  "resort/horse-riding-640.webp": [
+    640,
+    427
+  ],
+  "resort/horse-riding.webp": [
+    1800,
+    1200
+  ],
+  "resort/horse-track-1200.webp": [
+    1200,
+    800
+  ],
+  "resort/horse-track-640.webp": [
+    640,
+    427
+  ],
+  "resort/horse-track.webp": [
+    1350,
+    900
+  ],
+  "resort/lounge.webp": [
+    1350,
+    900
+  ],
+  "resort/pool-lawn-1200.webp": [
+    1200,
+    900
+  ],
+  "resort/pool-lawn-640.webp": [
+    640,
+    480
+  ],
+  "resort/pool-lawn.webp": [
+    1200,
+    900
+  ],
+  "resort/premium-room-alt.webp": [
+    1350,
+    900
+  ],
+  "resort/premium-room.webp": [
+    1350,
+    900
+  ],
+  "resort/resort-aerial-three-1200.webp": [
+    1200,
+    900
+  ],
+  "resort/resort-aerial-three-640.webp": [
+    640,
+    480
+  ],
+  "resort/resort-aerial-three.webp": [
+    1200,
+    900
+  ],
+  "resort/resort-aerial-two-1200.webp": [
+    1200,
+    900
+  ],
+  "resort/resort-aerial-two-640.webp": [
+    640,
+    480
+  ],
+  "resort/resort-aerial-two.webp": [
+    1200,
+    900
+  ],
+  "resort/resort-wide-1200.webp": [
+    1200,
+    900
+  ],
+  "resort/resort-wide-640.webp": [
+    640,
+    480
+  ],
+  "resort/resort-wide.webp": [
+    1200,
+    900
+  ],
+  "resort/room-white-alt.webp": [
+    1350,
+    900
+  ],
+  "resort/room-white.webp": [
+    1350,
+    900
+  ],
+  "resort/suite-living.webp": [
+    1350,
+    900
+  ],
+  "resort/turf-aerial-1200.webp": [
+    1200,
+    900
+  ],
+  "resort/turf-aerial-640.webp": [
+    640,
+    480
+  ],
+  "resort/turf-aerial.webp": [
+    1200,
+    900
+  ],
+  "resort/turf-close-1200.webp": [
+    1200,
+    900
+  ],
+  "resort/turf-close-640.webp": [
+    640,
+    480
+  ],
+  "resort/turf-close.webp": [
+    1200,
+    900
+  ],
+  "resort/turf-top-1200.webp": [
+    1200,
+    900
+  ],
+  "resort/turf-top-640.webp": [
+    640,
+    480
+  ],
+  "resort/turf-top.webp": [
+    1200,
+    900
+  ],
+  "resort/villa-exterior.webp": [
+    1800,
+    1200
+  ],
+  "resort/villa-garden-exterior.webp": [
+    1350,
+    900
+  ],
+  "resort/villa-living.webp": [
+    1350,
+    900
   ]
 }

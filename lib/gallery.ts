@@ -40,7 +40,16 @@ export const retiredGalleryFiles = new Set([
 
 export function isRetiredGalleryImage(value: string) {
   const path = value.replace(process.env.NEXT_PUBLIC_BASE_PATH ?? "", "").replace(/^\//, "");
+  if (path === "images/ds-agro/super-deluxe/ds-agro-super-deluxe-room-angle.webp") return true;
   return path.startsWith("resort/") && retiredGalleryFiles.has(path.slice(7));
+}
+
+// Content-derived UUIDs stay stable even when a new category is inserted.
+export async function officialGalleryId(imageUrl: string) {
+  const canonical = imageUrl.replace(process.env.NEXT_PUBLIC_BASE_PATH ?? "", "").replace(/^\//, "");
+  const digest = await crypto.subtle.digest("SHA-256", new TextEncoder().encode("ds-agro-official-gallery:" + canonical));
+  const hex = Array.from(new Uint8Array(digest)).map(byte => byte.toString(16).padStart(2, "0")).join("");
+  return `${hex.slice(0, 8)}-${hex.slice(8, 12)}-5${hex.slice(13, 16)}-a${hex.slice(17, 20)}-${hex.slice(20, 32)}`;
 }
 
 export const officialGalleryRows = galleryCategories.flatMap((category, categoryIndex) =>

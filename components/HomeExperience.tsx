@@ -2,7 +2,9 @@
 
 import { useEffect, useState } from "react";
 import { ResortPhoto } from "./ResortPhoto";
-import { contact, experiences, nav, resortImages } from "../data/site";
+import { contact, experiences, nav, pageMedia } from "../data/site";
+import { FirstVisitLoader } from "./FirstVisitLoader";
+import { HeroVideo } from "./HeroVideo";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
@@ -16,29 +18,6 @@ export function whatsapp(message: string) {
 
 function SocialIcon({ type }: { type: "wa" | "ig" | "fb" }) {
   return <span className={`social-glyph ${type}`} aria-hidden="true">{type === "wa" ? "◔" : type === "ig" ? "◎" : "f"}</span>;
-}
-
-export function FirstVisitLoader() {
-  const [show, setShow] = useState(true);
-  useEffect(() => {
-    const seen = sessionStorage.getItem("ds-loader-seen");
-    const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (seen) {
-      const instant = setTimeout(() => setShow(false), 0);
-      return () => clearTimeout(instant);
-    }
-    const timer = setTimeout(() => {
-      setShow(false);
-      sessionStorage.setItem("ds-loader-seen", "1");
-    }, reduce ? 350 : 2400);
-    return () => clearTimeout(timer);
-  }, []);
-  if (!show) return null;
-  return <div className="opening-loader" role="status" aria-label="Opening DS Agro Tourism & Resort">
-    <button onClick={() => { sessionStorage.setItem("ds-loader-seen", "1"); setShow(false); }} aria-label="Skip opening animation">Skip</button>
-    <div className="loader-ripple" /><div className="loader-seed" /><div className="loader-stem"><i /><i /></div>
-    <p>From soil</p><strong>DS</strong><p>to serenity</p>
-  </div>;
 }
 
 export function Header({ currentPath = "/" }: { currentPath?: string }) {
@@ -127,8 +106,7 @@ export function HomeExperience() {
     <FirstVisitLoader /><GlobalMotion /><a className="skip" href="#main">Skip to content</a><Header currentPath="/" />
     <main id="main" className="page-enter">
       <section className="hero">
-        <div className="hero-image"><ResortPhoto src={resortImages.resortWide} alt="Aerial view of the real DS Agro Tourism & Resort property" priority sizes="100vw" /></div><div className="hero-shade" />
-        <div className="sun-orb" /><div className="floating-leaf leaf-one">◆</div><div className="floating-leaf leaf-two">◆</div>
+        <HeroVideo /><div className="hero-shade" />
         <div className="hero-copy"><p className="eyebrow light hero-reveal delay-1">DS Agro Tourism & Resort</p><h1 className="hero-reveal delay-2">Escape the city.<br /><em>Return to yourself.</em></h1><p className="hero-lede hero-reveal delay-3">Nature-led stays, family adventures and celebrations shaped under open skies.</p>
           <div className="hero-actions hero-reveal delay-4"><a className="button button-gold pulse-button" href="#enquire">Plan your visit <b>↘</b></a><a className="text-link" href="#story">Discover the story <span>↓</span></a></div>
         </div>
@@ -140,17 +118,17 @@ export function HomeExperience() {
         <div><p className="eyebrow">The escape</p><h2>A slower world,<br />waiting just beyond<br /><em>the everyday.</em></h2></div>
         <div className="intro-copy"><p className="large-copy">DS Agro Tourism & Resort brings together the openness of farm life and the comfort of a considered getaway.</p><p>Come for a stay, a day outdoors, time by the pool or a gathering with the people who matter. Every visit begins with a direct conversation, so the details fit your plan.</p><a className="arrow-link" href={pageHref("/experiences")}>Explore all experiences <span>→</span></a></div>
       </section>
-      <section className="experience-stage reveal"><div className="experience-image" style={{ backgroundImage: `linear-gradient(90deg,rgba(17,36,26,.1),rgba(17,36,26,.72)),url("${feature.image}")` }} />
+      <section className="experience-stage reveal"><div className="experience-image"><ResortPhoto src={feature.image} alt={`${feature.name} at DS Agro Tourism & Resort`} sizes="100vw" /></div>
         <div className="experience-content"><p className="eyebrow light">Choose your escape</p>
           <div className="experience-tabs" role="tablist" aria-label="Experience selector">{experiences.map((item, index) => <button role="tab" aria-selected={active === index} onClick={() => setActive(index)} key={item.name}><span>0{index + 1}</span>{item.name}</button>)}</div>
           <div className="experience-detail"><p>{feature.eyebrow}</p><h3 key={feature.name} className="content-swap">{feature.copy}</h3><a href={whatsapp(`Hello DS Agro Tourism & Resort, I am interested in ${feature.name}. Please share more details.`)} target="_blank" rel="noreferrer">Enquire about this <span>↗</span></a></div>
         </div>
       </section>
       <section className="day section reveal"><div className="day-heading"><p className="eyebrow">A day at DS</p><h2>Follow the light.</h2><p>From first light to the glow of evening, make space for the moments that city life rushes past.</p></div>
-        <div className="day-grid"><article className="day-card morning" style={{ backgroundImage: `url("${resortImages.countryAerial}")` }}><div><span>Morning</span><h3>Wake with the land</h3></div></article><article className="day-card afternoon" style={{ backgroundImage: `url("${resortImages.turf}")` }}><div><span>Afternoon</span><h3>Step into adventure</h3></div></article><article className="day-card evening" style={{ backgroundImage: `url("${resortImages.veranda}")` }}><div><span>Golden hour</span><h3>Gather into evening</h3></div></article></div>
+        <div className="day-grid"><article className="day-card morning"><ResortPhoto src={pageMedia.home.dayJourney.morning} alt="Palm canopy within DS Agro" sizes="(max-width:900px) 82vw, 28vw" /><div><span>Morning</span><h3>Wake with the land</h3></div></article><article className="day-card afternoon"><ResortPhoto src={pageMedia.home.dayJourney.afternoon} alt="The sports turf from above" sizes="(max-width:900px) 82vw, 32vw" /><div><span>Afternoon</span><h3>Step into adventure</h3></div></article><article className="day-card evening"><ResortPhoto src={pageMedia.home.dayJourney.evening} alt="Warmly lit seating in the resort dining space" sizes="(max-width:900px) 82vw, 28vw" /><div><span>Evening</span><h3>Gather into evening</h3></div></article></div>
         <p className="disclaimer">Featured property photographs were supplied by DS Agro Tourism & Resort. Activity access and current availability are confirmed directly by the resort.</p>
       </section>
-      <section className="gather reveal"><div className="gather-image" style={{ backgroundImage: `url("${resortImages.poolLawn}")` }} /><div className="gather-copy"><p className="eyebrow light">Celebrations</p><h2>More room for<br /><em>what matters.</em></h2><p>Family milestones, group outings and corporate days feel different with open sky above and nature all around.</p><a className="button button-cream" href={pageHref("/celebrations")}>Imagine your gathering <b>→</b></a></div></section>
+      <section className="gather reveal"><div className="gather-image"><ResortPhoto src={pageMedia.home.gathering} alt="Decorated indoor gathering and dining space at DS Agro" sizes="(max-width:900px) 100vw, 60vw" /></div><div className="gather-copy"><p className="eyebrow light">Celebrations</p><h2>More room for<br /><em>what matters.</em></h2><p>Family milestones, group outings and corporate days feel different with open sky above and nature all around.</p><a className="button button-cream" href={pageHref("/celebrations")}>Imagine your gathering <b>→</b></a></div></section>
       <section className="final-cta reveal"><div className="cta-spark one">✦</div><div className="cta-spark two">✦</div><p className="eyebrow">Begin your escape</p><h2>Your weekend deserves<br /><em>more than a stay.</em></h2><div><a className="button button-dark pulse-button" href={whatsapp("Hello DS Agro Tourism & Resort, I would like to know more about visiting the resort.")} target="_blank" rel="noreferrer">WhatsApp us <b>↗</b></a><a className="button button-outline" href={contact.maps} target="_blank" rel="noreferrer">Get directions <b>↗</b></a></div></section>
     </main>
     <Footer />

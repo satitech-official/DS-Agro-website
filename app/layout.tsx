@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import "./visual-upgrade.css";
 
 const productionUrl = "https://satitech-official.github.io/DS-Agro-website";
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
@@ -14,5 +15,6 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  return <html lang="en"><body>{children}</body></html>;
+  // The tiny intro preflight adds only data-ds-intro before hydration.
+  return <html lang="en" suppressHydrationWarning><body>{children}</body></html>;
 }

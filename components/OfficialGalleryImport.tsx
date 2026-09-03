@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { isRetiredGalleryImage, officialGalleryRows, resolveGalleryImageUrl, type GalleryRecord } from "../lib/gallery";
+import { isRetiredGalleryImage, officialGalleryRows, officialGalleryId, resolveGalleryImageUrl, type GalleryRecord } from "../lib/gallery";
 import { getSupabaseClient } from "../lib/supabase";
 
 export function OfficialGalleryImport({ onComplete }: { onComplete: () => Promise<void> }) {
@@ -24,9 +24,8 @@ export function OfficialGalleryImport({ onComplete }: { onComplete: () => Promis
       }
       if (missing.length) {
         // Stable IDs make simultaneous imports safe without replacing admin edits.
-        const result = await client.from("gallery").upsert(missing.map(row => ({
-          ...row, id: `d5a60000-0902-4000-8000-${String(officialGalleryRows.indexOf(row) + 1).padStart(12, "0")}`,
-        })), { onConflict: "id", ignoreDuplicates: true });
+        const imports = await Promise.all(missing.map(async row => ({ ...row, id: await officialGalleryId(row.image_url) })));
+        const result = await client.from("gallery").upsert(imports, { onConflict: "id", ignoreDuplicates: true });
         if (result.error) throw result.error;
       }
       for (const row of rows.filter(row => row.status === "Published" && isRetiredGalleryImage(row.image_url))) {

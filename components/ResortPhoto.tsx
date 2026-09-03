@@ -13,9 +13,12 @@ export function ResortPhoto({ src, alt, className = "", priority = false, sizes 
   const localPath = src.replace(process.env.NEXT_PUBLIC_BASE_PATH ?? "", "").replace(/^\//, "");
   const responsive = !/^https?:/i.test(src) && Boolean(sizesByPath[localPath]);
   const variants = [src.replace(".webp", "-640.webp"), src.replace(".webp", "-1200.webp"), src];
+  const widths = new Set<number>();
   const srcSet = variants.map(path => {
     const size = sizesByPath[path.replace(process.env.NEXT_PUBLIC_BASE_PATH ?? "", "").replace(/^\//, "")];
-    return size ? `${path} ${size[0]}w` : "";
+    if (!size || widths.has(size[0])) return "";
+    widths.add(size[0]);
+    return `${path} ${size[0]}w`;
   }).filter(Boolean).join(", ");
   return <picture className={`resort-photo ${className}${contain ? " photo-contain" : ""}`}>
     {responsive && <source type="image/webp" srcSet={srcSet} sizes={sizes} />}

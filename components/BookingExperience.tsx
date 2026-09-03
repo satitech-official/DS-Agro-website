@@ -1,7 +1,7 @@
 "use client";
 
 import { FormEvent, useEffect, useMemo, useState } from "react";
-import { contact, resolveRoomCover, resortImages } from "../data/site";
+import { contact, resolveRoomCover, pageMedia } from "../data/site";
 import { ResortPhoto } from "./ResortPhoto";
 import { appHref, getSupabaseClient } from "../lib/supabase";
 import { Footer, GlobalMotion, Header } from "./HomeExperience";
@@ -222,7 +222,7 @@ export function BookingExperience() {
   return <>
     <GlobalMotion /><Header currentPath="/booking" />
     <main className="booking-page page-enter">
-      <section className="booking-hero" style={{ backgroundImage: `linear-gradient(90deg,#0b2419e8,#0b24195f),url("${resortImages.aerial}")` }}>
+      <section className="booking-hero" style={{ backgroundImage: `linear-gradient(90deg,#0b2419e8,#0b24195f),url("${pageMedia.booking.hero}")` }}>
         <div><p className="eyebrow light">Direct resort inquiry</p><h1>Plan your<br /><em>perfect escape.</em></h1><p>Choose your dates and room using live resort inventory. Your request remains an inquiry until the DS Agro team confirms it.</p></div>
         <a href={appHref("/stay")}>View room details <span>↗</span></a>
       </section>

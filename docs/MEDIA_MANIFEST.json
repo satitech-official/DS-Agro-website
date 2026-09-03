@@ -1,0 +1,2460 @@
+{
+  "version": 1,
+  "scope": "Official media defaults. Live admin records remain authoritative and may differ until imported.",
+  "generatedFrom": [
+    "data/site.ts",
+    "data/photo-sources.json",
+    "data/photo-dimensions.json"
+  ],
+  "marketingAudit": {
+    "slots": 41,
+    "duplicates": [],
+    "exceptions": [
+      "Full Gallery and room albums archive the official photographs.",
+      "A room cover is intentionally shared by its Stay card, Booking thumbnail and admin preview.",
+      "Video poster/loading/reduced-motion/low-data/error states share one official aerial.",
+      "Authenticated workspace branding is outside marketing slots."
+    ]
+  },
+  "photos": [
+    {
+      "source": "DSC02959.JPG",
+      "driveId": "1SafolvWumkAjyqyjGD-8fhvx5fJAKde4",
+      "path": "images/ds-agro/bungalow/ds-agro-bungalow-exterior.webp",
+      "marketingSlots": [
+        "stay.roomCards.2-bhk-villa"
+      ],
+      "galleryCategories": [
+        "bungalow"
+      ],
+      "roomAlbumSlots": [
+        "bungalow.cover"
+      ],
+      "bytes": 537708,
+      "sha256": "f373160c32c845113140fc2daecae8b25594e3a052fbd12d42bd90f5222e3acf",
+      "dimensions": [
+        2200,
+        1467
+      ],
+      "variants": [
+        {
+          "path": "images/ds-agro/bungalow/ds-agro-bungalow-exterior-640.webp",
+          "dimensions": [
+            640,
+            427
+          ]
+        },
+        {
+          "path": "images/ds-agro/bungalow/ds-agro-bungalow-exterior-1200.webp",
+          "dimensions": [
+            1200,
+            800
+          ]
+        }
+      ],
+      "sourceUrl": "https://drive.google.com/file/d/1SafolvWumkAjyqyjGD-8fhvx5fJAKde4/view",
+      "usage": "active"
+    },
+    {
+      "source": "DSC02948.JPG",
+      "driveId": "1auW6zOYZVmJSxprKkNd2U3cRcHwMiq37",
+      "path": "images/ds-agro/bungalow/ds-agro-bungalow-garden-bedroom.webp",
+      "marketingSlots": [],
+      "galleryCategories": [
+        "bungalow"
+      ],
+      "roomAlbumSlots": [
+        "bungalow.gallery.3"
+      ],
+      "bytes": 163572,
+      "sha256": "3da7172a8b7ee1ff8c99d57f6241b5c1441c8290383656a26db810e3e0a4284b",
+      "dimensions": [
+        2200,
+        1467
+      ],
+      "variants": [
+        {
+          "path": "images/ds-agro/bungalow/ds-agro-bungalow-garden-bedroom-640.webp",
+          "dimensions": [
+            640,
+            427
+          ]
+        },
+        {
+          "path": "images/ds-agro/bungalow/ds-agro-bungalow-garden-bedroom-1200.webp",
+          "dimensions": [
+            1200,
+            800
+          ]
+        }
+      ],
+      "sourceUrl": "https://drive.google.com/file/d/1auW6zOYZVmJSxprKkNd2U3cRcHwMiq37/view",
+      "usage": "active"
+    },
+    {
+      "source": "DSC02945.JPG",
+      "driveId": "1MjR5bC0bAg-2HQCfWaIq96vu3RIVCycl",
+      "path": "images/ds-agro/bungalow/ds-agro-bungalow-king-bedroom.webp",
+      "marketingSlots": [],
+      "galleryCategories": [
+        "bungalow"
+      ],
+      "roomAlbumSlots": [
+        "bungalow.gallery.2"
+      ],
+      "bytes": 107396,
+      "sha256": "9a482cdfddc5a411fd76a7a450d2c80de8de5c2605cdd41d96c05750b33f5588",
+      "dimensions": [
+        2200,
+        1467
+      ],
+      "variants": [
+        {
+          "path": "images/ds-agro/bungalow/ds-agro-bungalow-king-bedroom-640.webp",
+          "dimensions": [
+            640,
+            427
+          ]
+        },
+        {
+          "path": "images/ds-agro/bungalow/ds-agro-bungalow-king-bedroom-1200.webp",
+          "dimensions": [
+            1200,
+            800
+          ]
+        }
+      ],
+      "sourceUrl": "https://drive.google.com/file/d/1MjR5bC0bAg-2HQCfWaIq96vu3RIVCycl/view",
+      "usage": "active"
+    },
+    {
+      "source": "DSC02951.JPG",
+      "driveId": "1P91glvdDxeNbD8HVjaHawiFSVrlobTtJ",
+      "path": "images/ds-agro/bungalow/ds-agro-bungalow-kitchenette.webp",
+      "marketingSlots": [],
+      "galleryCategories": [
+        "bungalow"
+      ],
+      "roomAlbumSlots": [
+        "bungalow.gallery.4"
+      ],
+      "bytes": 112308,
+      "sha256": "d48494bd295a8026fdc44ed56391bf14fd19e973e3f243e3955174b3bae64a28",
+      "dimensions": [
+        2200,
+        1467
+      ],
+      "variants": [
+        {
+          "path": "images/ds-agro/bungalow/ds-agro-bungalow-kitchenette-640.webp",
+          "dimensions": [
+            640,
+            427
+          ]
+        },
+        {
+          "path": "images/ds-agro/bungalow/ds-agro-bungalow-kitchenette-1200.webp",
+          "dimensions": [
+            1200,
+            800
+          ]
+        }
+      ],
+      "sourceUrl": "https://drive.google.com/file/d/1P91glvdDxeNbD8HVjaHawiFSVrlobTtJ/view",
+      "usage": "active"
+    },
+    {
+      "source": "DSC02939.JPG",
+      "driveId": "15L4gBBUQmjxDnyd08rt1SkgV6PltFhrv",
+      "path": "images/ds-agro/bungalow/ds-agro-bungalow-living-overview.webp",
+      "marketingSlots": [],
+      "galleryCategories": [
+        "bungalow"
+      ],
+      "roomAlbumSlots": [
+        "bungalow.gallery.1"
+      ],
+      "bytes": 239798,
+      "sha256": "d2d87f0dcad8bbcc4c8ad57853b34a821b5790a86110701472606111d2f6f3e7",
+      "dimensions": [
+        2200,
+        1467
+      ],
+      "variants": [
+        {
+          "path": "images/ds-agro/bungalow/ds-agro-bungalow-living-overview-640.webp",
+          "dimensions": [
+            640,
+            427
+          ]
+        },
+        {
+          "path": "images/ds-agro/bungalow/ds-agro-bungalow-living-overview-1200.webp",
+          "dimensions": [
+            1200,
+            800
+          ]
+        }
+      ],
+      "sourceUrl": "https://drive.google.com/file/d/15L4gBBUQmjxDnyd08rt1SkgV6PltFhrv/view",
+      "usage": "active"
+    },
+    {
+      "source": "DSC02934.JPG",
+      "driveId": "1S-_alkxG7g9tZcwKDXlJB3fgCVgei-xR",
+      "path": "images/ds-agro/bungalow/ds-agro-bungalow-living-wide.webp",
+      "marketingSlots": [],
+      "galleryCategories": [
+        "bungalow"
+      ],
+      "roomAlbumSlots": [
+        "bungalow.gallery.0"
+      ],
+      "bytes": 197798,
+      "sha256": "2445d1bad2fce96591cb3b62e03ffa1a1f1f6c6b811b20235c78c9270b6d9834",
+      "dimensions": [
+        2200,
+        1467
+      ],
+      "variants": [
+        {
+          "path": "images/ds-agro/bungalow/ds-agro-bungalow-living-wide-640.webp",
+          "dimensions": [
+            640,
+            427
+          ]
+        },
+        {
+          "path": "images/ds-agro/bungalow/ds-agro-bungalow-living-wide-1200.webp",
+          "dimensions": [
+            1200,
+            800
+          ]
+        }
+      ],
+      "sourceUrl": "https://drive.google.com/file/d/1S-_alkxG7g9tZcwKDXlJB3fgCVgei-xR/view",
+      "usage": "active"
+    },
+    {
+      "source": "DSC02952.JPG",
+      "driveId": "16AAAlGWE3xHvnwoGvkjmkne5w4h0Lvpl",
+      "path": "images/ds-agro/bungalow/ds-agro-bungalow-lounge.webp",
+      "marketingSlots": [
+        "stay.visualStory.1"
+      ],
+      "galleryCategories": [
+        "bungalow"
+      ],
+      "roomAlbumSlots": [
+        "bungalow.gallery.5"
+      ],
+      "bytes": 210296,
+      "sha256": "ab3c1fb8e595660c0e4f915ff193db77c05c6938ffa2b8e42da2dfae4e491e65",
+      "dimensions": [
+        2200,
+        1467
+      ],
+      "variants": [
+        {
+          "path": "images/ds-agro/bungalow/ds-agro-bungalow-lounge-640.webp",
+          "dimensions": [
+            640,
+            427
+          ]
+        },
+        {
+          "path": "images/ds-agro/bungalow/ds-agro-bungalow-lounge-1200.webp",
+          "dimensions": [
+            1200,
+            800
+          ]
+        }
+      ],
+      "sourceUrl": "https://drive.google.com/file/d/16AAAlGWE3xHvnwoGvkjmkne5w4h0Lvpl/view",
+      "usage": "active"
+    },
+    {
+      "source": "DSC02956.JPG",
+      "driveId": "1lSxTtVBG2q2Q2Kf-ahqqaWCHWAqMvEW0",
+      "path": "images/ds-agro/bungalow/ds-agro-bungalow-veranda.webp",
+      "marketingSlots": [],
+      "galleryCategories": [
+        "bungalow"
+      ],
+      "roomAlbumSlots": [
+        "bungalow.gallery.6"
+      ],
+      "bytes": 296414,
+      "sha256": "71af784d3ecbd2f6b72850fb9900b4f9c85498afec638692a0dc853d4b553ea0",
+      "dimensions": [
+        2200,
+        1467
+      ],
+      "variants": [
+        {
+          "path": "images/ds-agro/bungalow/ds-agro-bungalow-veranda-640.webp",
+          "dimensions": [
+            640,
+            427
+          ]
+        },
+        {
+          "path": "images/ds-agro/bungalow/ds-agro-bungalow-veranda-1200.webp",
+          "dimensions": [
+            1200,
+            800
+          ]
+        }
+      ],
+      "sourceUrl": "https://drive.google.com/file/d/1lSxTtVBG2q2Q2Kf-ahqqaWCHWAqMvEW0/view",
+      "usage": "active"
+    },
+    {
+      "source": "DSC03045.JPG",
+      "driveId": "12mrQ5Vtcb8qpobcpMXaeY0jmaaCbROVv",
+      "path": "images/ds-agro/deluxe/ds-agro-deluxe-king-room-angle.webp",
+      "marketingSlots": [],
+      "galleryCategories": [
+        "deluxe"
+      ],
+      "roomAlbumSlots": [
+        "deluxe.gallery.0"
+      ],
+      "bytes": 234074,
+      "sha256": "4c934c03b10113e56a96db11d9ff36b29464f4459d2c1cb42f931dc10a820260",
+      "dimensions": [
+        2200,
+        1467
+      ],
+      "variants": [
+        {
+          "path": "images/ds-agro/deluxe/ds-agro-deluxe-king-room-angle-640.webp",
+          "dimensions": [
+            640,
+            427
+          ]
+        },
+        {
+          "path": "images/ds-agro/deluxe/ds-agro-deluxe-king-room-angle-1200.webp",
+          "dimensions": [
+            1200,
+            800
+          ]
+        }
+      ],
+      "sourceUrl": "https://drive.google.com/file/d/12mrQ5Vtcb8qpobcpMXaeY0jmaaCbROVv/view",
+      "usage": "active"
+    },
+    {
+      "source": "DSC03048.JPG",
+      "driveId": "1puGh7aZsYW4H-DBw1xO1Vt_hH0MOSztX",
+      "path": "images/ds-agro/deluxe/ds-agro-deluxe-king-room-front.webp",
+      "marketingSlots": [],
+      "galleryCategories": [
+        "deluxe"
+      ],
+      "roomAlbumSlots": [
+        "deluxe.gallery.1"
+      ],
+      "bytes": 180444,
+      "sha256": "0fb1715326e74e61481122073f96de9499cbe9689f9b3ab746831be9ddc8d3c2",
+      "dimensions": [
+        2200,
+        1467
+      ],
+      "variants": [
+        {
+          "path": "images/ds-agro/deluxe/ds-agro-deluxe-king-room-front-640.webp",
+          "dimensions": [
+            640,
+            427
+          ]
+        },
+        {
+          "path": "images/ds-agro/deluxe/ds-agro-deluxe-king-room-front-1200.webp",
+          "dimensions": [
+            1200,
+            800
+          ]
+        }
+      ],
+      "sourceUrl": "https://drive.google.com/file/d/1puGh7aZsYW4H-DBw1xO1Vt_hH0MOSztX/view",
+      "usage": "active"
+    },
+    {
+      "source": "DSC03066.JPG",
+      "driveId": "13EwWDeYhWXAMJ5aaIjw68QBYo3pgA8RI",
+      "path": "images/ds-agro/deluxe/ds-agro-deluxe-room-complete.webp",
+      "marketingSlots": [
+        "stay.visualStory.0"
+      ],
+      "galleryCategories": [
+        "deluxe"
+      ],
+      "roomAlbumSlots": [
+        "deluxe.gallery.6"
+      ],
+      "bytes": 147514,
+      "sha256": "bc2629a961b6f7cd1581e5f4933bd103cd79dd4c1aa9583c0acacaf50688fa20",
+      "dimensions": [
+        2200,
+        1467
+      ],
+      "variants": [
+        {
+          "path": "images/ds-agro/deluxe/ds-agro-deluxe-room-complete-640.webp",
+          "dimensions": [
+            640,
+            427
+          ]
+        },
+        {
+          "path": "images/ds-agro/deluxe/ds-agro-deluxe-room-complete-1200.webp",
+          "dimensions": [
+            1200,
+            800
+          ]
+        }
+      ],
+      "sourceUrl": "https://drive.google.com/file/d/13EwWDeYhWXAMJ5aaIjw68QBYo3pgA8RI/view",
+      "usage": "active"
+    },
+    {
+      "source": "DSC03041.JPG",
+      "driveId": "1gzk5o5qaLt5_f4xb46J_-zA32lcrQW_0",
+      "path": "images/ds-agro/deluxe/ds-agro-deluxe-room-cover.webp",
+      "marketingSlots": [
+        "stay.roomCards.deluxe-room"
+      ],
+      "galleryCategories": [
+        "deluxe"
+      ],
+      "roomAlbumSlots": [
+        "deluxe.cover"
+      ],
+      "bytes": 249936,
+      "sha256": "72b662c4ec276c0076be1c319954393112157ab88d879c1cdb6e9ee60dc7a1e1",
+      "dimensions": [
+        2200,
+        1467
+      ],
+      "variants": [
+        {
+          "path": "images/ds-agro/deluxe/ds-agro-deluxe-room-cover-640.webp",
+          "dimensions": [
+            640,
+            427
+          ]
+        },
+        {
+          "path": "images/ds-agro/deluxe/ds-agro-deluxe-room-cover-1200.webp",
+          "dimensions": [
+            1200,
+            800
+          ]
+        }
+      ],
+      "sourceUrl": "https://drive.google.com/file/d/1gzk5o5qaLt5_f4xb46J_-zA32lcrQW_0/view",
+      "usage": "active"
+    },
+    {
+      "source": "DSC03050.JPG",
+      "driveId": "1KYbXfn3-SSSNiOvu7NBriVU1kkX46xCs",
+      "path": "images/ds-agro/deluxe/ds-agro-deluxe-room-storage.webp",
+      "marketingSlots": [],
+      "galleryCategories": [
+        "deluxe"
+      ],
+      "roomAlbumSlots": [
+        "deluxe.gallery.2"
+      ],
+      "bytes": 165076,
+      "sha256": "c4157dbddc7d1c00f6aa7bef6ef90c064ec3bb28e7b1954cce32ee9661676061",
+      "dimensions": [
+        2200,
+        1467
+      ],
+      "variants": [
+        {
+          "path": "images/ds-agro/deluxe/ds-agro-deluxe-room-storage-640.webp",
+          "dimensions": [
+            640,
+            427
+          ]
+        },
+        {
+          "path": "images/ds-agro/deluxe/ds-agro-deluxe-room-storage-1200.webp",
+          "dimensions": [
+            1200,
+            800
+          ]
+        }
+      ],
+      "sourceUrl": "https://drive.google.com/file/d/1KYbXfn3-SSSNiOvu7NBriVU1kkX46xCs/view",
+      "usage": "active"
+    },
+    {
+      "source": "DSC03064.JPG",
+      "driveId": "1PjXfLl8AsQkqNw00kG6Ypc_eW_zX5W8S",
+      "path": "images/ds-agro/deluxe/ds-agro-deluxe-room-window.webp",
+      "marketingSlots": [],
+      "galleryCategories": [
+        "deluxe"
+      ],
+      "roomAlbumSlots": [
+        "deluxe.gallery.5"
+      ],
+      "bytes": 187340,
+      "sha256": "28c950a14e5368fc31170790f9ce67f8d284ac0cc4fc4fb5daf4c059bfab895f",
+      "dimensions": [
+        2200,
+        1467
+      ],
+      "variants": [
+        {
+          "path": "images/ds-agro/deluxe/ds-agro-deluxe-room-window-640.webp",
+          "dimensions": [
+            640,
+            427
+          ]
+        },
+        {
+          "path": "images/ds-agro/deluxe/ds-agro-deluxe-room-window-1200.webp",
+          "dimensions": [
+            1200,
+            800
+          ]
+        }
+      ],
+      "sourceUrl": "https://drive.google.com/file/d/1PjXfLl8AsQkqNw00kG6Ypc_eW_zX5W8S/view",
+      "usage": "active"
+    },
+    {
+      "source": "DSC03052.JPG",
+      "driveId": "1rHb0Yo2Xwz1wFfYuYsqyl5FR5bUUtZSG",
+      "path": "images/ds-agro/deluxe/ds-agro-deluxe-twin-room-angle.webp",
+      "marketingSlots": [],
+      "galleryCategories": [
+        "deluxe"
+      ],
+      "roomAlbumSlots": [
+        "deluxe.gallery.3"
+      ],
+      "bytes": 152230,
+      "sha256": "e5142f585b1f98c4d72ae1bd38b33a6365575b6f5e1d497b9fd7b18ffd2e0bbe",
+      "dimensions": [
+        2200,
+        1467
+      ],
+      "variants": [
+        {
+          "path": "images/ds-agro/deluxe/ds-agro-deluxe-twin-room-angle-640.webp",
+          "dimensions": [
+            640,
+            427
+          ]
+        },
+        {
+          "path": "images/ds-agro/deluxe/ds-agro-deluxe-twin-room-angle-1200.webp",
+          "dimensions": [
+            1200,
+            800
+          ]
+        }
+      ],
+      "sourceUrl": "https://drive.google.com/file/d/1rHb0Yo2Xwz1wFfYuYsqyl5FR5bUUtZSG/view",
+      "usage": "active"
+    },
+    {
+      "source": "DSC03068.JPG",
+      "driveId": "1obdkbWlmXWVS0B7D9VPVdjgFXi1Ucwzu",
+      "path": "images/ds-agro/deluxe/ds-agro-deluxe-twin-room-entry.webp",
+      "marketingSlots": [],
+      "galleryCategories": [
+        "deluxe"
+      ],
+      "roomAlbumSlots": [
+        "deluxe.gallery.7"
+      ],
+      "bytes": 141314,
+      "sha256": "d32c0ab819d40f4edf38957a74dc181ab1d0208df6458e398614aa9135063bfb",
+      "dimensions": [
+        2200,
+        1467
+      ],
+      "variants": [
+        {
+          "path": "images/ds-agro/deluxe/ds-agro-deluxe-twin-room-entry-640.webp",
+          "dimensions": [
+            640,
+            427
+          ]
+        },
+        {
+          "path": "images/ds-agro/deluxe/ds-agro-deluxe-twin-room-entry-1200.webp",
+          "dimensions": [
+            1200,
+            800
+          ]
+        }
+      ],
+      "sourceUrl": "https://drive.google.com/file/d/1obdkbWlmXWVS0B7D9VPVdjgFXi1Ucwzu/view",
+      "usage": "active"
+    },
+    {
+      "source": "DSC03070.JPG",
+      "driveId": "1vPugkiVvAFop9oJxJr9U3ZWVoCPMxWH5",
+      "path": "images/ds-agro/deluxe/ds-agro-deluxe-twin-room-storage.webp",
+      "marketingSlots": [],
+      "galleryCategories": [
+        "deluxe"
+      ],
+      "roomAlbumSlots": [
+        "deluxe.gallery.8"
+      ],
+      "bytes": 158446,
+      "sha256": "08b43e2bb00a5fa1d38969079124d28360bd978e76aec3b2f107be9c14f33821",
+      "dimensions": [
+        2200,
+        1467
+      ],
+      "variants": [
+        {
+          "path": "images/ds-agro/deluxe/ds-agro-deluxe-twin-room-storage-640.webp",
+          "dimensions": [
+            640,
+            427
+          ]
+        },
+        {
+          "path": "images/ds-agro/deluxe/ds-agro-deluxe-twin-room-storage-1200.webp",
+          "dimensions": [
+            1200,
+            800
+          ]
+        }
+      ],
+      "sourceUrl": "https://drive.google.com/file/d/1vPugkiVvAFop9oJxJr9U3ZWVoCPMxWH5/view",
+      "usage": "active"
+    },
+    {
+      "source": "DSC03055.JPG",
+      "driveId": "16AUFb02wcE-a6Qhp9ucTw-HacEfKYwxm",
+      "path": "images/ds-agro/deluxe/ds-agro-deluxe-twin-room-wide.webp",
+      "marketingSlots": [],
+      "galleryCategories": [
+        "deluxe"
+      ],
+      "roomAlbumSlots": [
+        "deluxe.gallery.4"
+      ],
+      "bytes": 179600,
+      "sha256": "324ba565505ea75c2c191def8654b3c3eeee306f51e0569721a2049e8f73835b",
+      "dimensions": [
+        2200,
+        1467
+      ],
+      "variants": [
+        {
+          "path": "images/ds-agro/deluxe/ds-agro-deluxe-twin-room-wide-640.webp",
+          "dimensions": [
+            640,
+            427
+          ]
+        },
+        {
+          "path": "images/ds-agro/deluxe/ds-agro-deluxe-twin-room-wide-1200.webp",
+          "dimensions": [
+            1200,
+            800
+          ]
+        }
+      ],
+      "sourceUrl": "https://drive.google.com/file/d/16AUFb02wcE-a6Qhp9ucTw-HacEfKYwxm/view",
+      "usage": "active"
+    },
+    {
+      "source": "DSC03075.JPG",
+      "driveId": "1zmK0zMrqGks2LWQSZcZ5qNu5nAJCXrLy",
+      "path": "images/ds-agro/deluxe/ds-agro-deluxe-twin-room-window.webp",
+      "marketingSlots": [],
+      "galleryCategories": [
+        "deluxe"
+      ],
+      "roomAlbumSlots": [
+        "deluxe.gallery.9"
+      ],
+      "bytes": 214318,
+      "sha256": "50a970b7359d3608bcd1e43fa2b1161804e60cf9084e67c4f34d5d69c71a5dc7",
+      "dimensions": [
+        2200,
+        1467
+      ],
+      "variants": [
+        {
+          "path": "images/ds-agro/deluxe/ds-agro-deluxe-twin-room-window-640.webp",
+          "dimensions": [
+            640,
+            427
+          ]
+        },
+        {
+          "path": "images/ds-agro/deluxe/ds-agro-deluxe-twin-room-window-1200.webp",
+          "dimensions": [
+            1200,
+            800
+          ]
+        }
+      ],
+      "sourceUrl": "https://drive.google.com/file/d/1zmK0zMrqGks2LWQSZcZ5qNu5nAJCXrLy/view",
+      "usage": "active"
+    },
+    {
+      "source": "DSC02963.JPG",
+      "driveId": "1m9TfE-wTfRZqGgC0OCziQfVVfDwUkfnk",
+      "path": "images/ds-agro/premium/ds-agro-premium-bathroom.webp",
+      "marketingSlots": [],
+      "galleryCategories": [
+        "premium"
+      ],
+      "roomAlbumSlots": [
+        "premium.gallery.1"
+      ],
+      "bytes": 144684,
+      "sha256": "8e7e76b95917d14b2b4346eb770e9159d2b94ad89c27ec4e3ec263787d5591e7",
+      "dimensions": [
+        2200,
+        1467
+      ],
+      "variants": [
+        {
+          "path": "images/ds-agro/premium/ds-agro-premium-bathroom-640.webp",
+          "dimensions": [
+            640,
+            427
+          ]
+        },
+        {
+          "path": "images/ds-agro/premium/ds-agro-premium-bathroom-1200.webp",
+          "dimensions": [
+            1200,
+            800
+          ]
+        }
+      ],
+      "sourceUrl": "https://drive.google.com/file/d/1m9TfE-wTfRZqGgC0OCziQfVVfDwUkfnk/view",
+      "usage": "active"
+    },
+    {
+      "source": "DSC02961.JPG",
+      "driveId": "12G8MN416lSYK7FeCNdTd0jV0PTWJegLL",
+      "path": "images/ds-agro/premium/ds-agro-premium-bed-detail.webp",
+      "marketingSlots": [],
+      "galleryCategories": [
+        "premium"
+      ],
+      "roomAlbumSlots": [
+        "premium.gallery.0"
+      ],
+      "bytes": 149258,
+      "sha256": "382d67463dd36bd81ec61648e3a222ee26f92fe0cdecde251d1b21794a8bb7c7",
+      "dimensions": [
+        2200,
+        1467
+      ],
+      "variants": [
+        {
+          "path": "images/ds-agro/premium/ds-agro-premium-bed-detail-640.webp",
+          "dimensions": [
+            640,
+            427
+          ]
+        },
+        {
+          "path": "images/ds-agro/premium/ds-agro-premium-bed-detail-1200.webp",
+          "dimensions": [
+            1200,
+            800
+          ]
+        }
+      ],
+      "sourceUrl": "https://drive.google.com/file/d/12G8MN416lSYK7FeCNdTd0jV0PTWJegLL/view",
+      "usage": "active"
+    },
+    {
+      "source": "DSC02965.JPG",
+      "driveId": "1kFi2oTUufeRz-NlzopiiRNCr1UltnGha",
+      "path": "images/ds-agro/premium/ds-agro-premium-room-cover.webp",
+      "marketingSlots": [
+        "stay.roomCards.premium-room"
+      ],
+      "galleryCategories": [
+        "premium"
+      ],
+      "roomAlbumSlots": [
+        "premium.cover"
+      ],
+      "bytes": 285710,
+      "sha256": "18ecd07dadda11632c4f80560883b143e73f10cba5e7040aa5562c137bb9f053",
+      "dimensions": [
+        2200,
+        1467
+      ],
+      "variants": [
+        {
+          "path": "images/ds-agro/premium/ds-agro-premium-room-cover-640.webp",
+          "dimensions": [
+            640,
+            427
+          ]
+        },
+        {
+          "path": "images/ds-agro/premium/ds-agro-premium-room-cover-1200.webp",
+          "dimensions": [
+            1200,
+            800
+          ]
+        }
+      ],
+      "sourceUrl": "https://drive.google.com/file/d/1kFi2oTUufeRz-NlzopiiRNCr1UltnGha/view",
+      "usage": "active"
+    },
+    {
+      "source": "DSC02969.JPG",
+      "driveId": "1Hn47JT4aSNhCqHsXbnU0oMCDN9IaYZ_2",
+      "path": "images/ds-agro/premium/ds-agro-premium-room-front.webp",
+      "marketingSlots": [
+        "home.experiences.stay"
+      ],
+      "galleryCategories": [
+        "premium"
+      ],
+      "roomAlbumSlots": [
+        "premium.gallery.3"
+      ],
+      "bytes": 301070,
+      "sha256": "b31bf7c46ad5c736fd33ffb8829a88affa30eae18a2fc4f5afc322860427a4ff",
+      "dimensions": [
+        2200,
+        1467
+      ],
+      "variants": [
+        {
+          "path": "images/ds-agro/premium/ds-agro-premium-room-front-640.webp",
+          "dimensions": [
+            640,
+            427
+          ]
+        },
+        {
+          "path": "images/ds-agro/premium/ds-agro-premium-room-front-1200.webp",
+          "dimensions": [
+            1200,
+            800
+          ]
+        }
+      ],
+      "sourceUrl": "https://drive.google.com/file/d/1Hn47JT4aSNhCqHsXbnU0oMCDN9IaYZ_2/view",
+      "usage": "active"
+    },
+    {
+      "source": "DSC02968.JPG",
+      "driveId": "1pGR3abPUbL-ekCiIhME0AYdYL17Cxry9",
+      "path": "images/ds-agro/premium/ds-agro-premium-seating-and-beds.webp",
+      "marketingSlots": [],
+      "galleryCategories": [
+        "premium"
+      ],
+      "roomAlbumSlots": [
+        "premium.gallery.2"
+      ],
+      "bytes": 279478,
+      "sha256": "8219aed44e0a7d6b901414b43a1cc6dc3d60fa8dce4e7f7a775ac5b29d9a94f0",
+      "dimensions": [
+        2200,
+        1467
+      ],
+      "variants": [
+        {
+          "path": "images/ds-agro/premium/ds-agro-premium-seating-and-beds-640.webp",
+          "dimensions": [
+            640,
+            427
+          ]
+        },
+        {
+          "path": "images/ds-agro/premium/ds-agro-premium-seating-and-beds-1200.webp",
+          "dimensions": [
+            1200,
+            800
+          ]
+        }
+      ],
+      "sourceUrl": "https://drive.google.com/file/d/1pGR3abPUbL-ekCiIhME0AYdYL17Cxry9/view",
+      "usage": "active"
+    },
+    {
+      "source": "DSC02970.JPG",
+      "driveId": "1Xko7nY6PQXJzwBcHLiyBb4QZH5icwPY_",
+      "path": "images/ds-agro/premium/ds-agro-premium-seating.webp",
+      "marketingSlots": [
+        "stay.visualStory.2"
+      ],
+      "galleryCategories": [
+        "premium"
+      ],
+      "roomAlbumSlots": [
+        "premium.gallery.4"
+      ],
+      "bytes": 164988,
+      "sha256": "d9b2f7a34f8abd655cacbc296d12253ac54e6880629f7a7156707a211dc232a1",
+      "dimensions": [
+        2200,
+        1467
+      ],
+      "variants": [
+        {
+          "path": "images/ds-agro/premium/ds-agro-premium-seating-640.webp",
+          "dimensions": [
+            640,
+            427
+          ]
+        },
+        {
+          "path": "images/ds-agro/premium/ds-agro-premium-seating-1200.webp",
+          "dimensions": [
+            1200,
+            800
+          ]
+        }
+      ],
+      "sourceUrl": "https://drive.google.com/file/d/1Xko7nY6PQXJzwBcHLiyBb4QZH5icwPY_/view",
+      "usage": "active"
+    },
+    {
+      "source": "DSC02972.JPG",
+      "driveId": "12Tqqbb-YY-OFBnbj8ZezNtxNvWQjnDom",
+      "path": "images/ds-agro/premium/ds-agro-premium-storage.webp",
+      "marketingSlots": [],
+      "galleryCategories": [
+        "premium"
+      ],
+      "roomAlbumSlots": [
+        "premium.gallery.5"
+      ],
+      "bytes": 165738,
+      "sha256": "bcaff856ead6fbc319c6459aa616bd83e82997185cc7e0e6a95646eb1e56385d",
+      "dimensions": [
+        2200,
+        1467
+      ],
+      "variants": [
+        {
+          "path": "images/ds-agro/premium/ds-agro-premium-storage-640.webp",
+          "dimensions": [
+            640,
+            427
+          ]
+        },
+        {
+          "path": "images/ds-agro/premium/ds-agro-premium-storage-1200.webp",
+          "dimensions": [
+            1200,
+            800
+          ]
+        }
+      ],
+      "sourceUrl": "https://drive.google.com/file/d/12Tqqbb-YY-OFBnbj8ZezNtxNvWQjnDom/view",
+      "usage": "active"
+    },
+    {
+      "source": "DSC03040.JPG",
+      "driveId": "1C5XTeYDOnbcUY4F6gF1hPj5UvV2coyBX",
+      "path": "images/ds-agro/property/ds-agro-accommodation-exterior.webp",
+      "marketingSlots": [
+        "stay.hero"
+      ],
+      "galleryCategories": [],
+      "roomAlbumSlots": [],
+      "bytes": 534130,
+      "sha256": "9098512e2772eb00089c814e53202acc0c346d1a9388a8790eda1d6b755840fa",
+      "dimensions": [
+        2200,
+        1467
+      ],
+      "variants": [
+        {
+          "path": "images/ds-agro/property/ds-agro-accommodation-exterior-640.webp",
+          "dimensions": [
+            640,
+            427
+          ]
+        },
+        {
+          "path": "images/ds-agro/property/ds-agro-accommodation-exterior-1200.webp",
+          "dimensions": [
+            1200,
+            800
+          ]
+        }
+      ],
+      "sourceUrl": "https://drive.google.com/file/d/1C5XTeYDOnbcUY4F6gF1hPj5UvV2coyBX/view",
+      "usage": "active"
+    },
+    {
+      "source": "IMG_4311.heic",
+      "driveId": "1TN0IqniyJikCdQCXRSiDTVANrdX-9NnU",
+      "path": "images/ds-agro/property/ds-agro-atv.webp",
+      "marketingSlots": [
+        "experiences.visualStory.2"
+      ],
+      "galleryCategories": [
+        "activities-outdoors"
+      ],
+      "roomAlbumSlots": [],
+      "bytes": 988892,
+      "sha256": "7b8dce0b579865bb74c5d2102809a8deae2bee6d5af2d0fde9bc929f7ce01f8e",
+      "dimensions": [
+        1237,
+        2200
+      ],
+      "variants": [
+        {
+          "path": "images/ds-agro/property/ds-agro-atv-640.webp",
+          "dimensions": [
+            360,
+            640
+          ]
+        },
+        {
+          "path": "images/ds-agro/property/ds-agro-atv-1200.webp",
+          "dimensions": [
+            675,
+            1200
+          ]
+        }
+      ],
+      "sourceUrl": "https://drive.google.com/file/d/1TN0IqniyJikCdQCXRSiDTVANrdX-9NnU/view",
+      "usage": "active"
+    },
+    {
+      "source": "DSC03028.JPG",
+      "driveId": "1dOjtIWZJ3st53nHX4FJYGnoQqd3uIEGh",
+      "path": "images/ds-agro/property/ds-agro-banquet-table.webp",
+      "marketingSlots": [
+        "celebrations.visualStory.0"
+      ],
+      "galleryCategories": [
+        "celebrations"
+      ],
+      "roomAlbumSlots": [],
+      "bytes": 517764,
+      "sha256": "e38bf17462abd4ccd6c4e7ad467fac09488e1bcf366ac0af2b3d7ea74bd00a67",
+      "dimensions": [
+        2200,
+        1467
+      ],
+      "variants": [
+        {
+          "path": "images/ds-agro/property/ds-agro-banquet-table-640.webp",
+          "dimensions": [
+            640,
+            427
+          ]
+        },
+        {
+          "path": "images/ds-agro/property/ds-agro-banquet-table-1200.webp",
+          "dimensions": [
+            1200,
+            800
+          ]
+        }
+      ],
+      "sourceUrl": "https://drive.google.com/file/d/1dOjtIWZJ3st53nHX4FJYGnoQqd3uIEGh/view",
+      "usage": "active"
+    },
+    {
+      "source": "DSC03094.JPG",
+      "driveId": "1P9gZKK1OQ9UtrsdNVor9WoToEkPs-rSD",
+      "path": "images/ds-agro/property/ds-agro-dining-service.webp",
+      "marketingSlots": [
+        "dining.visualStory.2"
+      ],
+      "galleryCategories": [
+        "dining"
+      ],
+      "roomAlbumSlots": [],
+      "bytes": 517132,
+      "sha256": "c6e0482465b551cbbd5e214e3aafdec1fba5cde810ca8194116355fcff897aeb",
+      "dimensions": [
+        2200,
+        1467
+      ],
+      "variants": [
+        {
+          "path": "images/ds-agro/property/ds-agro-dining-service-640.webp",
+          "dimensions": [
+            640,
+            427
+          ]
+        },
+        {
+          "path": "images/ds-agro/property/ds-agro-dining-service-1200.webp",
+          "dimensions": [
+            1200,
+            800
+          ]
+        }
+      ],
+      "sourceUrl": "https://drive.google.com/file/d/1P9gZKK1OQ9UtrsdNVor9WoToEkPs-rSD/view",
+      "usage": "active"
+    },
+    {
+      "source": "DSC03081.JPG",
+      "driveId": "1EK2fS6_-_HwKvAMhAu4YggA4IrOyCFeS",
+      "path": "images/ds-agro/property/ds-agro-dining-table-detail.webp",
+      "marketingSlots": [
+        "dining.visualStory.0"
+      ],
+      "galleryCategories": [
+        "dining"
+      ],
+      "roomAlbumSlots": [],
+      "bytes": 219558,
+      "sha256": "a1803603cce414d2861b785de041be758b7994179c0b6e9396cc6f2dcc2cd306",
+      "dimensions": [
+        2200,
+        1467
+      ],
+      "variants": [
+        {
+          "path": "images/ds-agro/property/ds-agro-dining-table-detail-640.webp",
+          "dimensions": [
+            640,
+            427
+          ]
+        },
+        {
+          "path": "images/ds-agro/property/ds-agro-dining-table-detail-1200.webp",
+          "dimensions": [
+            1200,
+            800
+          ]
+        }
+      ],
+      "sourceUrl": "https://drive.google.com/file/d/1EK2fS6_-_HwKvAMhAu4YggA4IrOyCFeS/view",
+      "usage": "active"
+    },
+    {
+      "source": "DSC03033.JPG",
+      "driveId": "16l5cZox3fXW6sVrP1cSY9UwvxU4Ippik",
+      "path": "images/ds-agro/property/ds-agro-dining-terrace.webp",
+      "marketingSlots": [
+        "dining.visualStory.1"
+      ],
+      "galleryCategories": [
+        "dining"
+      ],
+      "roomAlbumSlots": [],
+      "bytes": 503032,
+      "sha256": "60ab1eb26b907538bbae445279cec5015e4c0e8bcba25f591575c61ef43f72be",
+      "dimensions": [
+        2200,
+        1467
+      ],
+      "variants": [
+        {
+          "path": "images/ds-agro/property/ds-agro-dining-terrace-640.webp",
+          "dimensions": [
+            640,
+            427
+          ]
+        },
+        {
+          "path": "images/ds-agro/property/ds-agro-dining-terrace-1200.webp",
+          "dimensions": [
+            1200,
+            800
+          ]
+        }
+      ],
+      "sourceUrl": "https://drive.google.com/file/d/16l5cZox3fXW6sVrP1cSY9UwvxU4Ippik/view",
+      "usage": "active"
+    },
+    {
+      "source": "DSC03090.JPG",
+      "driveId": "1KnQBySLlc0X59ARh_WReeE1xBM0k1xEP",
+      "path": "images/ds-agro/property/ds-agro-evening-seating.webp",
+      "marketingSlots": [
+        "home.dayJourney.evening"
+      ],
+      "galleryCategories": [
+        "dining"
+      ],
+      "roomAlbumSlots": [],
+      "bytes": 462326,
+      "sha256": "76ca041b4bab7b18ccebb1192e8b0481a2d9dab9966bdb331a7292078265d6f6",
+      "dimensions": [
+        2200,
+        1467
+      ],
+      "variants": [
+        {
+          "path": "images/ds-agro/property/ds-agro-evening-seating-640.webp",
+          "dimensions": [
+            640,
+            427
+          ]
+        },
+        {
+          "path": "images/ds-agro/property/ds-agro-evening-seating-1200.webp",
+          "dimensions": [
+            1200,
+            800
+          ]
+        }
+      ],
+      "sourceUrl": "https://drive.google.com/file/d/1KnQBySLlc0X59ARh_WReeE1xBM0k1xEP/view",
+      "usage": "active"
+    },
+    {
+      "source": "DJI_20260807124208_0057_D.MP4",
+      "driveId": "1b15-fV6xBWfHowLETAobM8pYqsHfIGYA",
+      "path": "images/ds-agro/property/ds-agro-garden-arrival.webp",
+      "derivative": "Frame at 1.000 seconds from the original official 4K video",
+      "marketingSlots": [
+        "contact.visualStory.2"
+      ],
+      "galleryCategories": [
+        "nature"
+      ],
+      "roomAlbumSlots": [],
+      "bytes": 833010,
+      "sha256": "e4b5f21a00f381625163d844239d8fa48cd2b8f0e4c4cbe026dd83bf35d500ce",
+      "dimensions": [
+        2200,
+        1238
+      ],
+      "variants": [
+        {
+          "path": "images/ds-agro/property/ds-agro-garden-arrival-640.webp",
+          "dimensions": [
+            640,
+            360
+          ]
+        },
+        {
+          "path": "images/ds-agro/property/ds-agro-garden-arrival-1200.webp",
+          "dimensions": [
+            1200,
+            675
+          ]
+        }
+      ],
+      "sourceUrl": "https://drive.google.com/file/d/1b15-fV6xBWfHowLETAobM8pYqsHfIGYA/view",
+      "usage": "active"
+    },
+    {
+      "source": "DSC02994.JPG",
+      "driveId": "1doCyfmZVg-gSXSTOhR11r-vywl491vEo",
+      "path": "images/ds-agro/property/ds-agro-garden-pavilion.webp",
+      "marketingSlots": [
+        "amenities.visualStory.2"
+      ],
+      "galleryCategories": [
+        "amenities-spaces"
+      ],
+      "roomAlbumSlots": [],
+      "bytes": 686590,
+      "sha256": "f856fa8f83cf51f5324cb3f476d0e041032557d82d1ae58b45b24c8315de6a98",
+      "dimensions": [
+        2200,
+        1467
+      ],
+      "variants": [
+        {
+          "path": "images/ds-agro/property/ds-agro-garden-pavilion-640.webp",
+          "dimensions": [
+            640,
+            427
+          ]
+        },
+        {
+          "path": "images/ds-agro/property/ds-agro-garden-pavilion-1200.webp",
+          "dimensions": [
+            1200,
+            800
+          ]
+        }
+      ],
+      "sourceUrl": "https://drive.google.com/file/d/1doCyfmZVg-gSXSTOhR11r-vywl491vEo/view",
+      "usage": "active"
+    },
+    {
+      "source": "DJI_20260807122807_0038_D.MP4",
+      "driveId": "1bKUaRTRgfysMZk57UmAlC92s7uLyK08o",
+      "path": "images/ds-agro/property/ds-agro-green-estate.webp",
+      "derivative": "Frame at 1.000 seconds from the original official 4K video",
+      "marketingSlots": [
+        "booking.hero"
+      ],
+      "galleryCategories": [],
+      "roomAlbumSlots": [],
+      "bytes": 855550,
+      "sha256": "cbf77f909cc2c5e303d4643aaaab3208675f32e4103050e207eba1a0335d9f97",
+      "dimensions": [
+        2200,
+        1238
+      ],
+      "variants": [
+        {
+          "path": "images/ds-agro/property/ds-agro-green-estate-640.webp",
+          "dimensions": [
+            640,
+            360
+          ]
+        },
+        {
+          "path": "images/ds-agro/property/ds-agro-green-estate-1200.webp",
+          "dimensions": [
+            1200,
+            675
+          ]
+        }
+      ],
+      "sourceUrl": "https://drive.google.com/file/d/1bKUaRTRgfysMZk57UmAlC92s7uLyK08o/view",
+      "usage": "active"
+    },
+    {
+      "source": "DSC03025.JPG",
+      "driveId": "1EU3M7S-LbGkLUyVgk2pbgEeZRADA3wE9",
+      "path": "images/ds-agro/property/ds-agro-gym.webp",
+      "marketingSlots": [
+        "amenities.visualStory.0"
+      ],
+      "galleryCategories": [
+        "amenities-spaces"
+      ],
+      "roomAlbumSlots": [],
+      "bytes": 368900,
+      "sha256": "f5c8ec2dea5075a8d59f8b06db980a500b15ed1fdf768c9ada097778896de398",
+      "dimensions": [
+        2200,
+        1467
+      ],
+      "variants": [
+        {
+          "path": "images/ds-agro/property/ds-agro-gym-640.webp",
+          "dimensions": [
+            640,
+            427
+          ]
+        },
+        {
+          "path": "images/ds-agro/property/ds-agro-gym-1200.webp",
+          "dimensions": [
+            1200,
+            800
+          ]
+        }
+      ],
+      "sourceUrl": "https://drive.google.com/file/d/1EU3M7S-LbGkLUyVgk2pbgEeZRADA3wE9/view",
+      "usage": "active"
+    },
+    {
+      "source": "DSC03088.JPG",
+      "driveId": "1Se7r920R8-0MHVZBcJRb6UMiK5fx-hw_",
+      "path": "images/ds-agro/property/ds-agro-indoor-gathering.webp",
+      "marketingSlots": [
+        "home.gathering"
+      ],
+      "galleryCategories": [
+        "celebrations"
+      ],
+      "roomAlbumSlots": [],
+      "bytes": 402552,
+      "sha256": "4cb4ae956b9d8a6c24e6ff16feb0572a257f4ed2b659d7f6f893de113b37ff5d",
+      "dimensions": [
+        2200,
+        1467
+      ],
+      "variants": [
+        {
+          "path": "images/ds-agro/property/ds-agro-indoor-gathering-640.webp",
+          "dimensions": [
+            640,
+            427
+          ]
+        },
+        {
+          "path": "images/ds-agro/property/ds-agro-indoor-gathering-1200.webp",
+          "dimensions": [
+            1200,
+            800
+          ]
+        }
+      ],
+      "sourceUrl": "https://drive.google.com/file/d/1Se7r920R8-0MHVZBcJRb6UMiK5fx-hw_/view",
+      "usage": "active"
+    },
+    {
+      "source": "DSC03096.JPG",
+      "driveId": "1tmEJ-TrJC03angxggyH0kSElaBjxT9nS",
+      "path": "images/ds-agro/property/ds-agro-intimate-dining.webp",
+      "marketingSlots": [
+        "celebrations.visualStory.1"
+      ],
+      "galleryCategories": [
+        "celebrations"
+      ],
+      "roomAlbumSlots": [],
+      "bytes": 579508,
+      "sha256": "272af33b09413f2b88d9b5b8a3d667e07b56b45189266bd4cde1f641409dbbd6",
+      "dimensions": [
+        2200,
+        1467
+      ],
+      "variants": [
+        {
+          "path": "images/ds-agro/property/ds-agro-intimate-dining-640.webp",
+          "dimensions": [
+            640,
+            427
+          ]
+        },
+        {
+          "path": "images/ds-agro/property/ds-agro-intimate-dining-1200.webp",
+          "dimensions": [
+            1200,
+            800
+          ]
+        }
+      ],
+      "sourceUrl": "https://drive.google.com/file/d/1tmEJ-TrJC03angxggyH0kSElaBjxT9nS/view",
+      "usage": "active"
+    },
+    {
+      "source": "DSC03017.JPG",
+      "driveId": "1MBU6iSyYGYFLobRmpgHwOKR-zYNRwcHn",
+      "path": "images/ds-agro/property/ds-agro-main-pool.webp",
+      "marketingSlots": [
+        "amenities.hero"
+      ],
+      "galleryCategories": [
+        "amenities-spaces"
+      ],
+      "roomAlbumSlots": [],
+      "bytes": 346408,
+      "sha256": "4db984e83d3a264e3fbdaa8cb90f19c2dc9ec06446837a8f4936f0f85b67bace",
+      "dimensions": [
+        2200,
+        1467
+      ],
+      "variants": [
+        {
+          "path": "images/ds-agro/property/ds-agro-main-pool-640.webp",
+          "dimensions": [
+            640,
+            427
+          ]
+        },
+        {
+          "path": "images/ds-agro/property/ds-agro-main-pool-1200.webp",
+          "dimensions": [
+            1200,
+            800
+          ]
+        }
+      ],
+      "sourceUrl": "https://drive.google.com/file/d/1MBU6iSyYGYFLobRmpgHwOKR-zYNRwcHn/view",
+      "usage": "active"
+    },
+    {
+      "source": "DJI_20260807124241_0058_D.MP4",
+      "driveId": "1RJPMxzsjerLAvFEc9b4E7ZoXnbrgvRfM",
+      "path": "images/ds-agro/property/ds-agro-palm-canopy.webp",
+      "derivative": "Frame at 1.000 seconds from the original official 4K video",
+      "marketingSlots": [
+        "home.dayJourney.morning"
+      ],
+      "galleryCategories": [
+        "nature"
+      ],
+      "roomAlbumSlots": [],
+      "bytes": 821768,
+      "sha256": "8c854acb72774d981ddf22f7214c1c3f6d1c073d3cd2736e1ba157b0ced06a60",
+      "dimensions": [
+        2200,
+        1238
+      ],
+      "variants": [
+        {
+          "path": "images/ds-agro/property/ds-agro-palm-canopy-640.webp",
+          "dimensions": [
+            640,
+            360
+          ]
+        },
+        {
+          "path": "images/ds-agro/property/ds-agro-palm-canopy-1200.webp",
+          "dimensions": [
+            1200,
+            675
+          ]
+        }
+      ],
+      "sourceUrl": "https://drive.google.com/file/d/1RJPMxzsjerLAvFEc9b4E7ZoXnbrgvRfM/view",
+      "usage": "active"
+    },
+    {
+      "source": "DSC03009.JPG",
+      "driveId": "14O6NK0nIr-3EDUj7z-aa-oOfSouolMrm",
+      "path": "images/ds-agro/property/ds-agro-pool-deck.webp",
+      "marketingSlots": [
+        "amenities.visualStory.1"
+      ],
+      "galleryCategories": [
+        "amenities-spaces"
+      ],
+      "roomAlbumSlots": [],
+      "bytes": 453100,
+      "sha256": "ce3064cb667db2eba113308f39171019f7bcf8932aadca964ad696f1baaa702b",
+      "dimensions": [
+        2200,
+        1467
+      ],
+      "variants": [
+        {
+          "path": "images/ds-agro/property/ds-agro-pool-deck-640.webp",
+          "dimensions": [
+            640,
+            427
+          ]
+        },
+        {
+          "path": "images/ds-agro/property/ds-agro-pool-deck-1200.webp",
+          "dimensions": [
+            1200,
+            800
+          ]
+        }
+      ],
+      "sourceUrl": "https://drive.google.com/file/d/14O6NK0nIr-3EDUj7z-aa-oOfSouolMrm/view",
+      "usage": "active"
+    },
+    {
+      "source": "DSC03037.JPG",
+      "driveId": "1Wq3iNYptZ7Loa5ouvhXglZD6msFH3qYb",
+      "path": "images/ds-agro/property/ds-agro-pool-garden-overview.webp",
+      "marketingSlots": [
+        "dayOuting.visualStory.0"
+      ],
+      "galleryCategories": [],
+      "roomAlbumSlots": [],
+      "bytes": 410172,
+      "sha256": "845bf746dc6d96ff8baba623da88af0e317436036ce7f4fb1ef944eb78768342",
+      "dimensions": [
+        2200,
+        1467
+      ],
+      "variants": [
+        {
+          "path": "images/ds-agro/property/ds-agro-pool-garden-overview-640.webp",
+          "dimensions": [
+            640,
+            427
+          ]
+        },
+        {
+          "path": "images/ds-agro/property/ds-agro-pool-garden-overview-1200.webp",
+          "dimensions": [
+            1200,
+            800
+          ]
+        }
+      ],
+      "sourceUrl": "https://drive.google.com/file/d/1Wq3iNYptZ7Loa5ouvhXglZD6msFH3qYb/view",
+      "usage": "active"
+    },
+    {
+      "source": "DSC03015.JPG",
+      "driveId": "1iddt7gdNmVB_AsHPn1W7k6GRWQUMaY92",
+      "path": "images/ds-agro/property/ds-agro-pool-lounger.webp",
+      "marketingSlots": [
+        "dayOuting.visualStory.2"
+      ],
+      "galleryCategories": [],
+      "roomAlbumSlots": [],
+      "bytes": 471184,
+      "sha256": "8532895795581db6730d33ea861ac2aeb0c46acd1756712dd55042850eda2ae5",
+      "dimensions": [
+        2200,
+        1467
+      ],
+      "variants": [
+        {
+          "path": "images/ds-agro/property/ds-agro-pool-lounger-640.webp",
+          "dimensions": [
+            640,
+            427
+          ]
+        },
+        {
+          "path": "images/ds-agro/property/ds-agro-pool-lounger-1200.webp",
+          "dimensions": [
+            1200,
+            800
+          ]
+        }
+      ],
+      "sourceUrl": "https://drive.google.com/file/d/1iddt7gdNmVB_AsHPn1W7k6GRWQUMaY92/view",
+      "usage": "active"
+    },
+    {
+      "source": "DSC03006.JPG",
+      "driveId": "1iqiMAocNBOe5QzYX_UdrtJWwn4JfSfNF",
+      "path": "images/ds-agro/property/ds-agro-pool-water.webp",
+      "marketingSlots": [
+        "home.experiences.pool"
+      ],
+      "galleryCategories": [],
+      "roomAlbumSlots": [],
+      "bytes": 300556,
+      "sha256": "d82f25148f3a61f13aa7dd67797786ce33f87633ec233c62e9dae8dd70b4b30d",
+      "dimensions": [
+        2200,
+        1467
+      ],
+      "variants": [
+        {
+          "path": "images/ds-agro/property/ds-agro-pool-water-640.webp",
+          "dimensions": [
+            640,
+            427
+          ]
+        },
+        {
+          "path": "images/ds-agro/property/ds-agro-pool-water-1200.webp",
+          "dimensions": [
+            1200,
+            800
+          ]
+        }
+      ],
+      "sourceUrl": "https://drive.google.com/file/d/1iqiMAocNBOe5QzYX_UdrtJWwn4JfSfNF/view",
+      "usage": "active"
+    },
+    {
+      "source": "DSC03077.JPG",
+      "driveId": "1T8_cEq_Q24V1xcF1pWLjSRySFOKO9glX",
+      "path": "images/ds-agro/property/ds-agro-restaurant.webp",
+      "marketingSlots": [
+        "dining.hero"
+      ],
+      "galleryCategories": [
+        "dining"
+      ],
+      "roomAlbumSlots": [],
+      "bytes": 590692,
+      "sha256": "c97c03f124d70e4471c06386928b8b8f648bb267500cc837d1c7da436e2b6e22",
+      "dimensions": [
+        2200,
+        1467
+      ],
+      "variants": [
+        {
+          "path": "images/ds-agro/property/ds-agro-restaurant-640.webp",
+          "dimensions": [
+            640,
+            427
+          ]
+        },
+        {
+          "path": "images/ds-agro/property/ds-agro-restaurant-1200.webp",
+          "dimensions": [
+            1200,
+            800
+          ]
+        }
+      ],
+      "sourceUrl": "https://drive.google.com/file/d/1T8_cEq_Q24V1xcF1pWLjSRySFOKO9glX/view",
+      "usage": "active"
+    },
+    {
+      "source": "DJI_20260807123911_0050_D.MP4",
+      "driveId": "13xnRgPFs11REUtihCOaZtiagrncI_eAa",
+      "path": "images/ds-agro/property/ds-agro-turf-and-pond.webp",
+      "derivative": "Official Drive video preview still, not a DSLR original",
+      "marketingSlots": [
+        "home.experiences.groups"
+      ],
+      "galleryCategories": [],
+      "roomAlbumSlots": [],
+      "bytes": 674026,
+      "sha256": "a9d10d70ab6e1c26cf9ef0b056c3472119e858e356498cc433a301dfac09f279",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "variants": [
+        {
+          "path": "images/ds-agro/property/ds-agro-turf-and-pond-640.webp",
+          "dimensions": [
+            640,
+            360
+          ]
+        },
+        {
+          "path": "images/ds-agro/property/ds-agro-turf-and-pond-1200.webp",
+          "dimensions": [
+            1200,
+            675
+          ]
+        }
+      ],
+      "sourceUrl": "https://drive.google.com/file/d/13xnRgPFs11REUtihCOaZtiagrncI_eAa/view",
+      "usage": "active"
+    },
+    {
+      "source": "DSC02998.JPG",
+      "driveId": "1gIqzVZ-mfdhdK2RwbcQPeLxtIwCsUhHB",
+      "path": "images/ds-agro/super-deluxe/ds-agro-super-deluxe-bathroom.webp",
+      "marketingSlots": [],
+      "galleryCategories": [
+        "super-deluxe"
+      ],
+      "roomAlbumSlots": [
+        "superDeluxe.gallery.0"
+      ],
+      "bytes": 164318,
+      "sha256": "3b826a7fbde4fdc99912a984118cfa90b0c0a0d61a4cfcce795f2c7e63a0362d",
+      "dimensions": [
+        2200,
+        1467
+      ],
+      "variants": [
+        {
+          "path": "images/ds-agro/super-deluxe/ds-agro-super-deluxe-bathroom-640.webp",
+          "dimensions": [
+            640,
+            427
+          ]
+        },
+        {
+          "path": "images/ds-agro/super-deluxe/ds-agro-super-deluxe-bathroom-1200.webp",
+          "dimensions": [
+            1200,
+            800
+          ]
+        }
+      ],
+      "sourceUrl": "https://drive.google.com/file/d/1gIqzVZ-mfdhdK2RwbcQPeLxtIwCsUhHB/view",
+      "usage": "active"
+    },
+    {
+      "source": "DSC03002.JPG",
+      "driveId": "1DYqf1MDsENkPDT2Os2ObA8S-qAK17zKT",
+      "path": "images/ds-agro/super-deluxe/ds-agro-super-deluxe-room-angle.webp",
+      "marketingSlots": [],
+      "galleryCategories": [],
+      "roomAlbumSlots": [],
+      "bytes": 94482,
+      "sha256": "2c7f077a30c12afc6e23d083517b433dc1eb941d6ea294452b5bdbdcdf82e599",
+      "dimensions": [
+        2200,
+        1467
+      ],
+      "variants": [
+        {
+          "path": "images/ds-agro/super-deluxe/ds-agro-super-deluxe-room-angle-640.webp",
+          "dimensions": [
+            640,
+            427
+          ]
+        },
+        {
+          "path": "images/ds-agro/super-deluxe/ds-agro-super-deluxe-room-angle-1200.webp",
+          "dimensions": [
+            1200,
+            800
+          ]
+        }
+      ],
+      "sourceUrl": "https://drive.google.com/file/d/1DYqf1MDsENkPDT2Os2ObA8S-qAK17zKT/view",
+      "usage": "retained-not-displayed"
+    },
+    {
+      "source": "DSC03001.JPG",
+      "driveId": "1bzWjLP4IJ0HHcXIsQrJv7kLaV8p652Bt",
+      "path": "images/ds-agro/super-deluxe/ds-agro-super-deluxe-room-cover.webp",
+      "marketingSlots": [
+        "stay.roomCards.super-deluxe-room"
+      ],
+      "galleryCategories": [
+        "super-deluxe"
+      ],
+      "roomAlbumSlots": [
+        "superDeluxe.cover"
+      ],
+      "bytes": 92316,
+      "sha256": "4b2591942ed3a16030de3538bdf95e8fce6b8a3f2fb98a6d46ae59d37b77b0d5",
+      "dimensions": [
+        2200,
+        1467
+      ],
+      "variants": [
+        {
+          "path": "images/ds-agro/super-deluxe/ds-agro-super-deluxe-room-cover-640.webp",
+          "dimensions": [
+            640,
+            427
+          ]
+        },
+        {
+          "path": "images/ds-agro/super-deluxe/ds-agro-super-deluxe-room-cover-1200.webp",
+          "dimensions": [
+            1200,
+            800
+          ]
+        }
+      ],
+      "sourceUrl": "https://drive.google.com/file/d/1bzWjLP4IJ0HHcXIsQrJv7kLaV8p652Bt/view",
+      "usage": "active"
+    },
+    {
+      "source": "DSC03004.JPG",
+      "driveId": "1PvxnQVWrFJx7ZgtjQ9Kj5B6jSbYGZs4H",
+      "path": "images/ds-agro/super-deluxe/ds-agro-super-deluxe-room-wide.webp",
+      "marketingSlots": [],
+      "galleryCategories": [
+        "super-deluxe"
+      ],
+      "roomAlbumSlots": [
+        "superDeluxe.gallery.1"
+      ],
+      "bytes": 104344,
+      "sha256": "a45fb613ee8bbbe94dc6e26f7dec6bc821899f513d89f9617e1865b8db89995a",
+      "dimensions": [
+        2200,
+        1467
+      ],
+      "variants": [
+        {
+          "path": "images/ds-agro/super-deluxe/ds-agro-super-deluxe-room-wide-640.webp",
+          "dimensions": [
+            640,
+            427
+          ]
+        },
+        {
+          "path": "images/ds-agro/super-deluxe/ds-agro-super-deluxe-room-wide-1200.webp",
+          "dimensions": [
+            1200,
+            800
+          ]
+        }
+      ],
+      "sourceUrl": "https://drive.google.com/file/d/1PvxnQVWrFJx7ZgtjQ9Kj5B6jSbYGZs4H/view",
+      "usage": "active"
+    },
+    {
+      "path": "resort/aerial.webp",
+      "source": null,
+      "provenance": "Retained official resort asset from the previous release; original camera filename not recorded.",
+      "marketingSlots": [
+        "contact.hero"
+      ],
+      "galleryCategories": [
+        "resort-views"
+      ],
+      "roomAlbumSlots": [],
+      "bytes": 332530,
+      "sha256": "3fe8fe26c1e8b5e9cf2a67ba6884ed38a6527a6417393fb7818ea96513823426",
+      "dimensions": [
+        1200,
+        900
+      ],
+      "variants": [
+        {
+          "path": "resort/aerial-640.webp",
+          "dimensions": [
+            640,
+            480
+          ]
+        },
+        {
+          "path": "resort/aerial-1200.webp",
+          "dimensions": [
+            1200,
+            900
+          ]
+        }
+      ],
+      "usage": "active"
+    },
+    {
+      "path": "resort/country-aerial.webp",
+      "source": null,
+      "provenance": "Retained official resort asset from the previous release; original camera filename not recorded.",
+      "marketingSlots": [
+        "contact.visualStory.0"
+      ],
+      "galleryCategories": [
+        "resort-views"
+      ],
+      "roomAlbumSlots": [],
+      "bytes": 180564,
+      "sha256": "80ac8a976cd84140068a14ab808c32fa3f60c1da62a7f6f8ca95a84014bbeb7d",
+      "dimensions": [
+        1200,
+        900
+      ],
+      "variants": [
+        {
+          "path": "resort/country-aerial-640.webp",
+          "dimensions": [
+            640,
+            480
+          ]
+        },
+        {
+          "path": "resort/country-aerial-1200.webp",
+          "dimensions": [
+            1200,
+            900
+          ]
+        }
+      ],
+      "usage": "active"
+    },
+    {
+      "path": "resort/estate-aerial.webp",
+      "source": null,
+      "provenance": "Retained official resort asset from the previous release; original camera filename not recorded.",
+      "marketingSlots": [
+        "gallery.hero"
+      ],
+      "galleryCategories": [],
+      "roomAlbumSlots": [],
+      "adminSlots": [
+        "admin.login.branding"
+      ],
+      "bytes": 309630,
+      "sha256": "fe52d48c907750d0f6c58a55a0794a47659b96516c4b8f640afe21e842c74598",
+      "dimensions": [
+        1200,
+        900
+      ],
+      "variants": [
+        {
+          "path": "resort/estate-aerial-640.webp",
+          "dimensions": [
+            640,
+            480
+          ]
+        },
+        {
+          "path": "resort/estate-aerial-1200.webp",
+          "dimensions": [
+            1200,
+            900
+          ]
+        }
+      ],
+      "usage": "active"
+    },
+    {
+      "path": "resort/farm-fields.webp",
+      "source": null,
+      "provenance": "Retained official resort asset from the previous release; original camera filename not recorded.",
+      "marketingSlots": [
+        "terms.hero"
+      ],
+      "galleryCategories": [
+        "resort-views"
+      ],
+      "roomAlbumSlots": [],
+      "bytes": 114564,
+      "sha256": "cd5e36551a7b76a24275d5d6efaeb95851a7a81a23956022b578afabb9f173e1",
+      "dimensions": [
+        1200,
+        900
+      ],
+      "variants": [
+        {
+          "path": "resort/farm-fields-640.webp",
+          "dimensions": [
+            640,
+            480
+          ]
+        },
+        {
+          "path": "resort/farm-fields-1200.webp",
+          "dimensions": [
+            1200,
+            900
+          ]
+        }
+      ],
+      "usage": "active"
+    },
+    {
+      "path": "resort/horse-action.webp",
+      "source": null,
+      "provenance": "Retained official resort asset from the previous release; original camera filename not recorded.",
+      "marketingSlots": [
+        "experiences.visualStory.0"
+      ],
+      "galleryCategories": [
+        "activities-outdoors"
+      ],
+      "roomAlbumSlots": [],
+      "bytes": 291254,
+      "sha256": "900f2d9bcf5d1d20da2dcc7f56d2e44f634479f95d980e9d7534515db6e1db0c",
+      "dimensions": [
+        1350,
+        900
+      ],
+      "variants": [
+        {
+          "path": "resort/horse-action-640.webp",
+          "dimensions": [
+            640,
+            427
+          ]
+        },
+        {
+          "path": "resort/horse-action-1200.webp",
+          "dimensions": [
+            1200,
+            800
+          ]
+        }
+      ],
+      "usage": "active"
+    },
+    {
+      "path": "resort/horse-arena-aerial.webp",
+      "source": null,
+      "provenance": "Retained official resort asset from the previous release; original camera filename not recorded.",
+      "marketingSlots": [
+        "experiences.hero"
+      ],
+      "galleryCategories": [
+        "activities-outdoors"
+      ],
+      "roomAlbumSlots": [],
+      "bytes": 377904,
+      "sha256": "782c2dcbdcb416f6fab9bc549f53976b381954e67edfdaea6d870897c710cb12",
+      "dimensions": [
+        1200,
+        900
+      ],
+      "variants": [
+        {
+          "path": "resort/horse-arena-aerial-640.webp",
+          "dimensions": [
+            640,
+            480
+          ]
+        },
+        {
+          "path": "resort/horse-arena-aerial-1200.webp",
+          "dimensions": [
+            1200,
+            900
+          ]
+        }
+      ],
+      "usage": "active"
+    },
+    {
+      "path": "resort/horse-portrait.webp",
+      "source": null,
+      "provenance": "Retained official resort asset from the previous release; original camera filename not recorded.",
+      "marketingSlots": [
+        "dayOuting.visualStory.1"
+      ],
+      "galleryCategories": [
+        "activities-outdoors"
+      ],
+      "roomAlbumSlots": [],
+      "bytes": 325056,
+      "sha256": "a683ce04ea8677fc1150623c2ecd4e5e37be5295d7f0b9b5f5b1aa74547749e4",
+      "dimensions": [
+        1350,
+        900
+      ],
+      "variants": [
+        {
+          "path": "resort/horse-portrait-640.webp",
+          "dimensions": [
+            640,
+            427
+          ]
+        },
+        {
+          "path": "resort/horse-portrait-1200.webp",
+          "dimensions": [
+            1200,
+            800
+          ]
+        }
+      ],
+      "usage": "active"
+    },
+    {
+      "path": "resort/horse-riding.webp",
+      "source": null,
+      "provenance": "Retained official resort asset from the previous release; original camera filename not recorded.",
+      "marketingSlots": [
+        "home.experiences.activities"
+      ],
+      "galleryCategories": [
+        "activities-outdoors"
+      ],
+      "roomAlbumSlots": [],
+      "bytes": 444192,
+      "sha256": "3a52eab86708a601d2c06df2caad42ff5ded594ab90a69eebbc83f116ee82e5a",
+      "dimensions": [
+        1800,
+        1200
+      ],
+      "variants": [
+        {
+          "path": "resort/horse-riding-640.webp",
+          "dimensions": [
+            640,
+            427
+          ]
+        },
+        {
+          "path": "resort/horse-riding-1200.webp",
+          "dimensions": [
+            1200,
+            800
+          ]
+        }
+      ],
+      "usage": "active"
+    },
+    {
+      "path": "resort/pool-lawn.webp",
+      "source": null,
+      "provenance": "Retained official resort asset from the previous release; original camera filename not recorded.",
+      "marketingSlots": [],
+      "galleryCategories": [
+        "amenities-spaces"
+      ],
+      "roomAlbumSlots": [],
+      "bytes": 352132,
+      "sha256": "e9dc51aa4d39a1cd087e61434ac706294ce325a3fe3ab56a5736e09c91518e97",
+      "dimensions": [
+        1200,
+        900
+      ],
+      "variants": [
+        {
+          "path": "resort/pool-lawn-640.webp",
+          "dimensions": [
+            640,
+            480
+          ]
+        },
+        {
+          "path": "resort/pool-lawn-1200.webp",
+          "dimensions": [
+            1200,
+            900
+          ]
+        }
+      ],
+      "usage": "active"
+    },
+    {
+      "path": "resort/resort-aerial-three.webp",
+      "source": null,
+      "provenance": "Retained official resort asset from the previous release; original camera filename not recorded.",
+      "marketingSlots": [],
+      "galleryCategories": [
+        "resort-views"
+      ],
+      "roomAlbumSlots": [],
+      "fallbackSlots": [
+        "hero.poster",
+        "hero.loading",
+        "hero.reducedMotion",
+        "hero.saveData",
+        "hero.error"
+      ],
+      "bytes": 334966,
+      "sha256": "4e753b32b3ae7eb1d6c2ad89064a104e57859ee7e35767f9fbe49bc24e2a0545",
+      "dimensions": [
+        1200,
+        900
+      ],
+      "variants": [
+        {
+          "path": "resort/resort-aerial-three-640.webp",
+          "dimensions": [
+            640,
+            480
+          ]
+        },
+        {
+          "path": "resort/resort-aerial-three-1200.webp",
+          "dimensions": [
+            1200,
+            900
+          ]
+        }
+      ],
+      "usage": "active"
+    },
+    {
+      "path": "resort/resort-aerial-two.webp",
+      "source": null,
+      "provenance": "Retained official resort asset from the previous release; original camera filename not recorded.",
+      "marketingSlots": [
+        "celebrations.hero"
+      ],
+      "galleryCategories": [
+        "resort-views"
+      ],
+      "roomAlbumSlots": [],
+      "bytes": 334024,
+      "sha256": "16363cd1efa26f849dffd4492f6c41f7b26370a7aeebcc42694e56e225a7aed8",
+      "dimensions": [
+        1200,
+        900
+      ],
+      "variants": [
+        {
+          "path": "resort/resort-aerial-two-640.webp",
+          "dimensions": [
+            640,
+            480
+          ]
+        },
+        {
+          "path": "resort/resort-aerial-two-1200.webp",
+          "dimensions": [
+            1200,
+            900
+          ]
+        }
+      ],
+      "usage": "active"
+    },
+    {
+      "path": "resort/resort-wide.webp",
+      "source": null,
+      "provenance": "Retained official resort asset from the previous release; original camera filename not recorded.",
+      "marketingSlots": [
+        "contact.visualStory.1"
+      ],
+      "galleryCategories": [],
+      "roomAlbumSlots": [],
+      "bytes": 272946,
+      "sha256": "3f152cb87e334c4b440f067e26ae7adebe9553d86bcad8337e01154b0c4e1e22",
+      "dimensions": [
+        1200,
+        900
+      ],
+      "variants": [
+        {
+          "path": "resort/resort-wide-640.webp",
+          "dimensions": [
+            640,
+            480
+          ]
+        },
+        {
+          "path": "resort/resort-wide-1200.webp",
+          "dimensions": [
+            1200,
+            900
+          ]
+        }
+      ],
+      "usage": "active"
+    },
+    {
+      "path": "resort/turf-aerial.webp",
+      "source": null,
+      "provenance": "Retained official resort asset from the previous release; original camera filename not recorded.",
+      "marketingSlots": [
+        "dayOuting.hero"
+      ],
+      "galleryCategories": [
+        "amenities-spaces"
+      ],
+      "roomAlbumSlots": [],
+      "bytes": 277942,
+      "sha256": "ac4f30c2e3434b5ef3794020cd674f92b9d7561b2e23a0603bd255657d540a81",
+      "dimensions": [
+        1200,
+        900
+      ],
+      "variants": [
+        {
+          "path": "resort/turf-aerial-640.webp",
+          "dimensions": [
+            640,
+            480
+          ]
+        },
+        {
+          "path": "resort/turf-aerial-1200.webp",
+          "dimensions": [
+            1200,
+            900
+          ]
+        }
+      ],
+      "usage": "active"
+    },
+    {
+      "path": "resort/turf-close.webp",
+      "source": null,
+      "provenance": "Retained official resort asset from the previous release; original camera filename not recorded.",
+      "marketingSlots": [
+        "experiences.visualStory.1"
+      ],
+      "galleryCategories": [
+        "activities-outdoors"
+      ],
+      "roomAlbumSlots": [],
+      "bytes": 387072,
+      "sha256": "16527eb58cf5d2c9c1af7c03a5ce164baea0bd87beae85ffc2b1acd6aa11eced",
+      "dimensions": [
+        1200,
+        900
+      ],
+      "variants": [
+        {
+          "path": "resort/turf-close-640.webp",
+          "dimensions": [
+            640,
+            480
+          ]
+        },
+        {
+          "path": "resort/turf-close-1200.webp",
+          "dimensions": [
+            1200,
+            900
+          ]
+        }
+      ],
+      "usage": "active"
+    },
+    {
+      "path": "resort/turf-top.webp",
+      "source": null,
+      "provenance": "Retained official resort asset from the previous release; original camera filename not recorded.",
+      "marketingSlots": [
+        "home.dayJourney.afternoon"
+      ],
+      "galleryCategories": [
+        "activities-outdoors"
+      ],
+      "roomAlbumSlots": [],
+      "bytes": 355282,
+      "sha256": "3da6646296cdeff28208bb6c3177348817b6b2d081e7fd8f9c9aa803d83c487b",
+      "dimensions": [
+        1200,
+        900
+      ],
+      "variants": [
+        {
+          "path": "resort/turf-top-640.webp",
+          "dimensions": [
+            640,
+            480
+          ]
+        },
+        {
+          "path": "resort/turf-top-1200.webp",
+          "dimensions": [
+            1200,
+            900
+          ]
+        }
+      ],
+      "usage": "active"
+    }
+  ],
+  "videos": [
+    {
+      "path": "video/ds-agro-hero.mp4",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "durationSeconds": 12.4,
+      "fps": 30,
+      "codec": "H.264 MP4",
+      "audio": false,
+      "bytes": 8177398,
+      "sources": [
+        {
+          "source": "DJI_20260807131702_0080_D.MP4",
+          "driveId": "1RCwGDEc_xGIrT2VwUiceESYSoQayxhI8",
+          "description": "Official DS Agro property orbit",
+          "sourceDimensions": [
+            3840,
+            2160
+          ],
+          "sourceFps": 60
+        },
+        {
+          "source": "DJI_20260807131142_0073_D.MP4",
+          "driveId": "13kfHSzC44CNa9wgLktxAxh5mwaPL0vY-",
+          "description": "Official DS Agro pool glide",
+          "sourceDimensions": [
+            3840,
+            2160
+          ],
+          "sourceFps": 60
+        }
+      ],
+      "poster": "resort/resort-aerial-three.webp"
+    },
+    {
+      "path": "video/ds-agro-hero-mobile.mp4",
+      "dimensions": [
+        720,
+        720
+      ],
+      "durationSeconds": 12.4,
+      "fps": 30,
+      "codec": "H.264 MP4",
+      "audio": false,
+      "bytes": 2618698,
+      "sources": [
+        {
+          "source": "DJI_20260807131702_0080_D.MP4",
+          "driveId": "1RCwGDEc_xGIrT2VwUiceESYSoQayxhI8",
+          "description": "Official DS Agro property orbit",
+          "sourceDimensions": [
+            3840,
+            2160
+          ],
+          "sourceFps": 60
+        },
+        {
+          "source": "DJI_20260807131142_0073_D.MP4",
+          "driveId": "13kfHSzC44CNa9wgLktxAxh5mwaPL0vY-",
+          "description": "Official DS Agro pool glide",
+          "sourceDimensions": [
+            3840,
+            2160
+          ],
+          "sourceFps": 60
+        }
+      ],
+      "poster": "resort/resort-aerial-three.webp"
+    }
+  ]
+}

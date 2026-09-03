@@ -16,12 +16,13 @@ test("exports the finished resort homepage", async () => {
   assert.match(html, /Escape the city\./);
   assert.match(html, /Check availability/);
   assert.doesNotMatch(html, /pexels|unsplash/i);
-  assert.match(html, /resort\/resort-wide\.webp/);
-  assert.match(html, /resort\/turf-aerial\.webp/);
-  assert.match(html, /resort\/dining-area\.webp/);
-  assert.match(html, /ds-agro-super-deluxe-room-cover\.webp/);
-  assert.match(html, /resort\/country-aerial\.webp/);
-  assert.match(html, /resort\/pool-lawn\.webp/);
+  assert.match(html, /<video/);
+  assert.match(html, /resort\/resort-aerial-three\.webp/);
+  assert.match(html, /resort\/turf-top\.webp/);
+  assert.match(html, /ds-agro-evening-seating\.webp/);
+  assert.match(html, /ds-agro-premium-room-front\.webp/);
+  assert.match(html, /ds-agro-palm-canopy\.webp/);
+  assert.match(html, /ds-agro-indoor-gathering\.webp/);
   assert.equal(uniqueResortImages(html).size, 6, "homepage should render six different initial property photographs");
   assert.match(html, />Rooms</);
   assert.match(html, />Amenities</);
@@ -80,12 +81,13 @@ test("uses different hero and content photos across detailed pages", async () =>
     renderedHtml("day-outing/index.html"),
   ]);
 
-  assert.match(amenities, /resort\/pool-lawn\.webp/);
-  assert.match(amenities, /ds-agro-bungalow-lounge\.webp/);
+  assert.match(amenities, /ds-agro-main-pool\.webp/);
+  assert.match(amenities, /ds-agro-gym\.webp/);
+  assert.doesNotMatch(amenities, /ds-agro-bungalow-lounge\.webp/);
   assert.match(activities, /resort\/horse-arena-aerial\.webp/);
   assert.match(activities, /resort\/turf-close\.webp/);
-  assert.match(outing, /resort\/country-aerial\.webp/);
-  assert.match(outing, /resort\/pool-lawn\.webp/);
+  assert.match(outing, /ds-agro-pool-garden-overview\.webp/);
+  assert.match(outing, /ds-agro-pool-lounger\.webp/);
   assert.equal(uniqueResortImages(amenities).size, 4);
   assert.equal(uniqueResortImages(activities).size, 4);
   assert.equal(uniqueResortImages(outing).size, 4);
@@ -100,8 +102,10 @@ test("exports a categorized gallery with every photograph used once", async () =
   assert.match(gallery, /Deluxe Rooms/);
   assert.match(gallery, /Activities &amp; Outdoors/);
   assert.match(gallery, /Amenities &amp; Shared Spaces/);
-  assert.equal((gallery.match(/class="gallery-category-card"/g) ?? []).length, 33);
-  assert.equal(uniqueResortImages(gallery).size, 34, "gallery hero and all 33 gallery photos should be different");
+  assert.match(gallery, /Premium Rooms/);
+  assert.match(gallery, /Nature &amp; Gardens/);
+  assert.equal((gallery.match(/class="gallery-category-card"/g) ?? []).length, 57);
+  assert.equal(uniqueResortImages(gallery).size, 58, "gallery hero and all 57 gallery photos should be different");
   assert.match(gallery, /ds-agro-bungalow-living-wide\.webp/);
   assert.match(gallery, /ds-agro-super-deluxe-bathroom\.webp/);
   assert.match(gallery, /resort\/horse-portrait\.webp/);
