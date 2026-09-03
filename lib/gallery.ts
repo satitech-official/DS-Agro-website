@@ -1,5 +1,4 @@
-import { galleryCategories, type GalleryCategory } from "../data/site";
-import { appHref } from "./supabase";
+import { galleryCategories, resolveMediaUrl, type GalleryCategory } from "../data/site";
 
 export type GalleryRecord = {
   id: string;
@@ -17,27 +16,54 @@ export type GalleryRecord = {
 
 export const galleryRecordSelect = "id,title,category,image_url,thumbnail_url,media_type,description,featured,display_order,status,created_at";
 
-export const galleryCategoryOptions = galleryCategories.map((category) => ({
+export const galleryCategoryOptions = [...galleryCategories.map((category) => ({
   id: category.id,
   title: category.title,
-}));
+})), { id: "rooms-stays", title: "Rooms & Stays (legacy)" }];
 
 export function galleryCategoryLabel(categoryId: string) {
   return galleryCategoryOptions.find((category) => category.id === categoryId)?.title ?? categoryId;
 }
 
 export function resolveGalleryImageUrl(value: string) {
-  const trimmed = value.trim();
-  if (/^(https?:|data:|blob:)/i.test(trimmed)) return trimmed;
-  return appHref(`/${trimmed.replace(/^\/+/, "")}`);
+  return resolveMediaUrl(value.trim());
 }
+
+// Reviewed duplicates and wrongly labelled legacy photographs. Keep files/rows
+// recoverable, but do not continue presenting these as verified room categories.
+export const retiredGalleryFiles = new Set([
+  "resort-wide.webp", "deluxe-room.webp", "premium-room.webp", "premium-room-alt.webp",
+  "room-white.webp", "room-white-alt.webp", "suite-living.webp", "dormitory.webp",
+  "dormitory-wide.webp", "dormitory-lounge.webp", "villa-exterior.webp", "villa-living.webp",
+  "bathroom.webp", "lounge.webp", "horse-track.webp", "dining-area.webp", "villa-garden-exterior.webp",
+]);
+
+export function isRetiredGalleryImage(value: string) {
+  const path = value.replace(process.env.NEXT_PUBLIC_BASE_PATH ?? "", "").replace(/^\//, "");
+  return path.startsWith("resort/") && retiredGalleryFiles.has(path.slice(7));
+}
+
+export const officialGalleryRows = galleryCategories.flatMap((category, categoryIndex) =>
+  category.images.map((photo, index) => ({
+    title: photo.label, category: category.id,
+    image_url: photo.image.replace(process.env.NEXT_PUBLIC_BASE_PATH ?? "", "").replace(/^\//, ""),
+    media_type: "image" as const, description: photo.copy, featured: false,
+    display_order: (categoryIndex + 1) * 100 + index * 10, status: "Published" as const,
+  })),
+);
 
 export function recordsToGalleryCategories(records: GalleryRecord[]): GalleryCategory[] {
   const grouped = new Map<string, GalleryRecord[]>();
+  const seen = new Set<string>();
   records
-    .filter((record) => record.media_type === "image" && record.status === "Published")
+    .filter((record) => record.media_type === "image" && record.status === "Published" && !isRetiredGalleryImage(record.image_url))
     .sort((a, b) => a.display_order - b.display_order || a.created_at.localeCompare(b.created_at))
-    .forEach((record) => grouped.set(record.category, [...(grouped.get(record.category) ?? []), record]));
+    .forEach((record) => {
+      const url = resolveGalleryImageUrl(record.image_url);
+      if (seen.has(url)) return;
+      seen.add(url);
+      grouped.set(record.category, [...(grouped.get(record.category) ?? []), record]);
+    });
 
   const knownOrder = new Map(galleryCategoryOptions.map((category, index) => [category.id, index]));
   return [...grouped.entries()]

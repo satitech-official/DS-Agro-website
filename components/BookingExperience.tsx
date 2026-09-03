@@ -1,7 +1,8 @@
 "use client";
 
 import { FormEvent, useEffect, useMemo, useState } from "react";
-import { contact } from "../data/site";
+import { contact, resolveRoomCover, resortImages } from "../data/site";
+import { ResortPhoto } from "./ResortPhoto";
 import { appHref, getSupabaseClient } from "../lib/supabase";
 import { Footer, GlobalMotion, Header } from "./HomeExperience";
 
@@ -57,10 +58,8 @@ function money(value: number | null) {
   return value == null ? "Rate on request" : new Intl.NumberFormat("en-IN", { style: "currency", currency: "INR", maximumFractionDigits: 0 }).format(value);
 }
 
-function roomImage(image: string | null) {
-  if (!image) return `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/resort/resort-wide.webp`;
-  if (image.startsWith("/")) return `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${image}`;
-  return image;
+function roomImage(room: Availability) {
+  return resolveRoomCover(room.slug, room.cover_image);
 }
 
 export function BookingExperience() {
@@ -223,7 +222,7 @@ export function BookingExperience() {
   return <>
     <GlobalMotion /><Header currentPath="/booking" />
     <main className="booking-page page-enter">
-      <section className="booking-hero" style={{ backgroundImage: `linear-gradient(90deg,#0b2419e8,#0b24195f),url("${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/resort/resort-wide.webp")` }}>
+      <section className="booking-hero" style={{ backgroundImage: `linear-gradient(90deg,#0b2419e8,#0b24195f),url("${resortImages.aerial}")` }}>
         <div><p className="eyebrow light">Direct resort inquiry</p><h1>Plan your<br /><em>perfect escape.</em></h1><p>Choose your dates and room using live resort inventory. Your request remains an inquiry until the DS Agro team confirms it.</p></div>
         <a href={appHref("/stay")}>View room details <span>↗</span></a>
       </section>
@@ -251,7 +250,7 @@ export function BookingExperience() {
           </div></div>}
 
           {step === 2 && <div className="booking-stage"><p className="eyebrow">03 · Live room availability</p><h2>Select an available stay.</h2><p className="booking-intro">Inventory shown below is calculated for {form.checkIn} to {form.checkOut}. Prices are starting rates and the resort confirms the final payable amount.</p><div className="room-choice-grid">{availability.map((room) => <button type="button" disabled={!room.is_available} className={`${form.roomId === room.room_id ? "selected" : ""} ${!room.is_available ? "unavailable" : ""}`} onClick={() => update("roomId", room.room_id)} key={room.room_id}>
-            <span className="room-choice-image" style={{ backgroundImage: `linear-gradient(0deg,rgba(10,31,21,.6),transparent),url("${roomImage(room.cover_image)}")` }}><small>{room.is_available ? `${room.available_units} unit${room.available_units === 1 ? "" : "s"} available` : "Unavailable for selected dates"}</small></span>
+            <span className="room-choice-image"><ResortPhoto src={roomImage(room)} alt={`${room.name} at DS Agro Tourism & Resort`} sizes="(max-width: 900px) 90vw, 30vw" /><small>{room.is_available ? `${room.available_units} unit${room.available_units === 1 ? "" : "s"} available` : "Unavailable for selected dates"}</small></span>
             <span className="room-choice-copy"><strong>{room.name}</strong><small>{room.bed_type || room.category} · up to {room.max_guests ?? "—"} guests</small><b>{money(room.base_price)} <i>/ weekday</i></b></span>
           </button>)}</div>{availability.length === 0 && <div className="empty-state">No active room inventory is available for these dates. Change the dates or contact the resort.</div>}</div>}
 

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import type { Page } from "../data/site";
+import { ResortPhoto } from "./ResortPhoto";
 
 export function InnerPageVisuals({ page }: { page: Page }) {
   const [active, setActive] = useState(0);
@@ -24,7 +25,7 @@ export function InnerPageVisuals({ page }: { page: Page }) {
         aria-label={`${visual.label}: ${visual.copy}`}
         key={visual.image}
       >
-        <span className="visual-photo" style={{ backgroundImage: `linear-gradient(0deg,rgba(8,29,19,.72),transparent 60%),url("${visual.image}")` }} />
+        <span className="visual-photo"><ResortPhoto src={visual.image} alt={`${visual.label}. ${visual.copy}`} /></span>
         <span className="visual-index">{String(index + 1).padStart(2, "0")}</span>
         <span className="visual-label">{visual.label}</span>
       </button>)}

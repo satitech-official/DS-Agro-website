@@ -3,10 +3,10 @@ import {
   amenities,
   dayOutingIncludes,
   dayOutingRates,
-  roomInventory,
   stayRates,
   terms,
 } from "../data/site";
+import { StayRoomCards } from "./StayRoomCards";
 
 function SectionHeading({ eyebrow, title, copy }: { eyebrow: string; title: string; copy: string }) {
   return <div className="details-heading">
@@ -23,11 +23,7 @@ function StayDetails() {
       title="Rooms and current inventory"
       copy="Room counts and tariffs below follow the supplied DS Agro Tourism & Resort rate card and accommodation update."
     />
-    <div className="room-inventory" id="room-details-title">
-      {roomInventory.map((room, index) => <article className="detail-card" key={room.name}>
-        <span>0{index + 1}</span><h3>{room.name}</h3><strong>{room.count}</strong><p>{room.detail}</p>
-      </article>)}
-    </div>
+    <StayRoomCards />
     <div className="tariff-block">
       <div className="tariff-heading"><div><p className="eyebrow">Farm stay</p><h3>Rates and inclusions</h3></div><p>CP includes breakfast. MAP includes breakfast and dinner.</p></div>
       <div className="tariff-table-wrap">

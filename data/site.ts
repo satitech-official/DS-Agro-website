@@ -4,28 +4,99 @@ function resortImage(name: string) {
   return `${basePath}/resort/${name}`;
 }
 
+function officialStayImage(category: string, name: string) {
+  return `${basePath}/images/ds-agro/${category}/${name}`;
+}
+
+export const accommodationMedia = {
+  bungalow: {
+    cover: officialStayImage("bungalow", "ds-agro-bungalow-exterior.webp"),
+    gallery: [
+      officialStayImage("bungalow", "ds-agro-bungalow-living-wide.webp"),
+      officialStayImage("bungalow", "ds-agro-bungalow-living-overview.webp"),
+      officialStayImage("bungalow", "ds-agro-bungalow-king-bedroom.webp"),
+      officialStayImage("bungalow", "ds-agro-bungalow-garden-bedroom.webp"),
+      officialStayImage("bungalow", "ds-agro-bungalow-kitchenette.webp"),
+      officialStayImage("bungalow", "ds-agro-bungalow-lounge.webp"),
+      officialStayImage("bungalow", "ds-agro-bungalow-veranda.webp"),
+    ],
+  },
+  superDeluxe: {
+    cover: officialStayImage("super-deluxe", "ds-agro-super-deluxe-room-cover.webp"),
+    gallery: [
+      officialStayImage("super-deluxe", "ds-agro-super-deluxe-bathroom.webp"),
+      officialStayImage("super-deluxe", "ds-agro-super-deluxe-room-angle.webp"),
+      officialStayImage("super-deluxe", "ds-agro-super-deluxe-room-wide.webp"),
+    ],
+  },
+  deluxe: {
+    cover: officialStayImage("deluxe", "ds-agro-deluxe-room-cover.webp"),
+    gallery: [
+      officialStayImage("deluxe", "ds-agro-deluxe-king-room-angle.webp"),
+      officialStayImage("deluxe", "ds-agro-deluxe-king-room-front.webp"),
+      officialStayImage("deluxe", "ds-agro-deluxe-room-storage.webp"),
+      officialStayImage("deluxe", "ds-agro-deluxe-twin-room-angle.webp"),
+      officialStayImage("deluxe", "ds-agro-deluxe-twin-room-wide.webp"),
+      officialStayImage("deluxe", "ds-agro-deluxe-room-window.webp"),
+      officialStayImage("deluxe", "ds-agro-deluxe-room-complete.webp"),
+      officialStayImage("deluxe", "ds-agro-deluxe-twin-room-entry.webp"),
+      officialStayImage("deluxe", "ds-agro-deluxe-twin-room-storage.webp"),
+      officialStayImage("deluxe", "ds-agro-deluxe-twin-room-window.webp"),
+    ],
+  },
+} as const;
+
+export const roomCoverBySlug: Record<string, string> = {
+  "deluxe-room": accommodationMedia.deluxe.cover,
+  "super-deluxe-room": accommodationMedia.superDeluxe.cover,
+  "2-bhk-villa": accommodationMedia.bungalow.cover,
+};
+
+export const roomCategoryBySlug: Record<string, string> = {
+  "deluxe-room": "deluxe", "super-deluxe-room": "super-deluxe", "2-bhk-villa": "bungalow",
+};
+
+const legacyRoomCovers = new Set([
+  "deluxe-room.webp", "room-white.webp", "premium-room.webp",
+  "dormitory.webp", "dormitory-wide.webp", "villa-exterior.webp",
+]);
+
+export function resolveMediaUrl(value: string) {
+  if (/^(https?:|blob:)/i.test(value)) return value;
+  const path = "/" + value.replace(/^\/+/, "");
+  return basePath && (path === basePath || path.startsWith(basePath + "/")) ? path : basePath + path;
+}
+
+// Replace only known seed photos. An administrator's custom cover always wins.
+// An empty string deliberately clears a cover; null means no cover configured yet.
+export function resolveRoomCover(slug: string, current?: string | null): string | null {
+  if (current === "") return null;
+  if (current) {
+    const path = current.replace(basePath + "/resort/", "/resort/");
+    const legacy = path.match(/^\/?resort\/([^/]+)$/);
+    if (!legacy || !legacyRoomCovers.has(legacy[1])) return resolveMediaUrl(current);
+  }
+  return roomCoverBySlug[slug] ?? null;
+}
+
 export const resortImages = {
   aerial: resortImage("aerial.webp"),
   resortWide: resortImage("resort-wide.webp"),
   poolLawn: resortImage("pool-lawn.webp"),
   turf: resortImage("turf-aerial.webp"),
   horseArena: resortImage("horse-arena-aerial.webp"),
-  deluxe: resortImage("deluxe-room.webp"),
-  premium: resortImage("premium-room.webp"),
-  dormitory: resortImage("dormitory.webp"),
-  villa: resortImage("villa-exterior.webp"),
-  villaLiving: resortImage("villa-living.webp"),
-  dining: resortImage("dining-area.webp"),
-  bathroom: resortImage("bathroom.webp"),
-  lounge: resortImage("lounge.webp"),
+  deluxe: accommodationMedia.deluxe.cover,
+  villa: accommodationMedia.bungalow.cover,
+  villaLiving: accommodationMedia.bungalow.gallery[0],
+  veranda: resortImage("dining-area.webp"),
+  bathroom: accommodationMedia.superDeluxe.gallery[0],
+  lounge: accommodationMedia.bungalow.gallery[5],
   horseRiding: resortImage("horse-riding.webp"),
-  roomWhite: resortImage("room-white.webp"),
-  roomWhiteAlt: resortImage("room-white-alt.webp"),
-  suiteLiving: resortImage("suite-living.webp"),
-  villaGarden: resortImage("villa-garden-exterior.webp"),
-  premiumAlt: resortImage("premium-room-alt.webp"),
-  dormitoryWide: resortImage("dormitory-wide.webp"),
-  dormitoryLounge: resortImage("dormitory-lounge.webp"),
+  roomWhite: accommodationMedia.superDeluxe.cover,
+  roomWhiteAlt: accommodationMedia.superDeluxe.gallery[1],
+  suiteLiving: accommodationMedia.bungalow.gallery[1],
+  villaGarden: accommodationMedia.bungalow.gallery[6],
+  deluxeComplete: accommodationMedia.deluxe.gallery[6],
   horseTrack: resortImage("horse-track.webp"),
   horseAction: resortImage("horse-action.webp"),
   horsePortrait: resortImage("horse-portrait.webp"),
@@ -53,12 +124,12 @@ export const nav = [
 ] as const;
 
 export const roomInventory = [
-  { name: "Deluxe Room", count: "6 rooms", detail: "Up to 2 guests per room" },
-  { name: "Super Deluxe Room", count: "2 rooms", detail: "Up to 2 guests per room" },
-  { name: "Premium Room", count: "2 rooms", detail: "King-size bed · Up to 4 guests per rate card" },
-  { name: "Dormitory", count: "2 bunk beds", detail: "Current dormitory setup" },
-  { name: "Additional Dormitories", count: "2 units", detail: "Expected to be ready within 1 month" },
-  { name: "2 BHK Villa / DS Bungalow", count: "1 villa", detail: "Up to 10 guests per rate card" },
+  { slug: "deluxe-room", name: "Deluxe Room", count: "6 rooms", detail: "Up to 2 guests per room" },
+  { slug: "super-deluxe-room", name: "Super Deluxe Room", count: "2 rooms", detail: "Up to 2 guests per room" },
+  { slug: "premium-room", name: "Premium Room", count: "2 rooms", detail: "King-size bed · Up to 4 guests per rate card" },
+  { slug: "dormitory", name: "Dormitory", count: "2 bunk beds", detail: "Current dormitory setup" },
+  { slug: "additional-dormitories", name: "Additional Dormitories", count: "2 units", detail: "Expected to be ready within 1 month" },
+  { slug: "2-bhk-villa", name: "2 BHK Villa / DS Bungalow", count: "1 villa", detail: "Up to 10 guests per rate card" },
 ] as const;
 
 export const stayRates = [
@@ -130,7 +201,7 @@ export const galleryCategories: GalleryCategory[] = [
     eyebrow: "The setting",
     description: "See the complete property, surrounding farms, lawns and countryside from different aerial perspectives.",
     images: [
-      { image: resortImages.resortWide, label: "The complete resort", copy: "Pool, lawns and stays surrounded by farmland." },
+
       { image: resortImages.aerial, label: "Across the fields", copy: "A wide countryside view around DS Agro Tourism & Resort." },
       { image: resortImages.countryAerial, label: "Country approach", copy: "The resort and its road connection through the fields." },
       { image: resortImages.farmFields, label: "Farm landscape", copy: "A top-down view of the agricultural setting." },
@@ -139,24 +210,47 @@ export const galleryCategories: GalleryCategory[] = [
     ],
   },
   {
-    id: "rooms-stays",
-    title: "Rooms & Stays",
-    eyebrow: "Accommodation",
-    description: "Explore different room categories, dormitory spaces, villa interiors and attached facilities.",
+    id: "bungalow",
+    title: "Bungalow",
+    eyebrow: "Private stay",
+    description: "Step inside the real DS Bungalow, from its bedrooms and shared living area to the private veranda.",
     images: [
-      { image: resortImages.deluxe, label: "Deluxe room", copy: "A comfortable room prepared for a relaxed stay." },
-      { image: resortImages.premium, label: "Premium room", copy: "King-size comfort with a spacious layout." },
-      { image: resortImages.premiumAlt, label: "Premium room view", copy: "A second, distinct view of the premium accommodation." },
-      { image: resortImages.roomWhite, label: "Bright bedroom", copy: "A clean bedroom with natural light." },
-      { image: resortImages.roomWhiteAlt, label: "Bedroom entrance", copy: "A different angle into the bright room." },
-      { image: resortImages.suiteLiving, label: "Suite living space", copy: "Extra seating and room for families to settle in." },
-      { image: resortImages.dormitory, label: "Dormitory", copy: "Group accommodation for guests travelling together." },
-      { image: resortImages.dormitoryWide, label: "Dormitory wide view", copy: "A complete view of the larger group room." },
-      { image: resortImages.dormitoryLounge, label: "Dormitory lounge", copy: "Beds and seating within the shared accommodation." },
-      { image: resortImages.villa, label: "2 BHK villa", copy: "The private villa surrounded by greenery." },
-      { image: resortImages.villaLiving, label: "Villa living", copy: "A bright shared room inside the villa." },
-      { image: resortImages.bathroom, label: "Attached facilities", copy: "Clean facilities within the accommodation." },
-      { image: resortImages.lounge, label: "Indoor lounge", copy: "A quiet sitting corner for conversation." },
+      { image: accommodationMedia.bungalow.gallery[0], label: "Bungalow living room", copy: "A wide view of the bungalow's generous shared living space." },
+      { image: accommodationMedia.bungalow.gallery[1], label: "Living area overview", copy: "Seating and open floor space for families and groups." },
+      { image: accommodationMedia.bungalow.gallery[2], label: "Bungalow king bedroom", copy: "A bright private bedroom inside the DS Bungalow." },
+      { image: accommodationMedia.bungalow.gallery[3], label: "Garden-facing bedroom", copy: "A second bungalow bedroom overlooking resort greenery." },
+      { image: accommodationMedia.bungalow.gallery[4], label: "Bungalow kitchenette", copy: "A compact preparation area within the bungalow." },
+      { image: accommodationMedia.bungalow.gallery[5], label: "Bungalow lounge", copy: "Comfortable seating for time together indoors." },
+      { image: accommodationMedia.bungalow.gallery[6], label: "Private veranda", copy: "An outdoor sitting area beside the bungalow." },
+    ],
+  },
+  {
+    id: "super-deluxe",
+    title: "Super Deluxe",
+    eyebrow: "Upgraded room",
+    description: "Explore the private Super Deluxe room, its bedroom views and attached bathroom.",
+    images: [
+      { image: accommodationMedia.superDeluxe.gallery[1], label: "Super Deluxe room angle", copy: "A clear angled view of the bed and writing desk." },
+      { image: accommodationMedia.superDeluxe.gallery[2], label: "Super Deluxe room", copy: "A second wide view of the verified Super Deluxe accommodation." },
+      { image: accommodationMedia.superDeluxe.gallery[0], label: "Super Deluxe bathroom", copy: "The attached bathroom serving the Super Deluxe room." },
+    ],
+  },
+  {
+    id: "deluxe",
+    title: "Deluxe Rooms",
+    eyebrow: "Six rooms",
+    description: "Explore distinct king and twin-bed layouts across the Deluxe room collection.",
+    images: [
+      { image: accommodationMedia.deluxe.gallery[0], label: "Deluxe king room", copy: "A bright king-bed room with a garden-facing window." },
+      { image: accommodationMedia.deluxe.gallery[1], label: "Deluxe king bed", copy: "A centered view of the king-bed headboard and bedside tables." },
+      { image: accommodationMedia.deluxe.gallery[2], label: "Deluxe room storage", copy: "Wardrobe, desk and room circulation shown together." },
+      { image: accommodationMedia.deluxe.gallery[3], label: "Deluxe twin room", copy: "A twin-bed configuration photographed from the entrance." },
+      { image: accommodationMedia.deluxe.gallery[4], label: "Deluxe twin room wide view", copy: "A complete view of one of the twin-bed Deluxe rooms." },
+      { image: accommodationMedia.deluxe.gallery[5], label: "Deluxe room by the window", copy: "Natural light across a second Deluxe room interior." },
+      { image: accommodationMedia.deluxe.gallery[6], label: "Deluxe room complete view", copy: "Bed, television, desk and entrance visible in one frame." },
+      { image: accommodationMedia.deluxe.gallery[7], label: "Deluxe twin room entry", copy: "A twin-bed room with storage and entrance in view." },
+      { image: accommodationMedia.deluxe.gallery[8], label: "Deluxe twin room storage", copy: "Twin beds paired with wardrobe and dressing storage." },
+      { image: accommodationMedia.deluxe.gallery[9], label: "Deluxe twin room window", copy: "A second twin-bed layout beside the garden-facing window." },
     ],
   },
   {
@@ -167,7 +261,7 @@ export const galleryCategories: GalleryCategory[] = [
     images: [
       { image: resortImages.horseRiding, label: "Horse riding", copy: "A real riding moment at the resort." },
       { image: resortImages.horseArena, label: "Horse arena", copy: "The complete riding arena from above." },
-      { image: resortImages.horseTrack, label: "On the track", copy: "The horse moving through the outdoor arena." },
+
       { image: resortImages.horseAction, label: "Training moment", copy: "A supervised activity moment inside the arena." },
       { image: resortImages.horsePortrait, label: "Meet the horse", copy: "A closer look at the resort's horse-riding experience." },
       { image: resortImages.turfClose, label: "Turf and play zone", copy: "The sports turf surrounded by resort greenery." },
@@ -178,12 +272,12 @@ export const galleryCategories: GalleryCategory[] = [
     id: "amenities-spaces",
     title: "Amenities & Shared Spaces",
     eyebrow: "Around the resort",
-    description: "Browse the lawn, pool area, dining corner and comfortable shared spaces around the property.",
+    description: "Browse the pool, lawns and sports facilities around the property.",
     images: [
       { image: resortImages.poolLawn, label: "Pool and lawn", copy: "Open green space next to the pool and stay areas." },
       { image: resortImages.turf, label: "Outdoor facilities", copy: "The turf and activity zone within the resort." },
-      { image: resortImages.dining, label: "Dining corner", copy: "A simple shared table for meals and conversation." },
-      { image: resortImages.villaGarden, label: "Garden-side villa", copy: "Accommodation opening into the resort greenery." },
+
+
     ],
   },
 ];
@@ -203,12 +297,12 @@ export const pages: Record<string, Page> = {
   stay: {
     title: "Stay close to nature.", kicker: "Rooms", variant: "stay",
     intro: "Six Deluxe rooms, two Super Deluxe rooms, two Premium rooms, dormitory accommodation and a 2 BHK villa give couples, families and groups room to settle in.",
-    image: resortImages.villaLiving,
+    image: accommodationMedia.bungalow.gallery[3],
     visualTitle: "Rest. Reconnect. Repeat.",
     visuals: [
-      { image: resortImages.deluxe, label: "Deluxe Room", copy: "A spacious room for up to two guests." },
-      { image: resortImages.premium, label: "Premium Room", copy: "King-size comfort for a relaxed stay." },
-      { image: resortImages.dormitory, label: "Group Stay", copy: "Dormitory accommodation for groups travelling together." },
+      { image: accommodationMedia.deluxe.gallery[6], label: "Deluxe Room", copy: "A spacious room for up to two guests." },
+      { image: accommodationMedia.bungalow.gallery[5], label: "2 BHK Villa / DS Bungalow", copy: "A private two-bedroom bungalow for families and groups." },
+      { image: resortImages.roomWhiteAlt, label: "Super Deluxe Room", copy: "An upgraded private room for couples and small families." },
     ],
     sections: [
       { title: "A room for every escape", body: "Choose from Deluxe, Super Deluxe and Premium rooms, a dormitory setup and the 2 BHK Villa / DS Bungalow." },
@@ -223,7 +317,7 @@ export const pages: Record<string, Page> = {
     visuals: [
       { image: resortImages.lounge, label: "Indoor comfort", copy: "Air-conditioned spaces for easy conversation and downtime." },
       { image: resortImages.bathroom, label: "Attached facilities", copy: "Clean facilities within the accommodation." },
-      { image: resortImages.villaGarden, label: "Garden-side stay", copy: "Comfortable accommodation surrounded by greenery." },
+      { image: resortImages.villaGarden, label: "Bungalow veranda", copy: "A private outdoor seating space alongside the bungalow." },
     ],
     sections: [
       { title: "For every kind of day", body: "Swim, work out, dine, play or simply take your time in the resort's open spaces." },
@@ -233,12 +327,12 @@ export const pages: Record<string, Page> = {
   "day-outing": {
     title: "One day. A world away.", kicker: "Day Outing", variant: "timeline",
     intro: "Choose a weekday or weekend outing with veg or non-veg meals, plus rain dance, swimming pool, trampoline and activities.",
-    image: resortImages.resortWide,
+    image: resortImages.resortAerialThree,
     visualTitle: "A day that keeps unfolding.",
     visuals: [
       { image: resortImages.countryAerial, label: "01 · Arrive", copy: "Leave the city pace at the gate." },
       { image: resortImages.turf, label: "02 · Play", copy: "Make room for movement, activities and laughter." },
-      { image: resortImages.suiteLiving, label: "03 · Gather", copy: "Close the day together in a comfortable shared space." },
+      { image: resortImages.poolLawn, label: "03 · Gather", copy: "Close the day together beside the pool and open lawn." },
     ],
     sections: [
       { title: "Made for groups", body: "Day outings are suited to families, friends, schools, colleges and corporate teams, subject to direct confirmation." },
@@ -267,7 +361,7 @@ export const pages: Record<string, Page> = {
     visualTitle: "Know before you go.",
     visuals: [
       { image: resortImages.bathroom, label: "Plan ahead", copy: "Confirm room details, dates and guest count." },
-      { image: resortImages.premiumAlt, label: "Check the stay", copy: "Review room policies and applicable charges." },
+      { image: resortImages.deluxeComplete, label: "Check the stay", copy: "Review room policies and applicable charges." },
       { image: resortImages.resortAerialThree, label: "Arrive ready", copy: "Keep the latest confirmation with your group." },
     ],
     sections: [
@@ -278,12 +372,12 @@ export const pages: Record<string, Page> = {
   dining: {
     title: "Gather around the table.", kicker: "Dining", variant: "dining",
     intro: "Traditional food and the warmth of eating together are central to the experience. Current meal formats and dietary requests are confirmed directly.",
-    image: resortImages.dining,
+    image: resortImages.countryAerial,
     visualTitle: "Made to be shared.",
     visuals: [
-      { image: resortImages.dormitoryLounge, label: "Shared time", copy: "The best meals bring everyone closer." },
-      { image: resortImages.suiteLiving, label: "Gather together", copy: "A comfortable shared space before or after a meal." },
-      { image: resortImages.villaLiving, label: "Easy comfort", copy: "Settle in after a generous meal." },
+      { image: resortImages.poolLawn, label: "Time outdoors", copy: "Unwind beside the pool and garden before or after a meal." },
+      { image: resortImages.veranda, label: "Bungalow veranda", copy: "A private sitting area beside the bungalow, not the resort restaurant." },
+      { image: resortImages.villaLiving, label: "Bungalow living room", copy: "A shared lounge within the private bungalow." },
     ],
     sections: [
       { title: "Food with a sense of place", body: "Expect a dining story rooted in freshness, familiar flavours and generous hospitality." },
@@ -297,8 +391,8 @@ export const pages: Record<string, Page> = {
     visualTitle: "Every reason deserves a setting.",
     visuals: [
       { image: resortImages.poolLawn, label: "Open-air occasions", copy: "Let nature become part of the atmosphere." },
-      { image: resortImages.dining, label: "Togetherness", copy: "A gathering shaped around your people." },
-      { image: resortImages.villaGarden, label: "Garden setting", copy: "A green property with space for shared memories." },
+      { image: resortImages.villaLiving, label: "Bungalow lounge", copy: "Time together inside the private bungalow." },
+      { image: resortImages.resortWide, label: "Resort setting", copy: "A green property with space for shared memories." },
     ],
     sections: [
       { title: "Your occasion, considered", body: "Tell us the event, date and expected guest count to understand the suitable spaces and possibilities." },

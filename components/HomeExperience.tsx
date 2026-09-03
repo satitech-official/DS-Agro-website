@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { ResortPhoto } from "./ResortPhoto";
 import { contact, experiences, nav, resortImages } from "../data/site";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
@@ -126,10 +127,7 @@ export function HomeExperience() {
     <FirstVisitLoader /><GlobalMotion /><a className="skip" href="#main">Skip to content</a><Header currentPath="/" />
     <main id="main" className="page-enter">
       <section className="hero">
-        <video className="hero-video" autoPlay muted loop playsInline preload="metadata" poster={resortImages.aerial} aria-label="Aerial countryside fields at golden hour">
-          <source src="https://videos.pexels.com/video-files/4334522/4334522-hd_1920_1080_24fps.mp4" type="video/mp4" />
-        </video>
-        <div className="hero-image" style={{ backgroundImage: `url("${resortImages.aerial}")` }} role="img" aria-label="Aerial view of DS Agro Tourism & Resort" /><div className="hero-shade" />
+        <div className="hero-image"><ResortPhoto src={resortImages.resortWide} alt="Aerial view of the real DS Agro Tourism & Resort property" priority sizes="100vw" /></div><div className="hero-shade" />
         <div className="sun-orb" /><div className="floating-leaf leaf-one">◆</div><div className="floating-leaf leaf-two">◆</div>
         <div className="hero-copy"><p className="eyebrow light hero-reveal delay-1">DS Agro Tourism & Resort</p><h1 className="hero-reveal delay-2">Escape the city.<br /><em>Return to yourself.</em></h1><p className="hero-lede hero-reveal delay-3">Nature-led stays, family adventures and celebrations shaped under open skies.</p>
           <div className="hero-actions hero-reveal delay-4"><a className="button button-gold pulse-button" href="#enquire">Plan your visit <b>↘</b></a><a className="text-link" href="#story">Discover the story <span>↓</span></a></div>
@@ -149,10 +147,10 @@ export function HomeExperience() {
         </div>
       </section>
       <section className="day section reveal"><div className="day-heading"><p className="eyebrow">A day at DS</p><h2>Follow the light.</h2><p>From first light to the glow of evening, make space for the moments that city life rushes past.</p></div>
-        <div className="day-grid"><article className="day-card morning" style={{ backgroundImage: `url("${resortImages.countryAerial}")` }}><div><span>Morning</span><h3>Wake with the land</h3></div></article><article className="day-card afternoon" style={{ backgroundImage: `url("${resortImages.turf}")` }}><div><span>Afternoon</span><h3>Step into adventure</h3></div></article><article className="day-card evening" style={{ backgroundImage: `url("${resortImages.dining}")` }}><div><span>Golden hour</span><h3>Gather into evening</h3></div></article></div>
+        <div className="day-grid"><article className="day-card morning" style={{ backgroundImage: `url("${resortImages.countryAerial}")` }}><div><span>Morning</span><h3>Wake with the land</h3></div></article><article className="day-card afternoon" style={{ backgroundImage: `url("${resortImages.turf}")` }}><div><span>Afternoon</span><h3>Step into adventure</h3></div></article><article className="day-card evening" style={{ backgroundImage: `url("${resortImages.veranda}")` }}><div><span>Golden hour</span><h3>Gather into evening</h3></div></article></div>
         <p className="disclaimer">Featured property photographs were supplied by DS Agro Tourism & Resort. Activity access and current availability are confirmed directly by the resort.</p>
       </section>
-      <section className="gather reveal"><div className="gather-image" style={{ backgroundImage: `url("${resortImages.villaGarden}")` }} /><div className="gather-copy"><p className="eyebrow light">Celebrations</p><h2>More room for<br /><em>what matters.</em></h2><p>Family milestones, group outings and corporate days feel different with open sky above and nature all around.</p><a className="button button-cream" href={pageHref("/celebrations")}>Imagine your gathering <b>→</b></a></div></section>
+      <section className="gather reveal"><div className="gather-image" style={{ backgroundImage: `url("${resortImages.poolLawn}")` }} /><div className="gather-copy"><p className="eyebrow light">Celebrations</p><h2>More room for<br /><em>what matters.</em></h2><p>Family milestones, group outings and corporate days feel different with open sky above and nature all around.</p><a className="button button-cream" href={pageHref("/celebrations")}>Imagine your gathering <b>→</b></a></div></section>
       <section className="final-cta reveal"><div className="cta-spark one">✦</div><div className="cta-spark two">✦</div><p className="eyebrow">Begin your escape</p><h2>Your weekend deserves<br /><em>more than a stay.</em></h2><div><a className="button button-dark pulse-button" href={whatsapp("Hello DS Agro Tourism & Resort, I would like to know more about visiting the resort.")} target="_blank" rel="noreferrer">WhatsApp us <b>↗</b></a><a className="button button-outline" href={contact.maps} target="_blank" rel="noreferrer">Get directions <b>↗</b></a></div></section>
     </main>
     <Footer />

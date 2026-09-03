@@ -3,6 +3,9 @@
 import { FormEvent, useEffect, useMemo, useState } from "react";
 import { galleryCategoryLabel, galleryCategoryOptions, galleryRecordSelect, resolveGalleryImageUrl, type GalleryRecord } from "../lib/gallery";
 import { appHref, getSupabaseClient } from "../lib/supabase";
+import { RoomMediaEditor } from "./RoomMediaEditor";
+import { OfficialGalleryImport } from "./OfficialGalleryImport";
+import { ResortPhoto } from "./ResortPhoto";
 
 type DashboardTab = "overview" | "bookings" | "inventory" | "gallery";
 
@@ -39,6 +42,8 @@ type Room = {
   name: string;
   total_units: number;
   status: string;
+  slug: string;
+  cover_image: string | null;
 };
 
 type RoomBlock = {
@@ -117,13 +122,6 @@ function money(value: number | string | null) {
   return new Intl.NumberFormat("en-IN", { style: "currency", currency: "INR", maximumFractionDigits: 0 }).format(Number(value));
 }
 
-function galleryStoragePath(imageUrl: string) {
-  const marker = "/storage/v1/object/public/gallery/";
-  const markerIndex = imageUrl.indexOf(marker);
-  if (markerIndex < 0) return null;
-  return decodeURIComponent(imageUrl.slice(markerIndex + marker.length));
-}
-
 function galleryFileExtension(file: File) {
   if (file.type === "image/jpeg") return "jpg";
   if (file.type === "image/png") return "png";
@@ -143,6 +141,7 @@ export function AdminDashboard() {
   const [rooms, setRooms] = useState<Room[]>([]);
   const [blocks, setBlocks] = useState<RoomBlock[]>([]);
   const [gallery, setGallery] = useState<GalleryRecord[]>([]);
+  const [galleryPreview, setGalleryPreview] = useState("");
   const [error, setError] = useState("");
   const [notice, setNotice] = useState("");
   const [refreshing, setRefreshing] = useState(false);
@@ -184,7 +183,7 @@ export function AdminDashboard() {
     setAdminName(admin.display_name || userData.user.email || "Admin");
     const [bookingResult, roomResult, blockResult, galleryResult] = await Promise.all([
       client.from("bookings").select("id,booking_reference,customer_name,phone,email,whatsapp_number,city,visit_type,check_in,check_out,adults,children,infants,total_guests,rooms_requested,room_name_snapshot,occasion,interests,special_request,estimated_amount,booking_status,payment_status,source,admin_notes,created_at").order("created_at", { ascending: false }).limit(100),
-      client.from("rooms").select("id,name,total_units,status").order("name"),
+      client.from("rooms").select("id,name,total_units,status,slug,cover_image").order("name"),
       client.from("room_blocks").select("id,room_id,start_date,end_date,blocked_units,reason,notes,created_at").order("start_date", { ascending: true }),
       client.from("gallery").select(galleryRecordSelect).order("display_order", { ascending: true }),
     ]);
@@ -220,6 +219,7 @@ export function AdminDashboard() {
   }, []);
 
   useEffect(() => { queueMicrotask(load); }, []);
+  useEffect(() => () => { if (galleryPreview) URL.revokeObjectURL(galleryPreview); }, [galleryPreview]);
 
   const metrics = useMemo(() => {
     const today = localDate(0);
@@ -415,14 +415,8 @@ export function AdminDashboard() {
       ? items.map((item) => item.id === saved.id ? saved : item)
       : [...items, saved]));
 
-    const oldStoragePath = currentItem ? galleryStoragePath(currentItem.image_url) : null;
-    const newStoragePath = galleryStoragePath(saved.image_url);
-    let cleanupWarning = "";
-    if (oldStoragePath && oldStoragePath !== newStoragePath) {
-      const { error: cleanupError } = await client.storage.from("gallery").remove([oldStoragePath]);
-      if (cleanupError) cleanupWarning = " The old stored file could not be removed automatically.";
-    }
-    setNotice(`${editingGalleryId ? "Gallery image updated" : "Gallery image added"} successfully.${cleanupWarning}`);
+    // Files may also be room covers/albums. Keep replaced assets recoverable.
+    setNotice(`${editingGalleryId ? "Gallery image updated" : "Gallery image added"} successfully. Original files are retained for safe recovery.`);
     setSavingGallery(false);
     resetGalleryEditor();
   }
@@ -440,11 +434,9 @@ export function AdminDashboard() {
       return setError(deleteError?.message || "Gallery image could not be deleted.");
     }
 
-    const storagePath = galleryStoragePath(item.image_url);
-    const storageResult = storagePath ? await client.storage.from("gallery").remove([storagePath]) : null;
     setGallery((items) => items.filter((galleryItem) => galleryItem.id !== item.id));
     if (editingGalleryId === item.id) resetGalleryEditor();
-    setNotice(`“${item.title}” deleted from the gallery.${storageResult?.error ? " The database entry was removed, but the stored file needs manual cleanup." : ""}`);
+    setNotice(`“${item.title}” deleted from the gallery. Stored file retained so room images and shared links remain intact.`);
     setDeletingGalleryId("");
   }
 
@@ -505,7 +497,7 @@ export function AdminDashboard() {
 
         <section className="admin-card">
           <div className="admin-section-head"><div><p>Room configuration</p><h2>Current room units</h2></div><span>{metrics.rooms} active units</span></div>
-          <div className="admin-inventory">{rooms.map((room) => <article key={room.id}><span>{room.status}</span><strong>{room.name}</strong><p>{room.total_units} unit{room.total_units === 1 ? "" : "s"}</p></article>)}</div>
+          <div className="admin-inventory">{rooms.map((room) => <article key={room.id}><span>{room.status}</span><strong>{room.name}</strong><p>{room.total_units} unit{room.total_units === 1 ? "" : "s"}</p><RoomMediaEditor room={room} /></article>)}</div>
         </section>
 
         <section className="admin-card">
@@ -524,6 +516,7 @@ export function AdminDashboard() {
       </div>}
 
       {activeTab === "gallery" && <div id="gallery" className="admin-tab-panel">
+        <section className="admin-card"><OfficialGalleryImport onComplete={load} /></section>
         <section className="admin-card">
           <div className="admin-section-head"><div><p>Gallery editor</p><h2>{editingGalleryId ? "Edit gallery image" : "Add a gallery image"}</h2></div><span>JPG, PNG or WebP · maximum 10 MB</span></div>
           <div className="admin-gallery-editor">
@@ -534,7 +527,7 @@ export function AdminDashboard() {
               </div>
               <label className="admin-field"><span>Description</span><textarea value={galleryDraft.description} onChange={(event) => setGalleryDraft((draft) => ({ ...draft, description: event.target.value }))} maxLength={300} placeholder="A short caption shown below the image" /></label>
               <div className="admin-form-grid">
-                <label className="admin-field"><span>{editingGalleryId ? "Replace image (optional)" : "Upload image"}</span><input key={galleryFileKey} type="file" accept="image/jpeg,image/png,image/webp" onChange={(event) => setGalleryFile(event.target.files?.[0] ?? null)} /></label>
+                <label className="admin-field"><span>{editingGalleryId ? "Replace image (optional)" : "Upload image"}</span><input key={galleryFileKey} type="file" accept="image/jpeg,image/png,image/webp" onChange={(event) => { const file = event.target.files?.[0] ?? null; setGalleryFile(file); setGalleryPreview(file ? URL.createObjectURL(file) : ""); }} /></label>
                 <label className="admin-field"><span>HTTPS image URL (alternative)</span><input type="text" inputMode="url" value={galleryDraft.image_url} onChange={(event) => setGalleryDraft((draft) => ({ ...draft, image_url: event.target.value }))} placeholder="https://…" /></label>
               </div>
               <div className="admin-gallery-settings">
@@ -547,7 +540,7 @@ export function AdminDashboard() {
             </form>
             <aside className="admin-gallery-preview">
               <span>{editingGalleryId ? "Current preview" : "New image"}</span>
-              {galleryDraft.image_url ? <div style={{ backgroundImage: `url("${resolveGalleryImageUrl(galleryDraft.image_url)}")` }} role="img" aria-label={galleryDraft.title || "Gallery image preview"} /> : <div className="empty"><b>{galleryFile ? galleryFile.name : "Choose an image"}</b><small>{galleryFile ? "The selected file will be uploaded when you save." : "A preview appears here for saved images and URLs."}</small></div>}
+              {galleryFile || galleryDraft.image_url ? <div style={{ position: "relative" }}><ResortPhoto src={galleryFile ? galleryPreview : resolveGalleryImageUrl(galleryDraft.image_url)} alt={galleryDraft.title || "Gallery image preview"} contain /></div> : <div className="empty"><b>Choose an image</b><small>A preview appears here before you save.</small></div>}
               <strong>{galleryDraft.title || "Image title"}</strong><small>{galleryCategoryLabel(galleryDraft.category)} · {galleryDraft.status}</small>
             </aside>
           </div>

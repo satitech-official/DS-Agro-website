@@ -7,7 +7,7 @@ async function renderedHtml(path = "index.html") {
 }
 
 function uniqueResortImages(html) {
-  return new Set([...html.matchAll(/resort\/([a-z0-9-]+\.webp)/g)].map((match) => match[1]));
+  return new Set([...html.matchAll(/(?:resort|images\/ds-agro\/[a-z-]+)\/([a-z0-9-]+\.webp)/g)].map((match) => match[1].replace(/-(640|1200)\.webp$/, ".webp")));
 }
 
 test("exports the finished resort homepage", async () => {
@@ -15,21 +15,21 @@ test("exports the finished resort homepage", async () => {
   assert.match(html, /DS Agro Tourism &amp; Resort/);
   assert.match(html, /Escape the city\./);
   assert.match(html, /Check availability/);
-  assert.match(html, /videos\.pexels\.com\/video-files\/4334522/);
-  assert.match(html, /resort\/aerial\.webp/);
+  assert.doesNotMatch(html, /pexels|unsplash/i);
+  assert.match(html, /resort\/resort-wide\.webp/);
   assert.match(html, /resort\/turf-aerial\.webp/);
   assert.match(html, /resort\/dining-area\.webp/);
-  assert.match(html, /resort\/room-white\.webp/);
+  assert.match(html, /ds-agro-super-deluxe-room-cover\.webp/);
   assert.match(html, /resort\/country-aerial\.webp/);
-  assert.match(html, /resort\/villa-garden-exterior\.webp/);
+  assert.match(html, /resort\/pool-lawn\.webp/);
   assert.equal(uniqueResortImages(html).size, 6, "homepage should render six different initial property photographs");
   assert.match(html, />Rooms</);
   assert.match(html, />Amenities</);
   assert.match(html, />Activities</);
   assert.match(html, />T&amp;C</);
-  assert.match(html, /href="\/admin"[^>]*aria-label="Open admin dashboard"/);
+  assert.match(html, /href="(?:\/DS-Agro-website)?\/admin"[^>]*aria-label="Open admin dashboard"/);
   assert.match(html, /Admin Dashboard/);
-  assert.match(html, /aria-current="page"[^>]*href="\/"|href="\/"[^>]*aria-current="page"/);
+  assert.match(html, /aria-current="page"[^>]*href="(?:\/DS-Agro-website)?\/"|href="(?:\/DS-Agro-website)?\/"[^>]*aria-current="page"/);
   assert.match(html, /918149428126/);
   assert.match(html, /4N9MusUsVUeHSG9E8/);
   assert.doesNotMatch(html, /chatgpt\.site|sites\.openai\.com/i);
@@ -44,7 +44,9 @@ test("exports inner experience pages without fake booking claims", async () => {
   assert.match(html, /₹2,999/);
   assert.match(html, /₹21,499/);
   assert.match(html, /Expected to be ready within 1 month/);
-  assert.match(html, /resort\/dormitory\.webp/);
+  assert.doesNotMatch(html, /resort\/dormitory\.webp/);
+  assert.match(html, /Photo awaiting verification/);
+  assert.match(html, /View room photographs/);
   assert.match(html, /Enquire on WhatsApp/);
   assert.match(html, /Rest\. Reconnect\. Repeat\./);
   assert.match(html, /visual-stay/);
@@ -79,11 +81,11 @@ test("uses different hero and content photos across detailed pages", async () =>
   ]);
 
   assert.match(amenities, /resort\/pool-lawn\.webp/);
-  assert.match(amenities, /resort\/lounge\.webp/);
+  assert.match(amenities, /ds-agro-bungalow-lounge\.webp/);
   assert.match(activities, /resort\/horse-arena-aerial\.webp/);
   assert.match(activities, /resort\/turf-close\.webp/);
   assert.match(outing, /resort\/country-aerial\.webp/);
-  assert.match(outing, /resort\/suite-living\.webp/);
+  assert.match(outing, /resort\/pool-lawn\.webp/);
   assert.equal(uniqueResortImages(amenities).size, 4);
   assert.equal(uniqueResortImages(activities).size, 4);
   assert.equal(uniqueResortImages(outing).size, 4);
@@ -93,13 +95,15 @@ test("exports a categorized gallery with every photograph used once", async () =
   const gallery = await renderedHtml("gallery/index.html");
 
   assert.match(gallery, /Resort &amp; Aerial Views/);
-  assert.match(gallery, /Rooms &amp; Stays/);
+  assert.match(gallery, /Bungalow/);
+  assert.match(gallery, /Super Deluxe/);
+  assert.match(gallery, /Deluxe Rooms/);
   assert.match(gallery, /Activities &amp; Outdoors/);
   assert.match(gallery, /Amenities &amp; Shared Spaces/);
-  assert.equal((gallery.match(/class="gallery-category-card"/g) ?? []).length, 30);
-  assert.equal(uniqueResortImages(gallery).size, 31, "gallery hero and all 30 gallery photos should be different");
-  assert.match(gallery, /resort\/villa-living\.webp/);
-  assert.match(gallery, /resort\/bathroom\.webp/);
+  assert.equal((gallery.match(/class="gallery-category-card"/g) ?? []).length, 33);
+  assert.equal(uniqueResortImages(gallery).size, 34, "gallery hero and all 33 gallery photos should be different");
+  assert.match(gallery, /ds-agro-bungalow-living-wide\.webp/);
+  assert.match(gallery, /ds-agro-super-deluxe-bathroom\.webp/);
   assert.match(gallery, /resort\/horse-portrait\.webp/);
   assert.match(gallery, /resort\/turf-top\.webp/);
 });
@@ -123,7 +127,7 @@ test("exports the live booking journey and protected admin entry points", async 
   assert.match(admin, /Loading secure dashboard/);
 });
 
-test("ships an operational admin dashboard for bookings, inventory and gallery updates", async () => {
+test("preserves admin source contracts for bookings, inventory and gallery updates", async () => {
   const [source, publicGallery, migration] = await Promise.all([
     readFile(new URL("../components/AdminDashboard.tsx", import.meta.url), "utf8"),
     readFile(new URL("../components/GalleryCategories.tsx", import.meta.url), "utf8"),

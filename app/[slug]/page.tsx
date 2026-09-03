@@ -5,6 +5,7 @@ import { DetailsContent } from "../../components/DetailsContent";
 import { GalleryCategories } from "../../components/GalleryCategories";
 import { InnerPageVisuals } from "../../components/InnerPageVisuals";
 import { contact, pages } from "../../data/site";
+import { ResortPhoto } from "../../components/ResortPhoto";
 
 export const dynamicParams = false;
 export function generateStaticParams() { return Object.keys(pages).map(slug => ({ slug })); }
@@ -19,7 +20,9 @@ export default async function StoryPage({ params }: { params: Promise<{ slug: st
   if (!page) notFound();
   const message = `Hello DS Agro Tourism & Resort, I would like to enquire about ${page.kicker.toLowerCase()}. Please share current details.`;
   return <><GlobalMotion /><Header currentPath={`/${slug}`} /><main className={`page-enter page-${page.variant}`}>
-    <section className={`inner-hero inner-${page.variant}`} style={{ backgroundImage: `linear-gradient(90deg,rgba(18,34,25,.84),rgba(18,34,25,.18)),url("${page.image}")` }}>
+    <section className={`inner-hero inner-${page.variant}`}>
+      <ResortPhoto src={page.image} alt={`${page.kicker} at DS Agro Tourism & Resort`} priority sizes="100vw" />
+      <span className="inner-photo-shade" />
       <div className="inner-hero-copy"><p className="eyebrow light">{page.kicker}</p><h1>{page.title}</h1><p>{page.intro}</p></div>
       <div className="inner-scroll">Scroll to discover <span>↓</span></div>
     </section>
