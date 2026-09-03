@@ -56,11 +56,27 @@ Room albums and public Gallery are separate catalogs, matching the existing data
 
 ## Safe release and verification
 
-Deploy website assets before changing database image paths. Then import only media fields in `rooms`, `room_images` and `gallery`. Do not rerun the original full booking seed migration, because it also updates business data.
+The release followed asset-first deployment: website assets were published before changing database image paths. Only media fields in `rooms`, `room_images` and `gallery` were imported. The original full booking seed migration was not rerun, because it also updates business data.
 
 The existing Supabase project was paused and was resumed on 3 September 2026. Its status returned to ACTIVE_HEALTHY. No plan upgrade, database reset, credential change or new project was involved.
 
 Automated checks include production export, lint, TypeScript, source-range mapping, distinct covers, no duplicate gallery URLs, real image/variant file existence, custom-cover precedence, GitHub Pages prefix handling, preserved business content and protected admin source contracts. GitHub Actions now runs lint and exported-site tests before deployment.
+
+### Verified on 3 September 2026
+
+- GitHub Pages deployed commit `2e7ddf7` successfully: [deployment run](https://github.com/satitech-official/DS-Agro-website/actions/runs/33724456277).
+- All 36 full-size URLs used by the three confirmed room covers and the 33-image public gallery returned HTTP 200 with `image/webp` content before database import.
+- Production database now contains 33 Published gallery records and 20 room-album photographs (Bungalow 7, Super Deluxe 3, Deluxe 10). Seventeen retired legacy gallery records were Archived, not deleted. Original files remain recoverable.
+- Three confirmed room covers were updated. The three unverified Premium/Dormitory cover references were cleared instead of presenting unrelated rooms. Conditional updates preserved any concurrently edited custom cover.
+- Before/after database fingerprints matched for room business fields, bookings, customers and manual inventory blocks. Both existing bookings were preserved; no test booking was submitted.
+- Public-role database checks returned exactly 33 gallery images and 20 room-album images, with zero Hidden/Archived rows visible. Existing admin-only media/storage write policies were inspected and left unchanged.
+- Production mobile gallery filtering showed exactly 10 Deluxe photos. Lightbox image loading, next-image control, Escape close and focus return passed. Tablet room albums expanded with correct counts and photographs. No horizontal overflow or browser errors were observed in these checks.
+- Live mobile availability and room selection were checked against the resumed Supabase service. Room prices and available counts remained intact. No booking submission or payment was made during QA.
+- Production export, lint, TypeScript and 16 automated tests passed. The new tests also cover hidden/archived records, empty managed galleries, URL deduplication, uploaded-image preservation and consistent official imports.
+
+### Remaining owner checks
+
+The signed-out live Admin page redirects to the login screen as expected. No authenticated administrator session was available in the accessible browser (Chrome was unavailable), so actual admin upload/save/delete interactions have **not** been claimed as browser-tested. Sign in to the in-app Admin page to complete that final hands-on check; no password or account reset is necessary.
 
 The booking journey is an inquiry flow, not an immediate paid reservation. There is no implemented Razorpay checkout in the inspected application; no payment transaction is claimed or tested.
 
