@@ -58,6 +58,7 @@ test("loader has a hard deadline and galleries share keyboard/swipe preview", as
   assert.match(loader, /catch/);
   assert.match(loader, /__dsIntro/);
   assert.match(await readFile(new URL("../app/visual-upgrade.css", import.meta.url), "utf8"), /serenity-safety-hide/);
+  assert.match(await readFile(new URL("../app/visual-upgrade.css", import.meta.url), "utf8"), /serenity-safety-hide 0s \.35s forwards !important/);
   const lightbox = await readFile(new URL("../components/PhotoLightbox.tsx", import.meta.url), "utf8");
   for (const feature of ["showModal", "onCancel", "ArrowRight", "ArrowLeft", "onTouchEnd", "opener.current?.focus", "aria-live"]) assert.ok(lightbox.includes(feature));
   for (const name of ["GalleryCategories", "StayRoomCards"]) assert.match(await readFile(new URL(`../components/${name}.tsx`, import.meta.url), "utf8"), /<PhotoLightbox/);

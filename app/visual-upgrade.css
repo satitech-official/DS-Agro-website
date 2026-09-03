@@ -54,7 +54,7 @@ html[data-ds-intro="seen"] .serenity-loader.checking { display:none; }
   .serenity-scene { width:210px; height:180px; }
 }
 @media(prefers-reduced-motion:reduce) {
-  .serenity-loader { animation-delay:.35s !important; }
+  .serenity-loader { animation:serenity-safety-hide 0s .35s forwards !important; }
   .serenity-scene,.serenity-caption { display:none; }
   .serenity-brand { margin:0; }
   .serenity-loader.leaving { opacity:0; }
